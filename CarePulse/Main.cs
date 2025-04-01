@@ -15,6 +15,7 @@ namespace CarePulse
         public Main()
         {
             InitializeComponent();
+            SetDataGridViewRowHeight();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,5 +42,35 @@ namespace CarePulse
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void SetDataGridViewRowHeight()
+        {
+            foreach (DataGridViewRow row in datagridCPHome.Rows)
+            {
+                row.Height = 28; 
+            }
+        }
+
+        // Moves the panel indicator to a specified vertical position.
+        private void UpdatePanelIndicator(int yOffset) => panelIndicator.Location = new Point(1, yOffset);
+
+        private void btnDashboard_Click(object sender, EventArgs e) => UpdatePanelIndicator(85);
+        private void btnMain_Click(object sender, EventArgs e) => UpdatePanelIndicator(135);
+        private void btnSettings_Click(object sender, EventArgs e) => UpdatePanelIndicator(185);
+
+        //Updates the text color of two buttons to indicate the active selection.
+        private void UpdateButtonColors(Button activeButton, Button inactiveButton)
+        {
+            activeButton.ForeColor = Color.FromArgb(128, 64, 0);
+            inactiveButton.ForeColor = Color.FromArgb(45, 53, 44);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e) => UpdateButtonColors(btnHome, btnReports);
+        private void btnReports_Click(object sender, EventArgs e) => UpdateButtonColors(btnReports, btnHome);
+        private void btnGithub_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

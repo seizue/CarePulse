@@ -99,5 +99,59 @@
   <ItemGroup>
     <None Include="Resources\unchecked_checkbox_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_layout_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bungalow_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecg_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_new_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\last_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\first_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_csv_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posted_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filtered_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
