@@ -21,8 +21,11 @@ C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\ReaLTaiizor.dll
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\ReaLTaiizor.xml
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.AssemblyReference.cache
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.RecoveryAccount.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.SignIn.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Main.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Properties.Resources.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.SignUp.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.GenerateResource.cache
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.CoreCompileInputs.cache
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.Up2Date
