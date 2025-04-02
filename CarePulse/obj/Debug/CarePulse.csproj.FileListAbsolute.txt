@@ -31,3 +31,4 @@ C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.Cor
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.Up2Date
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.exe
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.pdb
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Settings.resources

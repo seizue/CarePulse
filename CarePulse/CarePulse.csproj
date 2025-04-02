@@ -67,6 +67,12 @@
     <Compile Include="RecoveryAccount.Designer.cs">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="RecoveryAccount.resx">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -194,6 +203,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar_24px21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advance_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_24px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

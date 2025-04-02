@@ -105,8 +105,8 @@
             // comBox_UserAccounts
             // 
             this.comBox_UserAccounts.BackColor = System.Drawing.Color.White;
-            this.comBox_UserAccounts.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comBox_UserAccounts.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comBox_UserAccounts.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.comBox_UserAccounts.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
             this.comBox_UserAccounts.ColorC = System.Drawing.Color.White;
             this.comBox_UserAccounts.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.comBox_UserAccounts.ColorE = System.Drawing.Color.White;
@@ -119,7 +119,7 @@
             this.comBox_UserAccounts.DropDownHeight = 150;
             this.comBox_UserAccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comBox_UserAccounts.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.comBox_UserAccounts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            this.comBox_UserAccounts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             this.comBox_UserAccounts.FormattingEnabled = true;
             this.comBox_UserAccounts.HoverSelectionColor = System.Drawing.Color.Transparent;
             this.comBox_UserAccounts.IntegralHeight = false;

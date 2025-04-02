@@ -210,9 +210,22 @@ namespace CarePulse
         // Moves the panel indicator to a specified vertical position.
         private void UpdatePanelIndicator(int yOffset) => panelIndicator.Location = new Point(1, yOffset);
 
-        private void btnDashboard_Click(object sender, EventArgs e) => UpdatePanelIndicator(85);
-        private void btnMain_Click(object sender, EventArgs e) => UpdatePanelIndicator(135);
-        private void btnSettings_Click(object sender, EventArgs e) => UpdatePanelIndicator(185);
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            UpdatePanelIndicator(85);
+        }
+
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            UpdatePanelIndicator(135);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            UpdatePanelIndicator(185);
+            Settings settings = new Settings(this);
+            settings.ShowDialog();
+        }
 
         //Updates the text color of two buttons to indicate the active selection.
         private void UpdateButtonColors(Button activeButton, Button inactiveButton)
@@ -221,8 +234,16 @@ namespace CarePulse
             inactiveButton.ForeColor = Color.FromArgb(45, 53, 44);
         }
 
-        private void btnHome_Click(object sender, EventArgs e) => UpdateButtonColors(btnHome, btnReports);
-        private void btnReports_Click(object sender, EventArgs e) => UpdateButtonColors(btnReports, btnHome);
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            UpdateButtonColors(btnHome, btnReports);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        { 
+            UpdateButtonColors(btnReports, btnHome); 
+        }
+
         private void btnGithub_Click(object sender, EventArgs e)
         {
 
