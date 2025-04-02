@@ -246,7 +246,11 @@ namespace CarePulse
 
         private void btnGithub_Click(object sender, EventArgs e)
         {
-
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/seizue/CarePulse",
+                UseShellExecute = true
+            });
         }
 
     }
