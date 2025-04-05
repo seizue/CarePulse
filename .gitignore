@@ -1,3 +1,9 @@
 *.vsidx
 /.vs/CarePulse
 /.vs
+/CarePulse/bin
+CarePulse/bin/Debug/CarePulse.exe
+CarePulse/bin/Debug/CarePulse.pdb
+CarePulse/obj/Debug/CarePulse.csproj.GenerateResource.cache
+CarePulse/obj/Debug/CarePulse.exe
+CarePulse/obj/Debug/CarePulse.pdb

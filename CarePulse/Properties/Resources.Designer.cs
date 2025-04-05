@@ -103,6 +103,16 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap binoculars_24px {
+            get {
+                object obj = ResourceManager.GetObject("binoculars_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bungalow_24px {
             get {
                 object obj = ResourceManager.GetObject("bungalow_24px", resourceCulture);
@@ -133,6 +143,16 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_all_24px {
+            get {
+                object obj = ResourceManager.GetObject("check_all_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard_layout_24px {
             get {
                 object obj = ResourceManager.GetObject("dashboard_layout_24px", resourceCulture);
@@ -156,6 +176,16 @@ namespace CarePulse.Properties {
         internal static System.Drawing.Bitmap ecg_32px {
             get {
                 object obj = ResourceManager.GetObject("ecg_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_24px {
+            get {
+                object obj = ResourceManager.GetObject("Edit_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +283,16 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_math_24px {
+            get {
+                object obj = ResourceManager.GetObject("plus_math_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Posted_24px {
             get {
                 object obj = ResourceManager.GetObject("Posted_24px", resourceCulture);
@@ -286,6 +326,26 @@ namespace CarePulse.Properties {
         internal static System.Drawing.Bitmap settings_24px1 {
             get {
                 object obj = ResourceManager.GetObject("settings_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap survey_24px {
+            get {
+                object obj = ResourceManager.GetObject("survey_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap template_24px {
+            get {
+                object obj = ResourceManager.GetObject("template_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -61,6 +61,18 @@
     <Compile Include="CustomDatePicker.Designer.cs">
       <DependentUpon>CustomDatePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntryNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntryNew.Designer.cs">
+      <DependentUpon>EntryNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTemplates.Designer.cs">
+      <DependentUpon>NewTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecoveryAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EntryNew.resx">
+      <DependentUpon>EntryNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTemplates.resx">
+      <DependentUpon>NewTemplates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecoveryAccount.resx">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +230,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_math_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\survey_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binoculars_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_all_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\template_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

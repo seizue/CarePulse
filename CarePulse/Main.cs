@@ -220,12 +220,20 @@ namespace CarePulse
             UpdatePanelIndicator(135);
         }
 
+        private void btnSurveyTemplate_Click(object sender, EventArgs e)
+        {         
+            NewTemplates newTemplates = new NewTemplates();
+            newTemplates.ShowDialog();
+        }
+
+
         private void btnSettings_Click(object sender, EventArgs e)
-        {
-            UpdatePanelIndicator(185);
+        {                   
             Settings settings = new Settings(this);
             settings.ShowDialog();
         }
+
+   
 
         //Updates the text color of two buttons to indicate the active selection.
         private void UpdateButtonColors(Button activeButton, Button inactiveButton)
@@ -253,5 +261,22 @@ namespace CarePulse
             });
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            EntryNew entryNew = new EntryNew();
+            entryNew.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
