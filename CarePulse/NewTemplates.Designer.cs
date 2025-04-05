@@ -366,6 +366,7 @@
             this.btnPosted.Text = "SAVE CHANGES";
             this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPosted.UseVisualStyleBackColor = false;
+            this.btnPosted.Click += new System.EventHandler(this.btnPosted_Click);
             // 
             // panel1
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,7 @@ namespace CarePulse
             }
         }
 
-        // Modify your btnNew_Click to add a click event handler to each new textbox
+       
         private void btnNew_Click(object sender, EventArgs e)
         {
             HopeTextBox newHopeTextBox = new HopeTextBox
@@ -175,5 +176,80 @@ namespace CarePulse
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnPosted_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if template name is provided
+                if (string.IsNullOrWhiteSpace(txtboxTemplateName.Text))
+                {
+                    MessageBox.Show("Please enter a template name.", "Template Name Required",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Create directory if it doesn't exist
+                string folderPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    "CarePulse", "SurveyTemplate");
+
+                Directory.CreateDirectory(folderPath);
+
+                // Create a list to hold all the template questions
+                List<string> templateQuestions = new List<string>();
+
+                // Collect text from all textboxes in the flowLayoutPanel
+                foreach (Control control in flowLayoutPanel1.Controls)
+                {
+                    if (control is HopeTextBox textBox && !string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        templateQuestions.Add(textBox.Text);
+                    }
+                }
+
+                // Check if any questions were entered
+                if (templateQuestions.Count == 0)
+                {
+                    MessageBox.Show("Please add at least one template question.", "No Questions Found",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Create the template object
+                var template = new
+                {
+                    TemplateName = txtboxTemplateName.Text,
+                    CreatedDate = DateTime.Now,
+                    Questions = templateQuestions
+                };
+
+                // Convert to JSON
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(template, Newtonsoft.Json.Formatting.Indented);
+
+                // Generate safe filename
+                string fileName = txtboxTemplateName.Text;
+                foreach (char c in Path.GetInvalidFileNameChars())
+                {
+                    fileName = fileName.Replace(c, '_');
+                }
+
+                string filePath = Path.Combine(folderPath, fileName + ".json");
+
+                // Write to file
+                File.WriteAllText(filePath, json);
+
+                MessageBox.Show("Template saved successfully!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving template: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+    
 }
