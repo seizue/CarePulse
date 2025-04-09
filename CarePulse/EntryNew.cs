@@ -27,5 +27,11 @@ namespace CarePulse
             NewTemplates newTemplates = new NewTemplates();
             newTemplates.ShowDialog();
         }
+
+        private void btnAnsSurvey_Click(object sender, EventArgs e)
+        {
+            Survey survey = new Survey();
+            survey.ShowDialog();
+        }
     }
 }

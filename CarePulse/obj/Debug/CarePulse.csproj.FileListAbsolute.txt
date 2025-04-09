@@ -34,3 +34,4 @@ C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.pdb
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Settings.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.EntryNew.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.NewTemplates.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Survey.resources
