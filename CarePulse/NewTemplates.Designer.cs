@@ -29,27 +29,31 @@
         private void InitializeComponent()
         {
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
-            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new ReaLTaiizor.Controls.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.comboBoxSelectSurveyTemplate = new ReaLTaiizor.Controls.DungeonComboBox();
             this.panel12 = new ReaLTaiizor.Controls.Panel();
             this.panel9 = new ReaLTaiizor.Controls.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new ReaLTaiizor.Controls.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtboxTemplateName = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new ReaLTaiizor.Controls.Panel();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnPosted = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.comboBoxSelectSurveyTemplate = new ReaLTaiizor.Controls.DungeonComboBox();
-            this.txtboxTemplateName = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnPosted = new System.Windows.Forms.Button();
-            this.panel1 = new ReaLTaiizor.Controls.Panel();
+            this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.dreamForm1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dreamForm1
@@ -78,70 +82,25 @@
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
             // 
-            // parrotGradientPanel1
+            // flowLayoutPanel1
             // 
-            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 640);
-            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
-            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel1.Size = new System.Drawing.Size(1062, 10);
-            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel1.TabIndex = 8;
-            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Controls.Add(this.btnPosted);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.txtboxTemplateName);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(0, 32);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1059, 47);
-            this.panel3.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Forte", 12.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.label2.Location = new System.Drawing.Point(31, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "CarePulse";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(0, 46);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(1059, 1);
-            this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel4.TabIndex = 14;
-            this.panel4.Text = "panel4";
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 152);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 466);
+            this.flowLayoutPanel1.TabIndex = 16;
             // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.btnClear);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.btnEdit);
             this.panel6.Controls.Add(this.comboBoxSelectSurveyTemplate);
             this.panel6.Controls.Add(this.panel12);
             this.panel6.Controls.Add(this.btnNew);
@@ -151,6 +110,36 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1061, 57);
             this.panel6.TabIndex = 15;
+            // 
+            // comboBoxSelectSurveyTemplate
+            // 
+            this.comboBoxSelectSurveyTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSelectSurveyTemplate.BackColor = System.Drawing.Color.White;
+            this.comboBoxSelectSurveyTemplate.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.comboBoxSelectSurveyTemplate.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.comboBoxSelectSurveyTemplate.ColorC = System.Drawing.Color.White;
+            this.comboBoxSelectSurveyTemplate.ColorD = System.Drawing.Color.White;
+            this.comboBoxSelectSurveyTemplate.ColorE = System.Drawing.Color.White;
+            this.comboBoxSelectSurveyTemplate.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.comboBoxSelectSurveyTemplate.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.comboBoxSelectSurveyTemplate.ColorH = System.Drawing.Color.Silver;
+            this.comboBoxSelectSurveyTemplate.ColorI = System.Drawing.Color.White;
+            this.comboBoxSelectSurveyTemplate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxSelectSurveyTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxSelectSurveyTemplate.DropDownHeight = 150;
+            this.comboBoxSelectSurveyTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelectSurveyTemplate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSelectSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.comboBoxSelectSurveyTemplate.FormattingEnabled = true;
+            this.comboBoxSelectSurveyTemplate.HoverSelectionColor = System.Drawing.Color.Transparent;
+            this.comboBoxSelectSurveyTemplate.IntegralHeight = false;
+            this.comboBoxSelectSurveyTemplate.ItemHeight = 23;
+            this.comboBoxSelectSurveyTemplate.Location = new System.Drawing.Point(669, 12);
+            this.comboBoxSelectSurveyTemplate.Name = "comboBoxSelectSurveyTemplate";
+            this.comboBoxSelectSurveyTemplate.Size = new System.Drawing.Size(359, 29);
+            this.comboBoxSelectSurveyTemplate.StartIndex = 0;
+            this.comboBoxSelectSurveyTemplate.TabIndex = 412;
+            this.comboBoxSelectSurveyTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectSurveyTemplate_SelectedIndexChanged);
             // 
             // panel12
             // 
@@ -177,16 +166,165 @@
             this.panel9.TabIndex = 14;
             this.panel9.Text = "panel9";
             // 
-            // flowLayoutPanel1
+            // panel3
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 152);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 466);
-            this.flowLayoutPanel1.TabIndex = 16;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.btnPosted);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtboxTemplateName);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(0, 32);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1059, 47);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Location = new System.Drawing.Point(874, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(1, 15);
+            this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel1.TabIndex = 414;
+            this.panel1.Text = "panel1";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label7.Location = new System.Drawing.Point(333, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 15);
+            this.label7.TabIndex = 398;
+            this.label7.Text = "Template Name";
+            // 
+            // txtboxTemplateName
+            // 
+            this.txtboxTemplateName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxTemplateName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtboxTemplateName.BorderColor = System.Drawing.Color.Black;
+            this.txtboxTemplateName.EdgeColor = System.Drawing.Color.Black;
+            this.txtboxTemplateName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtboxTemplateName.Location = new System.Drawing.Point(432, 8);
+            this.txtboxTemplateName.MaxLength = 32767;
+            this.txtboxTemplateName.Multiline = false;
+            this.txtboxTemplateName.Name = "txtboxTemplateName";
+            this.txtboxTemplateName.ReadOnly = false;
+            this.txtboxTemplateName.Size = new System.Drawing.Size(418, 29);
+            this.txtboxTemplateName.TabIndex = 31;
+            this.txtboxTemplateName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtboxTemplateName.UseSystemPasswordChar = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Forte", 12.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.label2.Location = new System.Drawing.Point(31, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 19);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "CarePulse";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Location = new System.Drawing.Point(0, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
+            this.panel4.Size = new System.Drawing.Size(1059, 1);
+            this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel4.TabIndex = 14;
+            this.panel4.Text = "panel4";
+            // 
+            // parrotGradientPanel1
+            // 
+            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 640);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(1062, 10);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel1.TabIndex = 8;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Location = new System.Drawing.Point(243, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(1, 20);
+            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel2.TabIndex = 414;
+            this.panel2.Text = "panel2";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnClear.Image = global::CarePulse.Properties.Resources.broom_24px;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(260, 11);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(88, 31);
+            this.btnClear.TabIndex = 415;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnEdit.Image = global::CarePulse.Properties.Resources.sign_up_24px;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(148, 11);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(80, 31);
+            this.btnEdit.TabIndex = 413;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnNew
             // 
@@ -223,7 +361,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             this.btnDelete.Image = global::CarePulse.Properties.Resources.trash_24px;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(144, 11);
+            this.btnDelete.Location = new System.Drawing.Point(381, 11);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(104, 31);
             this.btnDelete.TabIndex = 22;
@@ -231,6 +369,28 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnPosted
+            // 
+            this.btnPosted.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
+            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatAppearance.BorderSize = 0;
+            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
+            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPosted.Location = new System.Drawing.Point(889, 7);
+            this.btnPosted.Name = "btnPosted";
+            this.btnPosted.Size = new System.Drawing.Size(140, 31);
+            this.btnPosted.TabIndex = 413;
+            this.btnPosted.Text = "SAVE CHANGES";
+            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPosted.UseVisualStyleBackColor = false;
+            this.btnPosted.Click += new System.EventHandler(this.btnPosted_Click);
             // 
             // btnMaximize
             // 
@@ -286,100 +446,17 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // comboBoxSelectSurveyTemplate
+            // panel5
             // 
-            this.comboBoxSelectSurveyTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSelectSurveyTemplate.BackColor = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.comboBoxSelectSurveyTemplate.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.comboBoxSelectSurveyTemplate.ColorC = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorD = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorE = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.comboBoxSelectSurveyTemplate.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.comboBoxSelectSurveyTemplate.ColorH = System.Drawing.Color.Silver;
-            this.comboBoxSelectSurveyTemplate.ColorI = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxSelectSurveyTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxSelectSurveyTemplate.DropDownHeight = 150;
-            this.comboBoxSelectSurveyTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSelectSurveyTemplate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.comboBoxSelectSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.comboBoxSelectSurveyTemplate.FormattingEnabled = true;
-            this.comboBoxSelectSurveyTemplate.HoverSelectionColor = System.Drawing.Color.Transparent;
-            this.comboBoxSelectSurveyTemplate.IntegralHeight = false;
-            this.comboBoxSelectSurveyTemplate.ItemHeight = 23;
-            this.comboBoxSelectSurveyTemplate.Location = new System.Drawing.Point(669, 12);
-            this.comboBoxSelectSurveyTemplate.Name = "comboBoxSelectSurveyTemplate";
-            this.comboBoxSelectSurveyTemplate.Size = new System.Drawing.Size(359, 29);
-            this.comboBoxSelectSurveyTemplate.StartIndex = 0;
-            this.comboBoxSelectSurveyTemplate.TabIndex = 412;
-            // 
-            // txtboxTemplateName
-            // 
-            this.txtboxTemplateName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxTemplateName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtboxTemplateName.BorderColor = System.Drawing.Color.Black;
-            this.txtboxTemplateName.EdgeColor = System.Drawing.Color.Black;
-            this.txtboxTemplateName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtboxTemplateName.Location = new System.Drawing.Point(432, 8);
-            this.txtboxTemplateName.MaxLength = 32767;
-            this.txtboxTemplateName.Multiline = false;
-            this.txtboxTemplateName.Name = "txtboxTemplateName";
-            this.txtboxTemplateName.ReadOnly = false;
-            this.txtboxTemplateName.Size = new System.Drawing.Size(418, 29);
-            this.txtboxTemplateName.TabIndex = 31;
-            this.txtboxTemplateName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtboxTemplateName.UseSystemPasswordChar = false;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label7.Location = new System.Drawing.Point(333, 14);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 15);
-            this.label7.TabIndex = 398;
-            this.label7.Text = "Template Name";
-            // 
-            // btnPosted
-            // 
-            this.btnPosted.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
-            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.BorderSize = 0;
-            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
-            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPosted.Location = new System.Drawing.Point(889, 7);
-            this.btnPosted.Name = "btnPosted";
-            this.btnPosted.Size = new System.Drawing.Size(140, 31);
-            this.btnPosted.TabIndex = 413;
-            this.btnPosted.Text = "SAVE CHANGES";
-            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPosted.UseVisualStyleBackColor = false;
-            this.btnPosted.Click += new System.EventHandler(this.btnPosted_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(874, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1, 15);
-            this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel1.TabIndex = 414;
-            this.panel1.Text = "panel1";
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel5.Location = new System.Drawing.Point(366, 17);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(1, 20);
+            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel5.TabIndex = 416;
+            this.panel5.Text = "panel5";
             // 
             // NewTemplates
             // 
@@ -393,9 +470,9 @@
             this.Text = "NewTemplates";
             this.Load += new System.EventHandler(this.NewTemplates_Load);
             this.dreamForm1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -421,5 +498,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPosted;
         private ReaLTaiizor.Controls.Panel panel1;
+        private System.Windows.Forms.Button btnEdit;
+        private ReaLTaiizor.Controls.Panel panel2;
+        private System.Windows.Forms.Button btnClear;
+        private ReaLTaiizor.Controls.Panel panel5;
     }
 }

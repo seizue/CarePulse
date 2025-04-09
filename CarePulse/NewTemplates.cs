@@ -58,11 +58,24 @@ namespace CarePulse
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
             }
+
+            // Load template files
+            LoadTemplatesIntoComboBox();
         }
 
-       
+
         private void btnNew_Click(object sender, EventArgs e)
         {
+            // Clear the template name
+            txtboxTemplateName.Text = string.Empty;
+        
+            // Reset selection
+            selectedTextBox = null;
+
+            // Reset ComboBox selection (optional)
+            comboBoxSelectSurveyTemplate.SelectedIndex = -1;
+
+            // Create a new HopeTextBox
             HopeTextBox newHopeTextBox = new HopeTextBox
             {
                 Width = 400,
@@ -96,13 +109,17 @@ namespace CarePulse
 
             // Ensure AutoScroll is enabled
             flowLayoutPanel1.AutoScroll = true;
+
             // Add the control
             flowLayoutPanel1.Controls.Add(newHopeTextBox);
+
             // Force layout refresh
             flowLayoutPanel1.PerformLayout();
+
             // Scroll to make the new control visible
             newHopeTextBox.Focus();
             flowLayoutPanel1.ScrollControlIntoView(newHopeTextBox);
+
             // Additional approach to ensure scrolling works
             flowLayoutPanel1.AutoScrollPosition = new Point(0, flowLayoutPanel1.VerticalScroll.Maximum);
 
@@ -130,6 +147,43 @@ namespace CarePulse
                 Console.WriteLine("Highlighted textbox: " + selectedTextBox.Name);
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Check if a template is selected
+            if (comboBoxSelectSurveyTemplate.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a template to edit.", "No Template Selected",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Enable editing of the template name
+            txtboxTemplateName.Enabled = true;
+
+            // Enable editing of all HopeTextBox controls in the FlowLayoutPanel
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is HopeTextBox textBox)
+                {
+                    textBox.Enabled = true;
+                    textBox.BorderColorA = Color.FromArgb(64, 158, 255);
+                }
+            }
+
+            // Optionally, highlight the first textbox for better UX
+            if (flowLayoutPanel1.Controls.Count > 0 && flowLayoutPanel1.Controls[0] is HopeTextBox firstTextBox)
+            {
+                selectedTextBox = firstTextBox;
+                firstTextBox.Focus();
+                HighlightSelectedTextBox();
+            }
+
+            MessageBox.Show("You can now edit the Template. Click 'Save Changes' to apply your modifications.", "Edit Mode",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
 
         // Implement the delete button to remove the selected textbox
         private void btnDelete_Click(object sender, EventArgs e)
@@ -176,6 +230,7 @@ namespace CarePulse
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private void btnPosted_Click(object sender, EventArgs e)
         {
@@ -250,6 +305,121 @@ namespace CarePulse
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void LoadTemplatesIntoComboBox()
+        {
+            string folderPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "SurveyTemplate");
+
+            if (!Directory.Exists(folderPath))
+                return;
+
+            var files = Directory.GetFiles(folderPath, "*.json");
+            comboBoxSelectSurveyTemplate.Items.Clear();
+
+            foreach (var file in files)
+            {
+                comboBoxSelectSurveyTemplate.Items.Add(Path.GetFileNameWithoutExtension(file));
+            }
+        }
+
+
+
+        private void comboBoxSelectSurveyTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSelectSurveyTemplate.SelectedItem == null)
+                return;
+
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
+            string folderPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "SurveyTemplate");
+            string filePath = Path.Combine(folderPath, selectedTemplate + ".json");
+
+            if (!File.Exists(filePath))
+                return;
+
+            try
+            {
+                string json = File.ReadAllText(filePath);
+                dynamic template = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+                txtboxTemplateName.Text = template.TemplateName;
+
+                flowLayoutPanel1.Controls.Clear(); // Clear existing questions
+
+                foreach (var question in template.Questions)
+                {
+                    HopeTextBox questionBox = new HopeTextBox
+                    {
+                        Width = 400,
+                        Height = 44,
+                        Visible = true,
+                        Multiline = true,
+                        Hint = "Enter template text...",
+                        Text = question.ToString(),
+                        Name = "QuestionSurvey_" + flowLayoutPanel1.Controls.Count,
+                        ForeColor = Color.FromArgb(30, 35, 29),
+                        Font = new Font("Calibri", 9.25f, FontStyle.Bold),
+                        BackColor = Color.White,
+                        BaseColor = Color.White,
+                        BorderColorA = Color.FromArgb(64, 158, 255),
+                        BorderColorB = Color.LightGray,
+                        Margin = new Padding(5),
+                        Enabled = false,
+                    };
+
+                    // Add click/focus for selection
+                    questionBox.Click += (s, args) => {
+                        selectedTextBox = questionBox;
+                        HighlightSelectedTextBox();
+                    };
+                    questionBox.GotFocus += (s, args) => {
+                        selectedTextBox = questionBox;
+                        HighlightSelectedTextBox();
+                    };
+
+                    flowLayoutPanel1.Controls.Add(questionBox);
+                }
+
+                if (flowLayoutPanel1.Controls.Count > 0)
+                {
+                    selectedTextBox = flowLayoutPanel1.Controls[0] as HopeTextBox;
+                    selectedTextBox?.Focus();
+                    HighlightSelectedTextBox();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading template: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void ClearFields()
+        {
+            // Clear the template name
+            txtboxTemplateName.Text = string.Empty;
+
+            // Remove all controls from the FlowLayoutPanel
+            flowLayoutPanel1.Controls.Clear();
+
+            // Reset selection
+            selectedTextBox = null;
+
+            // Reset ComboBox selection (optional)
+            comboBoxSelectSurveyTemplate.SelectedIndex = -1;
+        }
+
+    
     }
     
 }
