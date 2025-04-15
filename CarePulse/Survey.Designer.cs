@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.datagridSurvey = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.panel10 = new ReaLTaiizor.Controls.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
-            this.btnPosted = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             this.btnImportOCR = new System.Windows.Forms.Button();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.btnResponseOption = new System.Windows.Forms.Button();
@@ -58,14 +58,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel9 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
-            this.comboBoxSelectSurveyTemplate = new ReaLTaiizor.Controls.DungeonComboBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).BeginInit();
             this.panel8.SuspendLayout();
@@ -102,14 +101,15 @@
             // 
             // datagridSurvey
             // 
+            this.datagridSurvey.AllowUserToAddRows = false;
             this.datagridSurvey.AllowUserToDeleteRows = false;
             this.datagridSurvey.AllowUserToResizeColumns = false;
             this.datagridSurvey.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.datagridSurvey.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.datagridSurvey.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.datagridSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,43 +119,43 @@
             this.datagridSurvey.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datagridSurvey.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.datagridSurvey.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridSurvey.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurvey.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.datagridSurvey.ColumnHeadersHeight = 48;
             this.datagridSurvey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridSurvey.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surveyID,
             this.surveyQuestions,
             this.surveyResponse});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridSurvey.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridSurvey.DefaultCellStyle = dataGridViewCellStyle19;
             this.datagridSurvey.EnableHeadersVisualStyles = false;
             this.datagridSurvey.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.datagridSurvey.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.datagridSurvey.Location = new System.Drawing.Point(36, 145);
             this.datagridSurvey.Name = "datagridSurvey";
             this.datagridSurvey.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridSurvey.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurvey.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.datagridSurvey.RowHeadersWidth = 5;
             this.datagridSurvey.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridSurvey.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -179,9 +179,9 @@
             // 
             // surveyResponse
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle18;
             this.surveyResponse.FillWeight = 20F;
             this.surveyResponse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.surveyResponse.HeaderText = "Response ";
@@ -312,7 +312,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.btnPosted);
+            this.panel6.Controls.Add(this.btnPost);
             this.panel6.Controls.Add(this.btnImportOCR);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.btnResponseOption);
@@ -340,25 +340,26 @@
             this.panel1.TabIndex = 417;
             this.panel1.Text = "panel1";
             // 
-            // btnPosted
+            // btnPost
             // 
-            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
-            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.BorderSize = 0;
-            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
-            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPosted.Location = new System.Drawing.Point(28, 11);
-            this.btnPosted.Name = "btnPosted";
-            this.btnPosted.Size = new System.Drawing.Size(86, 31);
-            this.btnPosted.TabIndex = 413;
-            this.btnPosted.Text = "POST";
-            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPosted.UseVisualStyleBackColor = false;
+            this.btnPost.BackColor = System.Drawing.Color.Transparent;
+            this.btnPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPost.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatAppearance.BorderSize = 0;
+            this.btnPost.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnPost.Image = global::CarePulse.Properties.Resources.Posted_24px;
+            this.btnPost.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPost.Location = new System.Drawing.Point(28, 11);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(86, 31);
+            this.btnPost.TabIndex = 413;
+            this.btnPost.Text = "POST";
+            this.btnPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPost.UseVisualStyleBackColor = false;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // btnImportOCR
             // 
@@ -523,11 +524,22 @@
             this.panel3.Controls.Add(this.label21);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.comboBoxSelectSurveyTemplate);
             this.panel3.Location = new System.Drawing.Point(0, 32);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1043, 47);
             this.panel3.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.label21.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(115, 16);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(106, 15);
+            this.label21.TabIndex = 417;
+            this.label21.Text = "ANSWER SURVEY";
             // 
             // label2
             // 
@@ -552,35 +564,6 @@
             this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel4.TabIndex = 14;
             this.panel4.Text = "panel4";
-            // 
-            // comboBoxSelectSurveyTemplate
-            // 
-            this.comboBoxSelectSurveyTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSelectSurveyTemplate.BackColor = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.comboBoxSelectSurveyTemplate.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.comboBoxSelectSurveyTemplate.ColorC = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorD = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorE = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.comboBoxSelectSurveyTemplate.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.comboBoxSelectSurveyTemplate.ColorH = System.Drawing.Color.Silver;
-            this.comboBoxSelectSurveyTemplate.ColorI = System.Drawing.Color.White;
-            this.comboBoxSelectSurveyTemplate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxSelectSurveyTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxSelectSurveyTemplate.DropDownHeight = 150;
-            this.comboBoxSelectSurveyTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSelectSurveyTemplate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSelectSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.comboBoxSelectSurveyTemplate.FormattingEnabled = true;
-            this.comboBoxSelectSurveyTemplate.HoverSelectionColor = System.Drawing.Color.Transparent;
-            this.comboBoxSelectSurveyTemplate.IntegralHeight = false;
-            this.comboBoxSelectSurveyTemplate.ItemHeight = 23;
-            this.comboBoxSelectSurveyTemplate.Location = new System.Drawing.Point(648, 8);
-            this.comboBoxSelectSurveyTemplate.Name = "comboBoxSelectSurveyTemplate";
-            this.comboBoxSelectSurveyTemplate.Size = new System.Drawing.Size(364, 29);
-            this.comboBoxSelectSurveyTemplate.StartIndex = 0;
-            this.comboBoxSelectSurveyTemplate.TabIndex = 412;
             // 
             // parrotGradientPanel1
             // 
@@ -656,18 +639,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.label21.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(115, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(106, 15);
-            this.label21.TabIndex = 417;
-            this.label21.Text = "ANSWER SURVEY";
-            // 
             // Survey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,6 +649,7 @@
             this.Name = "Survey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Survey";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Survey_FormClosing);
             this.Load += new System.EventHandler(this.Survey_Load);
             this.dreamForm1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).EndInit();
@@ -697,12 +669,11 @@
         private System.Windows.Forms.Button btnClear;
         private ReaLTaiizor.Controls.Panel panel2;
         private System.Windows.Forms.Button btnEdit;
-        private ReaLTaiizor.Controls.DungeonComboBox comboBoxSelectSurveyTemplate;
         private ReaLTaiizor.Controls.Panel panel12;
         private System.Windows.Forms.Button btnDelete;
         private ReaLTaiizor.Controls.Panel panel9;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnPosted;
+        private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.Label label2;
         private ReaLTaiizor.Controls.Panel panel4;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
