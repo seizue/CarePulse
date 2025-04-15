@@ -163,12 +163,64 @@ namespace CarePulse
 
         private void EntryNew_Load(object sender, EventArgs e)
         {
-            // Generate and set the unique ID during form load
             string generatedId = GenerateUniqueId();
             txtBoxIDNo.Text = generatedId;
 
             LoadSurveyTemplates();
+            PopulateMonthComboBox();
+            PopulateYearComboBox();
+
+            // Set initial values from date picker
+            datePickerDateSurvey_ValueChanged(null, null);
         }
+
+        private void datePickerDateSurvey_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = datePickerDateSurvey.Value;
+
+            // Set the selected month (e.g., "April")
+            comboBoxMonthSurvey.SelectedItem = selectedDate.ToString("MMMM");
+
+            // Set the selected year (e.g., "2025")
+            comboBoxYearSurvey.SelectedItem = selectedDate.Year.ToString();
+        }
+
+        private void PopulateMonthComboBox()
+        {
+            comboBoxMonthSurvey.Items.Clear();
+            for (int month = 1; month <= 12; month++)
+            {
+                comboBoxMonthSurvey.Items.Add(new DateTime(1, month, 1).ToString("MMMM"));
+            }
+        }
+
+        private void PopulateYearComboBox()
+        {
+            comboBoxYearSurvey.Items.Clear();
+            int currentYear = DateTime.Now.Year;
+            for (int year = currentYear - 5; year <= currentYear + 5; year++)
+            {
+                comboBoxYearSurvey.Items.Add(year.ToString());
+            }
+        }
+
+
+        private void btnEditSurvey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewTemplates_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
 

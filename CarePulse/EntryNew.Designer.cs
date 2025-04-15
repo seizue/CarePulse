@@ -57,7 +57,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxMonthSurvey = new ReaLTaiizor.Controls.DungeonComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.datePickerDateSurvey = new CarePulse.CustomDatePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxIDNo = new ReaLTaiizor.Controls.HopeTextBox();
@@ -69,6 +68,7 @@
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.datePickerDateSurvey = new CarePulse.CustomDatePicker();
             this.dreamForm1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -184,6 +184,7 @@
             this.btnEditSurvey.Text = "EDIT ANSWER";
             this.btnEditSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditSurvey.UseVisualStyleBackColor = false;
+            this.btnEditSurvey.Click += new System.EventHandler(this.btnEditSurvey_Click);
             // 
             // btnViewTemplates
             // 
@@ -205,6 +206,7 @@
             this.btnViewTemplates.TabIndex = 423;
             this.btnViewTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewTemplates.UseVisualStyleBackColor = false;
+            this.btnViewTemplates.Click += new System.EventHandler(this.btnViewTemplates_Click);
             // 
             // label20
             // 
@@ -595,21 +597,6 @@
             this.label4.TabIndex = 335;
             this.label4.Text = "Date of Survey";
             // 
-            // datePickerDateSurvey
-            // 
-            this.datePickerDateSurvey.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerDateSurvey.BorderSize = 0;
-            this.datePickerDateSurvey.FillColor = System.Drawing.Color.White;
-            this.datePickerDateSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerDateSurvey.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerDateSurvey.Location = new System.Drawing.Point(251, 156);
-            this.datePickerDateSurvey.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerDateSurvey.Name = "datePickerDateSurvey";
-            this.datePickerDateSurvey.ShowIconOnly = false;
-            this.datePickerDateSurvey.Size = new System.Drawing.Size(152, 35);
-            this.datePickerDateSurvey.TabIndex = 334;
-            this.datePickerDateSurvey.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -714,6 +701,7 @@
             this.btnSaveChanges.Text = "SAVE CHANGES";
             this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // label2
             // 
@@ -776,6 +764,22 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // datePickerDateSurvey
+            // 
+            this.datePickerDateSurvey.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerDateSurvey.BorderSize = 0;
+            this.datePickerDateSurvey.FillColor = System.Drawing.Color.White;
+            this.datePickerDateSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDateSurvey.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateSurvey.Location = new System.Drawing.Point(251, 156);
+            this.datePickerDateSurvey.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerDateSurvey.Name = "datePickerDateSurvey";
+            this.datePickerDateSurvey.ShowIconOnly = false;
+            this.datePickerDateSurvey.Size = new System.Drawing.Size(152, 35);
+            this.datePickerDateSurvey.TabIndex = 334;
+            this.datePickerDateSurvey.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.datePickerDateSurvey.ValueChanged += new System.EventHandler(this.datePickerDateSurvey_ValueChanged);
             // 
             // EntryNew
             // 
