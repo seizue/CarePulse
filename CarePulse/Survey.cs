@@ -72,7 +72,10 @@ namespace CarePulse
 
         public void SetSurveyQuestions(List<string> questions)
         {
-            datagridSurvey.Rows.Clear();  
+            datagridSurvey.Rows.Clear();
+
+            // Make the questions column read-only
+            datagridSurvey.Columns["surveyQuestions"].ReadOnly = true;
 
             int idCounter = 1;
             foreach (string question in questions)
@@ -83,7 +86,8 @@ namespace CarePulse
                 idCounter++;
             }
         }
-  
+
+
 
         private void btnResponseOption_Click(object sender, EventArgs e)
         {
@@ -271,6 +275,61 @@ namespace CarePulse
             this.Close();
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "CSV files (*.csv)|*.csv";
+            saveDialog.Title = "Export Survey Responses";
+            saveDialog.FileName = $"Survey_{respondentId}.csv";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(saveDialog.FileName))
+                    {
+                        // Write headers
+                        writer.WriteLine("Question ID,Question,Response");
+
+                        foreach (DataGridViewRow row in datagridSurvey.Rows)
+                        {
+                            if (!row.IsNewRow)
+                            {
+                                string id = row.Cells["surveyID"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+                                string question = row.Cells["surveyQuestions"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+                                string response = row.Cells["surveyResponse"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+
+                                writer.WriteLine($"{id},{question},{response}");
+                            }
+                        }
+                    }
+
+                    MessageBox.Show("Survey exported successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error exporting survey:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            // Reload the response options from file
+            LoadResponseOptions();
+
+            // Clear all responses
+            foreach (DataGridViewRow row in datagridSurvey.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells["surveyResponse"].Value = null;
+                }
+            }
+
+            MessageBox.Show("Survey refreshed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
     }
 
