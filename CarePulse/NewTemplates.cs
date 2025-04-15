@@ -66,9 +66,6 @@ namespace CarePulse
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            // Clear the template name
-            txtboxTemplateName.Text = string.Empty;
-        
             // Reset selection
             selectedTextBox = null;
 
