@@ -39,40 +39,53 @@ namespace CarePulse
             if (string.IsNullOrWhiteSpace(txtBoxIDNo.Text))
             {
                 string generatedId = GenerateUniqueId();
-                txtBoxIDNo.Text = generatedId;  // Set the generated ID in the textbox
+                txtBoxIDNo.Text = generatedId;  
             }
 
             string id = txtBoxIDNo.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(id))
+            if (string.IsNullOrWhiteSpace(id))
             {
-                // If ID is valid, create a new Survey form and pass the ID to it
-                Survey survey = new Survey(id);  // Create a new instance of Survey
+                MessageBox.Show("Please enter an ID number first.");
+                return;
+            }
 
-                // Load the selected survey template and pass the questions
-                string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
-                string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
-                string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+            if (comboBoxSelectSurveyTemplate.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a survey template before continuing.", "Template Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+   
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
 
-                if (File.Exists(filePath))
+            string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
+            string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+
+            Survey survey = new Survey(id); 
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
+
+                if (template?.Questions != null)
                 {
-                    string json = File.ReadAllText(filePath);
-                    SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
-
-                    if (template?.Questions != null)
-                    {
-                        // Pass the questions to the Survey form
-                        survey.SetSurveyQuestions(template.Questions);
-                    }
+                    survey.SetSurveyQuestions(template.Questions);
                 }
-
-                // Show the Survey form
-                survey.ShowDialog();
+                else
+                {
+                    MessageBox.Show("This template has no questions defined.", "Template Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Please enter an ID number first.");
+                MessageBox.Show("Template file not found.", "Missing Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            survey.ShowDialog(); 
         }
+
 
         // Method to generate a unique respondent ID in the format X1D-25D
         private string GenerateUniqueId()
@@ -144,20 +157,67 @@ namespace CarePulse
 
         private void comboBoxSelectSurveyTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = txtBoxIDNo.Text.Trim(); // Get the respondent ID from the text box
+            string id = txtBoxIDNo.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(id))
             {
                 MessageBox.Show("Please enter a valid respondent ID before selecting a template.");
-                return;  // Exit if the ID is empty
+                return;
             }
 
-            // Get the selected template
             string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
 
-            // Display the selected template name in the survey status textbox
-            txtboxSurveyStatus.Text = $"Selected Template: {selectedTemplate}";
+            string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
+            string templateFilePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+
+            if (!File.Exists(templateFilePath))
+            {
+                txtboxSurveyStatus.Text = "Template file not found.";
+                return;
+            }
+
+            SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(File.ReadAllText(templateFilePath));
+            if (template == null || template.Questions == null || template.Questions.Count == 0)
+            {
+                txtboxSurveyStatus.Text = "No questions found in the template.";
+                return;
+            }
+
+            string answeredPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", id + ".json");
+
+            Dictionary<string, object> answersDict = null;
+            if (File.Exists(answeredPath))
+            {
+                var json = File.ReadAllText(answeredPath);
+                var parsed = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+                if (parsed != null && parsed.ContainsKey("Answers"))
+                {
+                    answersDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(parsed["Answers"].ToString());
+                }
+            }
+
+            int totalQuestions = template.Questions.Count;
+            int answeredCount = 0;
+
+            if (answersDict != null)
+            {
+                foreach (var question in template.Questions)
+                {
+                    if (answersDict.TryGetValue(question, out object answer) && answer != null && !string.IsNullOrWhiteSpace(answer.ToString()))
+                    {
+                        answeredCount++;
+                    }
+                }
+            }
+
+            int unansweredCount = totalQuestions - answeredCount;
+
+            txtboxSurveyStatus.Text =
+    $"Selected Template: {selectedTemplate}\r\n" +
+    $"Total: {totalQuestions}, Answered: {answeredCount}, Unanswered: {unansweredCount}";
+
         }
+
 
 
 
@@ -217,10 +277,75 @@ namespace CarePulse
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtBoxIDNo.Text) ||
+                string.IsNullOrWhiteSpace(txtboxName.Text) ||
+                string.IsNullOrWhiteSpace(txtboxSurveyScore.Text) ||
+                comboBoxSelectSurveyTemplate.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtboxPatientFeedBack.Text) ||
+                comboBoxMonthSurvey.SelectedItem == null ||
+                comboBoxYearSurvey.SelectedItem == null)
+            {
+                MessageBox.Show("All fields are required. Please make sure everything is filled out.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Extract values
+            string id = txtBoxIDNo.Text.Trim();
+            string name = txtboxName.Text.Trim();
+            string score = txtboxSurveyScore.Text.Trim();
+            string feedback = txtboxPatientFeedBack.Text.Trim();
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
+            string month = comboBoxMonthSurvey.SelectedItem.ToString();
+            string year = comboBoxYearSurvey.SelectedItem.ToString();
+            DateTime date = datePickerDateSurvey.Value;
+
+            // Load the answered survey by respondent ID
+            string answeredSurveyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", $"{id}.json");
+
+            Dictionary<string, object> surveyAnswers = null;
+            if (File.Exists(answeredSurveyPath))
+            {
+                string answerJson = File.ReadAllText(answeredSurveyPath);
+                var parsed = JsonConvert.DeserializeObject<Dictionary<string, object>>(answerJson);
+                if (parsed != null && parsed.ContainsKey("Answers"))
+                {
+                    surveyAnswers = parsed;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Survey answers not found. Please complete the survey before saving.", "Missing Survey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Final object to save
+            var finalData = new
+            {
+                RespondentID = id,
+                Name = name,
+                SurveyScore = score,
+                PatientFeedback = feedback,
+                SurveyTemplate = selectedTemplate,
+                Date = date.ToString("yyyy-MM-dd"),
+                Month = month,
+                Year = year,
+                Answers = surveyAnswers["Answers"]
+            };
+
+            // Save to: Survey_{ID}_{Month}_{Year}.json
+            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "FinalizedSurveys");
+            Directory.CreateDirectory(finalFolder);
+            string finalFileName = $"Survey_{id}_{month}_{year}.json";
+            string finalPath = Path.Combine(finalFolder, finalFileName);
+
+            File.WriteAllText(finalPath, JsonConvert.SerializeObject(finalData, Formatting.Indented));
+
+            MessageBox.Show("Survey data saved successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
+
+
     }
 }
 
