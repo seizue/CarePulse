@@ -265,15 +265,12 @@ namespace CarePulse
         }
 
 
-        private void btnEditSurvey_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnViewTemplates_Click(object sender, EventArgs e)
         {
-
+            NewTemplates newTemplates = new NewTemplates();
+            newTemplates.ShowDialog();
         }
+
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -334,7 +331,7 @@ namespace CarePulse
             };
 
             // Save to: Survey_{ID}_{Month}_{Year}.json
-            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "FinalizedSurveys");
+            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
             Directory.CreateDirectory(finalFolder);
             string finalFileName = $"Survey_{id}_{month}_{year}.json";
             string finalPath = Path.Combine(finalFolder, finalFileName);

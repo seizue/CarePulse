@@ -67,6 +67,12 @@
     <Compile Include="EntryNew.Designer.cs">
       <DependentUpon>EntryNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntryUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntryUpdate.Designer.cs">
+      <DependentUpon>EntryUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewTemplates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="EntryNew.resx">
       <DependentUpon>EntryNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntryUpdate.resx">
+      <DependentUpon>EntryUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewTemplates.resx">
       <DependentUpon>NewTemplates.cs</DependentUpon>

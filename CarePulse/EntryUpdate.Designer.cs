@@ -1,6 +1,6 @@
 ﻿namespace CarePulse
 {
-    partial class EntryNew
+    partial class EntryUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.btnAnsSurvey = new System.Windows.Forms.Button();
+            this.btnEditSurvey = new System.Windows.Forms.Button();
             this.btnViewTemplates = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -80,7 +80,7 @@
             this.dreamForm1.ColorD = System.Drawing.Color.WhiteSmoke;
             this.dreamForm1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dreamForm1.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamForm1.Controls.Add(this.btnAnsSurvey);
+            this.dreamForm1.Controls.Add(this.btnEditSurvey);
             this.dreamForm1.Controls.Add(this.btnViewTemplates);
             this.dreamForm1.Controls.Add(this.label20);
             this.dreamForm1.Controls.Add(this.label19);
@@ -119,7 +119,7 @@
             this.dreamForm1.Location = new System.Drawing.Point(0, 0);
             this.dreamForm1.Name = "dreamForm1";
             this.dreamForm1.Size = new System.Drawing.Size(950, 625);
-            this.dreamForm1.TabIndex = 1;
+            this.dreamForm1.TabIndex = 2;
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
@@ -270,7 +270,6 @@
             this.comboBoxSelectSurveyTemplate.Size = new System.Drawing.Size(432, 29);
             this.comboBoxSelectSurveyTemplate.StartIndex = 0;
             this.comboBoxSelectSurveyTemplate.TabIndex = 410;
-            this.comboBoxSelectSurveyTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectSurveyTemplate_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -302,7 +301,6 @@
             this.btnNewTemplateSurvey.TabIndex = 404;
             this.btnNewTemplateSurvey.Text = "NEW TEMPLATE";
             this.btnNewTemplateSurvey.UseVisualStyleBackColor = false;
-            this.btnNewTemplateSurvey.Click += new System.EventHandler(this.btnNewTemplateSurvey_Click);
             // 
             // label12
             // 
@@ -527,7 +525,6 @@
             this.datePickerDateSurvey.Size = new System.Drawing.Size(152, 35);
             this.datePickerDateSurvey.TabIndex = 334;
             this.datePickerDateSurvey.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.datePickerDateSurvey.ValueChanged += new System.EventHandler(this.datePickerDateSurvey_ValueChanged);
             // 
             // label1
             // 
@@ -610,9 +607,9 @@
             this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(114, 16);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(125, 15);
+            this.label21.Size = new System.Drawing.Size(145, 15);
             this.label21.TabIndex = 416;
-            this.label21.Text = "NEW SURVEY ENTRY";
+            this.label21.Text = "UPDATE SURVEY ENTRY";
             // 
             // label2
             // 
@@ -658,28 +655,27 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
             // 
-            // btnAnsSurvey
+            // btnEditSurvey
             // 
-            this.btnAnsSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnsSurvey.BackColor = System.Drawing.Color.Transparent;
-            this.btnAnsSurvey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAnsSurvey.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatAppearance.BorderSize = 0;
-            this.btnAnsSurvey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnsSurvey.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnAnsSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnAnsSurvey.Image = global::CarePulse.Properties.Resources.check_all_24px;
-            this.btnAnsSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnsSurvey.Location = new System.Drawing.Point(761, 262);
-            this.btnAnsSurvey.Name = "btnAnsSurvey";
-            this.btnAnsSurvey.Size = new System.Drawing.Size(148, 31);
-            this.btnAnsSurvey.TabIndex = 425;
-            this.btnAnsSurvey.Text = "ANSWER SURVEY";
-            this.btnAnsSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnsSurvey.UseVisualStyleBackColor = false;
-            this.btnAnsSurvey.Click += new System.EventHandler(this.btnAnsSurvey_Click);
+            this.btnEditSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditSurvey.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditSurvey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditSurvey.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditSurvey.FlatAppearance.BorderSize = 0;
+            this.btnEditSurvey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditSurvey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditSurvey.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnEditSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnEditSurvey.Image = global::CarePulse.Properties.Resources.Edit_24px;
+            this.btnEditSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditSurvey.Location = new System.Drawing.Point(722, 262);
+            this.btnEditSurvey.Name = "btnEditSurvey";
+            this.btnEditSurvey.Size = new System.Drawing.Size(187, 31);
+            this.btnEditSurvey.TabIndex = 424;
+            this.btnEditSurvey.Text = "EDIT ANSWERED SURVEY";
+            this.btnEditSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditSurvey.UseVisualStyleBackColor = false;
             // 
             // btnViewTemplates
             // 
@@ -701,7 +697,6 @@
             this.btnViewTemplates.TabIndex = 423;
             this.btnViewTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewTemplates.UseVisualStyleBackColor = false;
-            this.btnViewTemplates.Click += new System.EventHandler(this.btnViewTemplates_Click);
             // 
             // btnSaveChanges
             // 
@@ -722,7 +717,6 @@
             this.btnSaveChanges.Text = "SAVE CHANGES";
             this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveChanges.UseVisualStyleBackColor = false;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // btnClose
             // 
@@ -742,17 +736,16 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // EntryNew
+            // EntryUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 625);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EntryNew";
+            this.Name = "EntryUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EntryNew";
-            this.Load += new System.EventHandler(this.EntryNew_Load);
+            this.Text = "EntryUpdate";
             this.dreamForm1.ResumeLayout(false);
             this.dreamForm1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -764,11 +757,22 @@
         #endregion
 
         private ReaLTaiizor.Forms.DreamForm dreamForm1;
-        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private ReaLTaiizor.Controls.Panel panel4;
+        private System.Windows.Forms.Button btnEditSurvey;
+        private System.Windows.Forms.Button btnViewTemplates;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private ReaLTaiizor.Controls.HopeTextBox txtboxSurveyStatus;
+        private System.Windows.Forms.Label label11;
+        private ReaLTaiizor.Controls.DungeonComboBox comboBoxSelectSurveyTemplate;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnNewTemplateSurvey;
+        private System.Windows.Forms.Label label12;
+        private ReaLTaiizor.Controls.HopeTextBox txtboxPatientFeedBack;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private ReaLTaiizor.Controls.HopeTextBox txtboxSurveyScore;
@@ -784,23 +788,12 @@
         private System.Windows.Forms.Label label9;
         private ReaLTaiizor.Controls.HopeTextBox txtBoxIDNo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label12;
-        private ReaLTaiizor.Controls.HopeTextBox txtboxPatientFeedBack;
-        private System.Windows.Forms.Button btnNewTemplateSurvey;
-        private System.Windows.Forms.Label label11;
-        private ReaLTaiizor.Controls.DungeonComboBox comboBoxSelectSurveyTemplate;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private ReaLTaiizor.Controls.HopeTextBox txtboxSurveyStatus;
-        private System.Windows.Forms.Button btnSaveChanges;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnViewTemplates;
-        private System.Windows.Forms.Button btnAnsSurvey;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnSaveChanges;
+        private System.Windows.Forms.Label label2;
+        private ReaLTaiizor.Controls.Panel panel4;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private System.Windows.Forms.Button btnClose;
     }
 }
