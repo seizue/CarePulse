@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace CarePulse
 {
@@ -20,7 +22,8 @@ namespace CarePulse
         public Main()
         {
             InitializeComponent();
-            SetDataGridViewRowHeight();
+           
+            LoadJsonToDataGrid();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -203,7 +206,7 @@ namespace CarePulse
         {
             foreach (DataGridViewRow row in datagridCPHome.Rows)
             {
-                row.Height = 28; 
+                row.Height = 35; 
             }
         }
 
@@ -267,6 +270,83 @@ namespace CarePulse
             entryNew.ShowDialog();
         }
 
+
+        private void LoadJsonToDataGrid()
+        {
+            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+
+            // Check if the directory exists
+            if (!Directory.Exists(finalizedSurveysPath))
+            {
+                Console.WriteLine("No directory found at: " + finalizedSurveysPath);
+                return;
+            }
+
+            // Get all JSON files in the directory
+            var jsonFiles = Directory.GetFiles(finalizedSurveysPath, "*.json");
+
+            // If no JSON files are found, log to console and return
+            if (jsonFiles.Length == 0)
+            {
+                Console.WriteLine("No JSON files found in: " + finalizedSurveysPath);
+                return;
+            }
+
+            // Clear existing rows in the DataGridView
+            datagridCPHome.Rows.Clear();
+
+            // Loop through each JSON file and load its data
+            foreach (var file in jsonFiles)
+            {
+                string jsonContent = File.ReadAllText(file);
+
+                // Deserialize JSON into a dictionary
+                var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonContent);
+
+                if (data != null)
+                {
+                    // Extract required fields
+                    string respondentID = data.ContainsKey("RespondentID") ? data["RespondentID"].ToString() : string.Empty;
+                    string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
+                    string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
+                    string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
+
+                    // Calculate the number of answered and unanswered questions
+                    int answeredCount = 0, unansweredCount = 0;
+                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+                    {
+                        foreach (var answer in answers)
+                        {
+                            if (!string.IsNullOrWhiteSpace(answer.Value.ToString()))
+                            {
+                                answeredCount++;
+                            }
+                            else
+                            {
+                                unansweredCount++;
+                            }
+                        }
+                    }
+
+                    string responseSummary = $"Answered: {answeredCount}, Unanswered: {unansweredCount}";
+
+                    // Add a new row to the DataGridView
+                    int rowIndex = datagridCPHome.Rows.Add();
+                    DataGridViewRow row = datagridCPHome.Rows[rowIndex];
+                    row.Cells["cpID"].Value = respondentID;
+                    row.Cells["cpName"].Value = name;
+                    row.Cells["cpDatePeriod"].Value = date;
+                    row.Cells["cpResponseTotal"].Value = responseSummary;
+                    row.Cells["cpSurveyScore"].Value = surveyScore;
+                }
+            }
+
+            // Set the row height after rows are added
+            SetDataGridViewRowHeight();
+        }
+
+
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -277,6 +357,9 @@ namespace CarePulse
 
         }
 
-       
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

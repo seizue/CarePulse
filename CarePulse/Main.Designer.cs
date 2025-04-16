@@ -34,51 +34,55 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
-            this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpResponseTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpFeedbackTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
-            this.btnStartPage = new System.Windows.Forms.Button();
-            this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnLastPage = new System.Windows.Forms.Button();
             this.panel10 = new ReaLTaiizor.Controls.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.panel12 = new ReaLTaiizor.Controls.Panel();
-            this.btnPosted = new System.Windows.Forms.Button();
-            this.btnExportCSV = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel9 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSurveyTemplate = new System.Windows.Forms.Button();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
+            this.panel5 = new ReaLTaiizor.Controls.Panel();
+            this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpResponseTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpSurveyScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStartPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnPosted = new System.Windows.Forms.Button();
+            this.btnExportCSV = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnSurveyTemplate = new System.Windows.Forms.Button();
             this.btnGithub = new System.Windows.Forms.Button();
             this.carePulse = new ReaLTaiizor.Controls.Button();
-            this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.panel2 = new ReaLTaiizor.Controls.Panel();
-            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel13 = new ReaLTaiizor.Controls.Panel();
+            this.panel14 = new ReaLTaiizor.Controls.Panel();
+            this.panel15 = new ReaLTaiizor.Controls.Panel();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).BeginInit();
             this.panel8.SuspendLayout();
@@ -118,6 +122,7 @@
             // 
             // datagridCPHome
             // 
+            this.datagridCPHome.AllowUserToAddRows = false;
             this.datagridCPHome.AllowUserToDeleteRows = false;
             this.datagridCPHome.AllowUserToResizeColumns = false;
             this.datagridCPHome.AllowUserToResizeRows = false;
@@ -147,13 +152,13 @@
             this.datagridCPHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridCPHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cpID,
-            this.cpName,
             this.cpDatePeriod,
+            this.cpName,
             this.cpResponseTotal,
-            this.cpFeedbackTotal});
+            this.cpSurveyScore});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -180,31 +185,6 @@
             this.datagridCPHome.TabIndex = 17;
             this.datagridCPHome.UseCustomBackColor = true;
             this.datagridCPHome.UseCustomForeColor = true;
-            // 
-            // cpID
-            // 
-            this.cpID.HeaderText = "CPID";
-            this.cpID.Name = "cpID";
-            // 
-            // cpName
-            // 
-            this.cpName.HeaderText = "Name";
-            this.cpName.Name = "cpName";
-            // 
-            // cpDatePeriod
-            // 
-            this.cpDatePeriod.HeaderText = "Date Period";
-            this.cpDatePeriod.Name = "cpDatePeriod";
-            // 
-            // cpResponseTotal
-            // 
-            this.cpResponseTotal.HeaderText = "Response";
-            this.cpResponseTotal.Name = "cpResponseTotal";
-            // 
-            // cpFeedbackTotal
-            // 
-            this.cpFeedbackTotal.HeaderText = "Feedback";
-            this.cpFeedbackTotal.Name = "cpFeedbackTotal";
             // 
             // panel8
             // 
@@ -234,83 +214,6 @@
             this.panel11.TabIndex = 29;
             this.panel11.Text = "panel11";
             // 
-            // btnStartPage
-            // 
-            this.btnStartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartPage.BackColor = System.Drawing.Color.Transparent;
-            this.btnStartPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStartPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStartPage.FlatAppearance.BorderSize = 0;
-            this.btnStartPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStartPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStartPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnStartPage.Image = global::CarePulse.Properties.Resources.first_24px;
-            this.btnStartPage.Location = new System.Drawing.Point(814, 5);
-            this.btnStartPage.Name = "btnStartPage";
-            this.btnStartPage.Size = new System.Drawing.Size(31, 31);
-            this.btnStartPage.TabIndex = 28;
-            this.btnStartPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStartPage.UseVisualStyleBackColor = false;
-            // 
-            // btnPreviousPage
-            // 
-            this.btnPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPreviousPage.BackColor = System.Drawing.Color.Transparent;
-            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPreviousPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
-            this.btnPreviousPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.btnPreviousPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnPreviousPage.Image = global::CarePulse.Properties.Resources.back_24px;
-            this.btnPreviousPage.Location = new System.Drawing.Point(851, 5);
-            this.btnPreviousPage.Name = "btnPreviousPage";
-            this.btnPreviousPage.Size = new System.Drawing.Size(31, 31);
-            this.btnPreviousPage.TabIndex = 27;
-            this.btnPreviousPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPreviousPage.UseVisualStyleBackColor = false;
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextPage.BackColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNextPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNextPage.FlatAppearance.BorderSize = 0;
-            this.btnNextPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNextPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnNextPage.Image = global::CarePulse.Properties.Resources.forward_24px;
-            this.btnNextPage.Location = new System.Drawing.Point(887, 5);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(31, 31);
-            this.btnNextPage.TabIndex = 26;
-            this.btnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNextPage.UseVisualStyleBackColor = false;
-            // 
-            // btnLastPage
-            // 
-            this.btnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLastPage.BackColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLastPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLastPage.FlatAppearance.BorderSize = 0;
-            this.btnLastPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLastPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLastPage.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnLastPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnLastPage.Image = global::CarePulse.Properties.Resources.last_24px;
-            this.btnLastPage.Location = new System.Drawing.Point(924, 5);
-            this.btnLastPage.Name = "btnLastPage";
-            this.btnLastPage.Size = new System.Drawing.Size(31, 31);
-            this.btnLastPage.TabIndex = 25;
-            this.btnLastPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLastPage.UseVisualStyleBackColor = false;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -328,6 +231,10 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.panel15);
+            this.panel6.Controls.Add(this.panel14);
+            this.panel6.Controls.Add(this.panel13);
+            this.panel6.Controls.Add(this.btnView);
             this.panel6.Controls.Add(this.dungeonComboBox1);
             this.panel6.Controls.Add(this.btnFilter);
             this.panel6.Controls.Add(this.panel12);
@@ -338,7 +245,7 @@
             this.panel6.Controls.Add(this.btnDelete);
             this.panel6.Controls.Add(this.btnUpdate);
             this.panel6.Controls.Add(this.panel9);
-            this.panel6.Location = new System.Drawing.Point(61, 94);
+            this.panel6.Location = new System.Drawing.Point(61, 93);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(986, 57);
             this.panel6.TabIndex = 14;
@@ -372,27 +279,6 @@
             this.dungeonComboBox1.StartIndex = 0;
             this.dungeonComboBox1.TabIndex = 31;
             // 
-            // btnFilter
-            // 
-            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFilter.FlatAppearance.BorderSize = 0;
-            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnFilter.Image = global::CarePulse.Properties.Resources.filtered_file_24px;
-            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(827, 11);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(31, 31);
-            this.btnFilter.TabIndex = 26;
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilter.UseVisualStyleBackColor = false;
-            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Gainsboro;
@@ -404,129 +290,6 @@
             this.panel12.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel12.TabIndex = 30;
             this.panel12.Text = "panel12";
-            // 
-            // btnPosted
-            // 
-            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
-            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.BorderSize = 0;
-            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
-            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPosted.Location = new System.Drawing.Point(35, 12);
-            this.btnPosted.Name = "btnPosted";
-            this.btnPosted.Size = new System.Drawing.Size(89, 31);
-            this.btnPosted.TabIndex = 26;
-            this.btnPosted.Text = "POST";
-            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPosted.UseVisualStyleBackColor = false;
-            // 
-            // btnExportCSV
-            // 
-            this.btnExportCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportCSV.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportCSV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExportCSV.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExportCSV.FlatAppearance.BorderSize = 0;
-            this.btnExportCSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExportCSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExportCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportCSV.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnExportCSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnExportCSV.Image = global::CarePulse.Properties.Resources.export_csv_24px;
-            this.btnExportCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportCSV.Location = new System.Drawing.Point(875, 11);
-            this.btnExportCSV.Name = "btnExportCSV";
-            this.btnExportCSV.Size = new System.Drawing.Size(31, 31);
-            this.btnExportCSV.TabIndex = 25;
-            this.btnExportCSV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportCSV.UseVisualStyleBackColor = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnRefresh.Image = global::CarePulse.Properties.Resources.refresh_24px;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(923, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(31, 31);
-            this.btnRefresh.TabIndex = 24;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.Color.Transparent;
-            this.btnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNew.FlatAppearance.BorderSize = 0;
-            this.btnNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnNew.Image = global::CarePulse.Properties.Resources.add_new_24px1;
-            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(163, 12);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(31, 31);
-            this.btnNew.TabIndex = 23;
-            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnDelete.Image = global::CarePulse.Properties.Resources.trash_24px;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(267, 13);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(31, 31);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnUpdate.Image = global::CarePulse.Properties.Resources.edit_property_24px;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(215, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(31, 31);
-            this.btnUpdate.TabIndex = 21;
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel9
             // 
@@ -564,27 +327,6 @@
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 17;
             this.label2.Text = "CarePulse";
-            // 
-            // btnImport
-            // 
-            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImport.BackColor = System.Drawing.Color.Transparent;
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnImport.Image = global::CarePulse.Properties.Resources.import_24px;
-            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImport.Location = new System.Drawing.Point(864, 15);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(95, 31);
-            this.btnImport.TabIndex = 19;
-            this.btnImport.Text = "IMPORT";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -687,6 +429,356 @@
             this.panel1.Size = new System.Drawing.Size(61, 630);
             this.panel1.TabIndex = 12;
             // 
+            // panelIndicator
+            // 
+            this.panelIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panelIndicator.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panelIndicator.Location = new System.Drawing.Point(1, 85);
+            this.panelIndicator.Name = "panelIndicator";
+            this.panelIndicator.Padding = new System.Windows.Forms.Padding(5);
+            this.panelIndicator.Size = new System.Drawing.Size(5, 25);
+            this.panelIndicator.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panelIndicator.TabIndex = 31;
+            this.panelIndicator.Text = "panel13";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Location = new System.Drawing.Point(12, 66);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(35, 1);
+            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel5.TabIndex = 15;
+            this.panel5.Text = "panel5";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Location = new System.Drawing.Point(60, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(1, 630);
+            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel2.TabIndex = 12;
+            this.panel2.Text = "panel2";
+            // 
+            // parrotGradientPanel1
+            // 
+            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 661);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(1053, 10);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel1.TabIndex = 8;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
+            // 
+            // cpID
+            // 
+            this.cpID.FillWeight = 25F;
+            this.cpID.HeaderText = "CPID";
+            this.cpID.Name = "cpID";
+            // 
+            // cpDatePeriod
+            // 
+            this.cpDatePeriod.FillWeight = 35F;
+            this.cpDatePeriod.HeaderText = "Date Period";
+            this.cpDatePeriod.Name = "cpDatePeriod";
+            // 
+            // cpName
+            // 
+            this.cpName.FillWeight = 70F;
+            this.cpName.HeaderText = "Name";
+            this.cpName.Name = "cpName";
+            // 
+            // cpResponseTotal
+            // 
+            this.cpResponseTotal.FillWeight = 60F;
+            this.cpResponseTotal.HeaderText = "Response";
+            this.cpResponseTotal.Name = "cpResponseTotal";
+            // 
+            // cpSurveyScore
+            // 
+            this.cpSurveyScore.FillWeight = 25F;
+            this.cpSurveyScore.HeaderText = "Survey Score";
+            this.cpSurveyScore.Name = "cpSurveyScore";
+            // 
+            // btnStartPage
+            // 
+            this.btnStartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnStartPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStartPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStartPage.FlatAppearance.BorderSize = 0;
+            this.btnStartPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStartPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStartPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnStartPage.Image = global::CarePulse.Properties.Resources.first_24px;
+            this.btnStartPage.Location = new System.Drawing.Point(814, 5);
+            this.btnStartPage.Name = "btnStartPage";
+            this.btnStartPage.Size = new System.Drawing.Size(31, 31);
+            this.btnStartPage.TabIndex = 28;
+            this.btnStartPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStartPage.UseVisualStyleBackColor = false;
+            // 
+            // btnPreviousPage
+            // 
+            this.btnPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPreviousPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPreviousPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
+            this.btnPreviousPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnPreviousPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnPreviousPage.Image = global::CarePulse.Properties.Resources.back_24px;
+            this.btnPreviousPage.Location = new System.Drawing.Point(851, 5);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(31, 31);
+            this.btnPreviousPage.TabIndex = 27;
+            this.btnPreviousPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPreviousPage.UseVisualStyleBackColor = false;
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNextPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNextPage.FlatAppearance.BorderSize = 0;
+            this.btnNextPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNextPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnNextPage.Image = global::CarePulse.Properties.Resources.forward_24px;
+            this.btnNextPage.Location = new System.Drawing.Point(887, 5);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(31, 31);
+            this.btnNextPage.TabIndex = 26;
+            this.btnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            // 
+            // btnLastPage
+            // 
+            this.btnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLastPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLastPage.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLastPage.FlatAppearance.BorderSize = 0;
+            this.btnLastPage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLastPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLastPage.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnLastPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnLastPage.Image = global::CarePulse.Properties.Resources.last_24px;
+            this.btnLastPage.Location = new System.Drawing.Point(924, 5);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(31, 31);
+            this.btnLastPage.TabIndex = 25;
+            this.btnLastPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLastPage.UseVisualStyleBackColor = false;
+            // 
+            // btnView
+            // 
+            this.btnView.BackColor = System.Drawing.Color.Transparent;
+            this.btnView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnView.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnView.FlatAppearance.BorderSize = 0;
+            this.btnView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnView.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnView.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnView.Image = global::CarePulse.Properties.Resources.binoculars_24px2;
+            this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnView.Location = new System.Drawing.Point(275, 12);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(31, 31);
+            this.btnView.TabIndex = 32;
+            this.btnView.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFilter.FlatAppearance.BorderSize = 0;
+            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnFilter.Image = global::CarePulse.Properties.Resources.filtered_file_24px;
+            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilter.Location = new System.Drawing.Point(827, 11);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(31, 31);
+            this.btnFilter.TabIndex = 26;
+            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            // 
+            // btnPosted
+            // 
+            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
+            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatAppearance.BorderSize = 0;
+            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
+            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPosted.Location = new System.Drawing.Point(35, 12);
+            this.btnPosted.Name = "btnPosted";
+            this.btnPosted.Size = new System.Drawing.Size(89, 31);
+            this.btnPosted.TabIndex = 26;
+            this.btnPosted.Text = "POST";
+            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPosted.UseVisualStyleBackColor = false;
+            // 
+            // btnExportCSV
+            // 
+            this.btnExportCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportCSV.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportCSV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportCSV.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExportCSV.FlatAppearance.BorderSize = 0;
+            this.btnExportCSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExportCSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExportCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportCSV.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnExportCSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnExportCSV.Image = global::CarePulse.Properties.Resources.export_csv_24px;
+            this.btnExportCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportCSV.Location = new System.Drawing.Point(875, 11);
+            this.btnExportCSV.Name = "btnExportCSV";
+            this.btnExportCSV.Size = new System.Drawing.Size(31, 31);
+            this.btnExportCSV.TabIndex = 25;
+            this.btnExportCSV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportCSV.UseVisualStyleBackColor = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnRefresh.Image = global::CarePulse.Properties.Resources.refresh_24px;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(923, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(31, 31);
+            this.btnRefresh.TabIndex = 24;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnNew.Image = global::CarePulse.Properties.Resources.add_new_24px2;
+            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNew.Location = new System.Drawing.Point(160, 12);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(31, 31);
+            this.btnNew.TabIndex = 23;
+            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnDelete.Image = global::CarePulse.Properties.Resources.trash_24px;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(332, 13);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(31, 31);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnUpdate.Image = global::CarePulse.Properties.Resources.edit_property_24px1;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(217, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(31, 31);
+            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImport.BackColor = System.Drawing.Color.Transparent;
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnImport.Image = global::CarePulse.Properties.Resources.import_24px;
+            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImport.Location = new System.Drawing.Point(864, 15);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(95, 31);
+            this.btnImport.TabIndex = 19;
+            this.btnImport.Text = "IMPORT";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.UseVisualStyleBackColor = false;
+            // 
             // btnSurveyTemplate
             // 
             this.btnSurveyTemplate.BackColor = System.Drawing.Color.Transparent;
@@ -704,18 +796,6 @@
             this.btnSurveyTemplate.TabIndex = 32;
             this.btnSurveyTemplate.UseVisualStyleBackColor = false;
             this.btnSurveyTemplate.Click += new System.EventHandler(this.btnSurveyTemplate_Click);
-            // 
-            // panelIndicator
-            // 
-            this.panelIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelIndicator.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelIndicator.Location = new System.Drawing.Point(1, 85);
-            this.panelIndicator.Name = "panelIndicator";
-            this.panelIndicator.Padding = new System.Windows.Forms.Padding(5);
-            this.panelIndicator.Size = new System.Drawing.Size(5, 25);
-            this.panelIndicator.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panelIndicator.TabIndex = 31;
-            this.panelIndicator.Text = "panel13";
             // 
             // btnGithub
             // 
@@ -756,18 +836,6 @@
             this.carePulse.Size = new System.Drawing.Size(34, 34);
             this.carePulse.TabIndex = 14;
             this.carePulse.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Location = new System.Drawing.Point(12, 66);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(35, 1);
-            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel5.TabIndex = 15;
-            this.panel5.Text = "panel5";
             // 
             // btnSettings
             // 
@@ -824,39 +892,6 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Location = new System.Drawing.Point(60, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(1, 630);
-            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel2.TabIndex = 12;
-            this.panel2.Text = "panel2";
-            // 
-            // parrotGradientPanel1
-            // 
-            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 661);
-            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
-            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel1.Size = new System.Drawing.Size(1053, 10);
-            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel1.TabIndex = 8;
-            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
-            // 
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -910,6 +945,42 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel13.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel13.Location = new System.Drawing.Point(205, 18);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(5);
+            this.panel13.Size = new System.Drawing.Size(1, 20);
+            this.panel13.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel13.TabIndex = 33;
+            this.panel13.Text = "panel13";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel14.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel14.Location = new System.Drawing.Point(263, 18);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(5);
+            this.panel14.Size = new System.Drawing.Size(1, 20);
+            this.panel14.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel14.TabIndex = 34;
+            this.panel14.Text = "panel14";
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel15.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel15.Location = new System.Drawing.Point(320, 18);
+            this.panel15.Name = "panel15";
+            this.panel15.Padding = new System.Windows.Forms.Padding(5);
+            this.panel15.Size = new System.Drawing.Size(1, 20);
+            this.panel15.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel15.TabIndex = 35;
+            this.panel15.Text = "panel15";
             // 
             // Main
             // 
@@ -981,15 +1052,19 @@
         private ReaLTaiizor.Controls.Panel panel12;
         private System.Windows.Forms.Button btnFilter;
         private ReaLTaiizor.Controls.PoisonDataGridView datagridCPHome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpDatePeriod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpResponseTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpFeedbackTotal;
         private System.Windows.Forms.Button btnGithub;
         private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
         private ReaLTaiizor.Controls.Panel panelIndicator;
         private System.Windows.Forms.Button btnSurveyTemplate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpDatePeriod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpResponseTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpSurveyScore;
+        private System.Windows.Forms.Button btnView;
+        private ReaLTaiizor.Controls.Panel panel15;
+        private ReaLTaiizor.Controls.Panel panel14;
+        private ReaLTaiizor.Controls.Panel panel13;
     }
 }
 

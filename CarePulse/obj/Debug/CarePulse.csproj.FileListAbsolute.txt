@@ -57,3 +57,4 @@ C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\Care
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.Up2Date
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.exe
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.pdb
+C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.EntryUpdate.resources
