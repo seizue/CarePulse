@@ -267,6 +267,14 @@ namespace CarePulse
         private void btnNew_Click(object sender, EventArgs e)
         {
             EntryNew entryNew = new EntryNew();
+
+            // Subscribe to the SaveChangesCompleted event
+            entryNew.SaveChangesCompleted += (s, ea) =>
+            {
+                // Refresh the data grid when the event is triggered
+                LoadJsonToDataGrid();
+            };
+
             entryNew.ShowDialog();
         }
 

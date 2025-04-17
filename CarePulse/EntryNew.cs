@@ -14,7 +14,8 @@ namespace CarePulse
 {
     public partial class EntryNew : Form
     {
-       
+        public event EventHandler SaveChangesCompleted;
+
         public EntryNew()
         {
             InitializeComponent();
@@ -214,12 +215,9 @@ namespace CarePulse
 
             txtboxSurveyStatus.Text =
     $"Selected Template: {selectedTemplate}\r\n" +
-    $"Total: {totalQuestions}, Answered: {answeredCount}, Unanswered: {unansweredCount}";
+    $"Total Questions: {totalQuestions}";
 
         }
-
-
-
 
         private void EntryNew_Load(object sender, EventArgs e)
         {
@@ -297,24 +295,18 @@ namespace CarePulse
             string year = comboBoxYearSurvey.SelectedItem.ToString();
             DateTime date = datePickerDateSurvey.Value;
 
-            // Load the answered survey by respondent ID
-            string answeredSurveyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", $"{id}.json");
+            // Load the temporary survey file
+            string tempFolderPath = Path.Combine(Path.GetTempPath(), "CarePulse", "TemporarySurvey");
+            string tempFilePath = Path.Combine(tempFolderPath, $"{id}.json");
 
-            Dictionary<string, object> surveyAnswers = null;
-            if (File.Exists(answeredSurveyPath))
+            if (!File.Exists(tempFilePath))
             {
-                string answerJson = File.ReadAllText(answeredSurveyPath);
-                var parsed = JsonConvert.DeserializeObject<Dictionary<string, object>>(answerJson);
-                if (parsed != null && parsed.ContainsKey("Answers"))
-                {
-                    surveyAnswers = parsed;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Survey answers not found. Please complete the survey before saving.", "Missing Survey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Temporary survey file not found. Please complete the survey before saving.", "Missing Survey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            string tempJson = File.ReadAllText(tempFilePath);
+            var surveyAnswers = JsonConvert.DeserializeObject<Dictionary<string, object>>(tempJson);
 
             // Final object to save
             var finalData = new
@@ -338,9 +330,16 @@ namespace CarePulse
 
             File.WriteAllText(finalPath, JsonConvert.SerializeObject(finalData, Formatting.Indented));
 
-            MessageBox.Show("Survey data saved successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            // Delete the temporary file after saving permanently
+            File.Delete(tempFilePath);
 
+            MessageBox.Show("Survey data saved successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Trigger the SaveChangesCompleted event
+            SaveChangesCompleted?.Invoke(this, EventArgs.Empty);
+
+            this.Close();
+        }
 
 
     }

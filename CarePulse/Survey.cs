@@ -259,21 +259,21 @@ namespace CarePulse
             {
                 RespondentID = respondentId,  // Store the respondent ID
                 Date = DateTime.Now,          // Add a timestamp
-                Answers = responses          // Add the responses
+                Answers = responses           // Add the responses
             };
 
-            // Save survey result as a JSON file
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey");
-            Directory.CreateDirectory(folderPath);
-            string filePath = Path.Combine(folderPath, $"{respondentId}.json");
+            // Save survey result as a temporary JSON file
+            string tempFolderPath = Path.Combine(Path.GetTempPath(), "CarePulse", "TemporarySurvey");
+            Directory.CreateDirectory(tempFolderPath);
+            string tempFilePath = Path.Combine(tempFolderPath, $"{respondentId}.json");
 
-            File.WriteAllText(filePath, JsonConvert.SerializeObject(surveyResult, Formatting.Indented));
+            File.WriteAllText(tempFilePath, JsonConvert.SerializeObject(surveyResult, Formatting.Indented));
 
-            MessageBox.Show("Survey posted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Survey saved temporarily. Please confirm changes to save permanently.", "Temporary Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-       
             this.Close();
         }
+
 
         private void btnExport_Click(object sender, EventArgs e)
         {
