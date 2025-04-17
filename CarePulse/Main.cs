@@ -318,12 +318,25 @@ namespace CarePulse
                     string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
                     string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
                     string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
+                    string month = data.ContainsKey("Month") ? data["Month"].ToString() : string.Empty;
+                    string year = data.ContainsKey("Year") ? data["Year"].ToString() : string.Empty;
+                    string surveyTemplate = data.ContainsKey("SurveyTemplate") ? data["SurveyTemplate"].ToString() : string.Empty;
+                    string patientFeedback = data.ContainsKey("PatientFeedback") ? data["PatientFeedback"].ToString() : string.Empty;
+
+                    // Extract answers and format them as a string
+                    string surveyQuestionsAnswers = string.Empty;
+                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+                    {
+                        var formattedAnswers = answers.Properties()
+                            .Select(p => $"{p.Name}: {p.Value?.ToString() ?? "No Response"}");
+                        surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
+                    }
 
                     // Calculate the number of answered and unanswered questions
                     int answeredCount = 0, unansweredCount = 0;
-                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answerCounts)
                     {
-                        foreach (var answer in answers)
+                        foreach (var answer in answerCounts)
                         {
                             if (!string.IsNullOrWhiteSpace(answer.Value.ToString()))
                             {
@@ -346,12 +359,18 @@ namespace CarePulse
                     row.Cells["cpDatePeriod"].Value = date;
                     row.Cells["cpResponseTotal"].Value = responseSummary;
                     row.Cells["cpSurveyScore"].Value = surveyScore;
+                    row.Cells["cpSurveyQuestionsAnswers"].Value = surveyQuestionsAnswers;
+                    row.Cells["cpMonth"].Value = month;
+                    row.Cells["cpYear"].Value = year;
+                    row.Cells["cpPatientsFeedback"].Value = patientFeedback;
+                    row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
                 }
             }
 
             // Set the row height after rows are added
             SetDataGridViewRowHeight();
         }
+
 
 
 
@@ -367,7 +386,33 @@ namespace CarePulse
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            // Ensure a row is selected
+            if (datagridCPHome.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to view the data.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Get the selected row
+            DataGridViewRow selectedRow = datagridCPHome.SelectedRows[0];
+
+            // Retrieve data from the selected row
+            string respondentID = selectedRow.Cells["cpID"].Value?.ToString() ?? string.Empty;
+            string patientName = selectedRow.Cells["cpName"].Value?.ToString() ?? string.Empty;
+            string surveyScore = selectedRow.Cells["cpSurveyScore"].Value?.ToString() ?? string.Empty;
+            string date = selectedRow.Cells["cpDatePeriod"].Value?.ToString() ?? string.Empty;
+            string surveyTemplate = selectedRow.Cells["cpSurveyTemplate"].Value?.ToString() ?? string.Empty;
+            string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
+            string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
+            string patientFeedback = selectedRow.Cells["cpPatientsFeedback"].Value?.ToString() ?? string.Empty;
+            string answers = string.Empty;
+
+          
+
+            // Open the ViewData form and pass the data
+            ViewData viewData = new ViewData(respondentID, patientName, surveyScore, date, month, year, patientFeedback, surveyTemplate, answers);
+            viewData.ShowDialog();
         }
+
     }
 }

@@ -117,11 +117,11 @@
     <Compile Include="Survey.Designer.cs">
       <DependentUpon>Survey.cs</DependentUpon>
     </Compile>
-    <Compile Include="VeiwData.cs">
+    <Compile Include="ViewData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VeiwData.Designer.cs">
-      <DependentUpon>VeiwData.cs</DependentUpon>
+    <Compile Include="ViewData.Designer.cs">
+      <DependentUpon>ViewData.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EntryNew.resx">
       <DependentUpon>EntryNew.cs</DependentUpon>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="Survey.resx">
       <DependentUpon>Survey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VeiwData.resx">
-      <DependentUpon>VeiwData.cs</DependentUpon>
+    <EmbeddedResource Include="ViewData.resx">
+      <DependentUpon>ViewData.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
