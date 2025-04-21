@@ -15,10 +15,12 @@ namespace CarePulse
     public partial class NewTemplates : Form
     {
         private HopeTextBox selectedTextBox = null;
+        private string templateToLoad;
 
-        public NewTemplates()
+        public NewTemplates(string templateName = null)
         {
             InitializeComponent();
+            templateToLoad = templateName;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -59,8 +61,15 @@ namespace CarePulse
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            // Load template files
+            // Load template files into the ComboBox
             LoadTemplatesIntoComboBox();
+
+            // If a template name is provided, load it
+            if (!string.IsNullOrWhiteSpace(templateToLoad))
+            {
+                comboBoxSelectSurveyTemplate.SelectedItem = templateToLoad;
+                comboBoxSelectSurveyTemplate_SelectedIndexChanged(null, null);
+            }
         }
 
 

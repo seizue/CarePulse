@@ -405,14 +405,34 @@ namespace CarePulse
             string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
             string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
             string patientFeedback = selectedRow.Cells["cpPatientsFeedback"].Value?.ToString() ?? string.Empty;
+
+            // Retrieve the JSON file for the selected respondent
+            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string filePath = Path.Combine(finalizedSurveysPath, $"Survey_{respondentID}_{month}_{year}.json");
+
             string answers = string.Empty;
 
-          
+            if (File.Exists(filePath))
+            {
+                string jsonContent = File.ReadAllText(filePath);
+                var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonContent);
+
+                if (data != null && data.ContainsKey("Answers"))
+                {
+                    answers = data["Answers"].ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Answers file not found for the selected respondent.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // Open the ViewData form and pass the data
             ViewData viewData = new ViewData(respondentID, patientName, surveyScore, date, month, year, patientFeedback, surveyTemplate, answers);
             viewData.ShowDialog();
         }
+
 
     }
 }

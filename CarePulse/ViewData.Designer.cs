@@ -28,7 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
+            this.btnSurveyTemplate = new System.Windows.Forms.Button();
+            this.datagridSurveyView = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.datagridQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datagridAnswers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new ReaLTaiizor.Controls.Panel();
+            this.txtSurveyTemplate = new ReaLTaiizor.Controls.HopeTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSurveyScore = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtFeedbacks = new ReaLTaiizor.Controls.HopeTextBox();
+            this.labelSurveyQuestions = new System.Windows.Forms.Label();
+            this.labelFeedback = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,14 +62,8 @@
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtFeedbacks = new ReaLTaiizor.Controls.HopeTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtSurveyScore = new ReaLTaiizor.Controls.HopeTextBox();
-            this.txtSurveyTemplate = new ReaLTaiizor.Controls.HopeTextBox();
-            this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.dreamForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridSurveyView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -69,13 +78,15 @@
             this.dreamForm1.ColorD = System.Drawing.Color.WhiteSmoke;
             this.dreamForm1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dreamForm1.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamForm1.Controls.Add(this.btnSurveyTemplate);
+            this.dreamForm1.Controls.Add(this.datagridSurveyView);
             this.dreamForm1.Controls.Add(this.panel1);
             this.dreamForm1.Controls.Add(this.txtSurveyTemplate);
             this.dreamForm1.Controls.Add(this.label8);
             this.dreamForm1.Controls.Add(this.txtSurveyScore);
             this.dreamForm1.Controls.Add(this.txtFeedbacks);
-            this.dreamForm1.Controls.Add(this.label7);
-            this.dreamForm1.Controls.Add(this.label6);
+            this.dreamForm1.Controls.Add(this.labelSurveyQuestions);
+            this.dreamForm1.Controls.Add(this.labelFeedback);
             this.dreamForm1.Controls.Add(this.pictureBox2);
             this.dreamForm1.Controls.Add(this.pictureBox1);
             this.dreamForm1.Controls.Add(this.label5);
@@ -101,6 +112,224 @@
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
+            // 
+            // btnSurveyTemplate
+            // 
+            this.btnSurveyTemplate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSurveyTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSurveyTemplate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSurveyTemplate.FlatAppearance.BorderSize = 0;
+            this.btnSurveyTemplate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSurveyTemplate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSurveyTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnSurveyTemplate.Image = global::CarePulse.Properties.Resources.binoculars_24px;
+            this.btnSurveyTemplate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSurveyTemplate.Location = new System.Drawing.Point(532, 278);
+            this.btnSurveyTemplate.Name = "btnSurveyTemplate";
+            this.btnSurveyTemplate.Size = new System.Drawing.Size(145, 31);
+            this.btnSurveyTemplate.TabIndex = 436;
+            this.btnSurveyTemplate.Text = "View Template";
+            this.btnSurveyTemplate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSurveyTemplate.UseVisualStyleBackColor = false;
+            this.btnSurveyTemplate.Click += new System.EventHandler(this.btnSurveyTemplate_Click);
+            // 
+            // datagridSurveyView
+            // 
+            this.datagridSurveyView.AllowUserToAddRows = false;
+            this.datagridSurveyView.AllowUserToDeleteRows = false;
+            this.datagridSurveyView.AllowUserToResizeColumns = false;
+            this.datagridSurveyView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.datagridSurveyView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagridSurveyView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datagridSurveyView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridSurveyView.BackgroundColor = System.Drawing.Color.White;
+            this.datagridSurveyView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datagridSurveyView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datagridSurveyView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.datagridSurveyView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurveyView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.datagridSurveyView.ColumnHeadersHeight = 30;
+            this.datagridSurveyView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.datagridSurveyView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.datagridQuestions,
+            this.datagridAnswers});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridSurveyView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.datagridSurveyView.EnableHeadersVisualStyles = false;
+            this.datagridSurveyView.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.datagridSurveyView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.datagridSurveyView.Location = new System.Drawing.Point(35, 315);
+            this.datagridSurveyView.Name = "datagridSurveyView";
+            this.datagridSurveyView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurveyView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.datagridSurveyView.RowHeadersWidth = 5;
+            this.datagridSurveyView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridSurveyView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.datagridSurveyView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridSurveyView.Size = new System.Drawing.Size(643, 296);
+            this.datagridSurveyView.TabIndex = 435;
+            this.datagridSurveyView.UseCustomBackColor = true;
+            this.datagridSurveyView.UseCustomForeColor = true;
+            this.datagridSurveyView.Visible = false;
+            // 
+            // datagridQuestions
+            // 
+            this.datagridQuestions.DividerWidth = 2;
+            this.datagridQuestions.FillWeight = 20F;
+            this.datagridQuestions.HeaderText = "Questions";
+            this.datagridQuestions.Name = "datagridQuestions";
+            // 
+            // datagridAnswers
+            // 
+            this.datagridAnswers.FillWeight = 80F;
+            this.datagridAnswers.HeaderText = "Answers";
+            this.datagridAnswers.Name = "datagridAnswers";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Location = new System.Drawing.Point(0, 265);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(713, 1);
+            this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel1.TabIndex = 434;
+            this.panel1.Text = "panel1";
+            // 
+            // txtSurveyTemplate
+            // 
+            this.txtSurveyTemplate.BackColor = System.Drawing.Color.White;
+            this.txtSurveyTemplate.BaseColor = System.Drawing.Color.White;
+            this.txtSurveyTemplate.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtSurveyTemplate.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtSurveyTemplate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSurveyTemplate.Hint = "Template Name";
+            this.txtSurveyTemplate.Location = new System.Drawing.Point(36, 576);
+            this.txtSurveyTemplate.MaxLength = 32767;
+            this.txtSurveyTemplate.Multiline = false;
+            this.txtSurveyTemplate.Name = "txtSurveyTemplate";
+            this.txtSurveyTemplate.PasswordChar = '\0';
+            this.txtSurveyTemplate.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSurveyTemplate.SelectedText = "";
+            this.txtSurveyTemplate.SelectionLength = 0;
+            this.txtSurveyTemplate.SelectionStart = 0;
+            this.txtSurveyTemplate.Size = new System.Drawing.Size(642, 35);
+            this.txtSurveyTemplate.TabIndex = 433;
+            this.txtSurveyTemplate.TabStop = false;
+            this.txtSurveyTemplate.UseSystemPasswordChar = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(33, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 15);
+            this.label8.TabIndex = 432;
+            this.label8.Text = "Survey Score";
+            // 
+            // txtSurveyScore
+            // 
+            this.txtSurveyScore.BackColor = System.Drawing.Color.White;
+            this.txtSurveyScore.BaseColor = System.Drawing.Color.White;
+            this.txtSurveyScore.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtSurveyScore.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtSurveyScore.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurveyScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSurveyScore.Hint = "Score";
+            this.txtSurveyScore.Location = new System.Drawing.Point(36, 205);
+            this.txtSurveyScore.MaxLength = 32767;
+            this.txtSurveyScore.Multiline = false;
+            this.txtSurveyScore.Name = "txtSurveyScore";
+            this.txtSurveyScore.PasswordChar = '\0';
+            this.txtSurveyScore.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSurveyScore.SelectedText = "";
+            this.txtSurveyScore.SelectionLength = 0;
+            this.txtSurveyScore.SelectionStart = 0;
+            this.txtSurveyScore.Size = new System.Drawing.Size(184, 35);
+            this.txtSurveyScore.TabIndex = 431;
+            this.txtSurveyScore.TabStop = false;
+            this.txtSurveyScore.UseSystemPasswordChar = false;
+            // 
+            // txtFeedbacks
+            // 
+            this.txtFeedbacks.BackColor = System.Drawing.Color.White;
+            this.txtFeedbacks.BaseColor = System.Drawing.Color.White;
+            this.txtFeedbacks.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtFeedbacks.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtFeedbacks.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFeedbacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFeedbacks.Hint = "Feedback";
+            this.txtFeedbacks.Location = new System.Drawing.Point(36, 326);
+            this.txtFeedbacks.MaxLength = 32767;
+            this.txtFeedbacks.Multiline = true;
+            this.txtFeedbacks.Name = "txtFeedbacks";
+            this.txtFeedbacks.PasswordChar = '\0';
+            this.txtFeedbacks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtFeedbacks.SelectedText = "";
+            this.txtFeedbacks.SelectionLength = 0;
+            this.txtFeedbacks.SelectionStart = 0;
+            this.txtFeedbacks.Size = new System.Drawing.Size(642, 244);
+            this.txtFeedbacks.TabIndex = 430;
+            this.txtFeedbacks.TabStop = false;
+            this.txtFeedbacks.UseSystemPasswordChar = false;
+            // 
+            // labelSurveyQuestions
+            // 
+            this.labelSurveyQuestions.AutoSize = true;
+            this.labelSurveyQuestions.BackColor = System.Drawing.Color.White;
+            this.labelSurveyQuestions.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.labelSurveyQuestions.ForeColor = System.Drawing.Color.DimGray;
+            this.labelSurveyQuestions.Location = new System.Drawing.Point(254, 287);
+            this.labelSurveyQuestions.Name = "labelSurveyQuestions";
+            this.labelSurveyQuestions.Size = new System.Drawing.Size(99, 15);
+            this.labelSurveyQuestions.TabIndex = 429;
+            this.labelSurveyQuestions.Text = "Survey Questions";
+            this.labelSurveyQuestions.Click += new System.EventHandler(this.labelSurveyQuestions_Click);
+            // 
+            // labelFeedback
+            // 
+            this.labelFeedback.AutoSize = true;
+            this.labelFeedback.BackColor = System.Drawing.Color.White;
+            this.labelFeedback.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.labelFeedback.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.labelFeedback.Location = new System.Drawing.Point(36, 287);
+            this.labelFeedback.Name = "labelFeedback";
+            this.labelFeedback.Size = new System.Drawing.Size(57, 15);
+            this.labelFeedback.TabIndex = 428;
+            this.labelFeedback.Text = "Feedback";
+            this.labelFeedback.Click += new System.EventHandler(this.labelFeedback_Click);
             // 
             // pictureBox2
             // 
@@ -384,123 +613,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label6.Location = new System.Drawing.Point(36, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
-            this.label6.TabIndex = 428;
-            this.label6.Text = "Feedback";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(254, 287);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 15);
-            this.label7.TabIndex = 429;
-            this.label7.Text = "Survey Questions";
-            // 
-            // txtFeedbacks
-            // 
-            this.txtFeedbacks.BackColor = System.Drawing.Color.White;
-            this.txtFeedbacks.BaseColor = System.Drawing.Color.White;
-            this.txtFeedbacks.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtFeedbacks.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtFeedbacks.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFeedbacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFeedbacks.Hint = "Feedback";
-            this.txtFeedbacks.Location = new System.Drawing.Point(36, 315);
-            this.txtFeedbacks.MaxLength = 32767;
-            this.txtFeedbacks.Multiline = true;
-            this.txtFeedbacks.Name = "txtFeedbacks";
-            this.txtFeedbacks.PasswordChar = '\0';
-            this.txtFeedbacks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFeedbacks.SelectedText = "";
-            this.txtFeedbacks.SelectionLength = 0;
-            this.txtFeedbacks.SelectionStart = 0;
-            this.txtFeedbacks.Size = new System.Drawing.Size(641, 250);
-            this.txtFeedbacks.TabIndex = 430;
-            this.txtFeedbacks.TabStop = false;
-            this.txtFeedbacks.UseSystemPasswordChar = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(33, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 15);
-            this.label8.TabIndex = 432;
-            this.label8.Text = "Survey Score";
-            // 
-            // txtSurveyScore
-            // 
-            this.txtSurveyScore.BackColor = System.Drawing.Color.White;
-            this.txtSurveyScore.BaseColor = System.Drawing.Color.White;
-            this.txtSurveyScore.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtSurveyScore.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtSurveyScore.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurveyScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSurveyScore.Hint = "Score";
-            this.txtSurveyScore.Location = new System.Drawing.Point(36, 205);
-            this.txtSurveyScore.MaxLength = 32767;
-            this.txtSurveyScore.Multiline = false;
-            this.txtSurveyScore.Name = "txtSurveyScore";
-            this.txtSurveyScore.PasswordChar = '\0';
-            this.txtSurveyScore.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSurveyScore.SelectedText = "";
-            this.txtSurveyScore.SelectionLength = 0;
-            this.txtSurveyScore.SelectionStart = 0;
-            this.txtSurveyScore.Size = new System.Drawing.Size(184, 35);
-            this.txtSurveyScore.TabIndex = 431;
-            this.txtSurveyScore.TabStop = false;
-            this.txtSurveyScore.UseSystemPasswordChar = false;
-            // 
-            // txtSurveyTemplate
-            // 
-            this.txtSurveyTemplate.BackColor = System.Drawing.Color.White;
-            this.txtSurveyTemplate.BaseColor = System.Drawing.Color.White;
-            this.txtSurveyTemplate.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtSurveyTemplate.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtSurveyTemplate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurveyTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSurveyTemplate.Hint = "Template Name";
-            this.txtSurveyTemplate.Location = new System.Drawing.Point(35, 582);
-            this.txtSurveyTemplate.MaxLength = 32767;
-            this.txtSurveyTemplate.Multiline = false;
-            this.txtSurveyTemplate.Name = "txtSurveyTemplate";
-            this.txtSurveyTemplate.PasswordChar = '\0';
-            this.txtSurveyTemplate.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSurveyTemplate.SelectedText = "";
-            this.txtSurveyTemplate.SelectionLength = 0;
-            this.txtSurveyTemplate.SelectionStart = 0;
-            this.txtSurveyTemplate.Size = new System.Drawing.Size(642, 35);
-            this.txtSurveyTemplate.TabIndex = 433;
-            this.txtSurveyTemplate.TabStop = false;
-            this.txtSurveyTemplate.UseSystemPasswordChar = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Location = new System.Drawing.Point(0, 265);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(713, 1);
-            this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel1.TabIndex = 434;
-            this.panel1.Text = "panel1";
-            // 
             // ViewData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,6 +625,7 @@
             this.Text = "VeiwData";
             this.dreamForm1.ResumeLayout(false);
             this.dreamForm1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridSurveyView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -542,12 +655,16 @@
         private ReaLTaiizor.Controls.HopeTextBox txtDateSurvey;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelFeedback;
         private ReaLTaiizor.Controls.HopeTextBox txtFeedbacks;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelSurveyQuestions;
         private System.Windows.Forms.Label label8;
         private ReaLTaiizor.Controls.HopeTextBox txtSurveyScore;
         private ReaLTaiizor.Controls.HopeTextBox txtSurveyTemplate;
         private ReaLTaiizor.Controls.Panel panel1;
+        private ReaLTaiizor.Controls.PoisonDataGridView datagridSurveyView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datagridQuestions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datagridAnswers;
+        private System.Windows.Forms.Button btnSurveyTemplate;
     }
 }

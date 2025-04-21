@@ -35,6 +35,8 @@ C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Settings.r
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.EntryNew.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.NewTemplates.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Survey.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.EntryUpdate.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.ViewData.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\bin\Debug\CarePulse.exe.config
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\bin\Debug\CarePulse.exe
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\bin\Debug\CarePulse.pdb
@@ -44,6 +46,7 @@ C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\bin\Debug\Newt
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\bin\Debug\ReaLTaiizor.xml
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.AssemblyReference.cache
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.EntryNew.resources
+C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.EntryUpdate.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.NewTemplates.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.RecoveryAccount.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.Settings.resources
@@ -52,11 +55,9 @@ C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\Care
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.Properties.Resources.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.SignUp.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.Survey.resources
+C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.ViewData.resources
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.GenerateResource.cache
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.csproj.Up2Date
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.exe
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.pdb
-C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.EntryUpdate.resources
-C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.EntryUpdate.resources
-C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.ViewData.resources

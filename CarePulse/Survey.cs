@@ -15,11 +15,17 @@ namespace CarePulse
 
     public partial class Survey : Form
     {
+        
         private string respondentId;
+        private int currentPage = 1;
+        private int totalPages = 1;
+        private int rowsPerPage = 10;
+        private List<string> surveyQuestionList = new List<string>();
 
         public Survey(string id)
         {
             InitializeComponent();
+         
             respondentId = id;  
         }
 
@@ -46,6 +52,7 @@ namespace CarePulse
             this.WindowState = FormWindowState.Minimized;
         }
 
+
         private void Survey_Load(object sender, EventArgs e)
         {
             // Set row height
@@ -53,7 +60,7 @@ namespace CarePulse
 
             foreach (DataGridViewRow row in datagridSurvey.Rows)
             {
-                row.Height = 35;
+                row.Height = 33;
             }
 
             if (this.WindowState == FormWindowState.Maximized)
@@ -62,12 +69,15 @@ namespace CarePulse
             }
             else
             {
-                // Maximize the window without covering the taskbar
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
             }
 
             LoadResponseOptions();
+
+            // Initialize pagination
+            CalculatePagination();
+            LoadPage(currentPage);
         }
 
         public void SetSurveyQuestions(List<string> questions)
@@ -75,18 +85,57 @@ namespace CarePulse
             datagridSurvey.Rows.Clear();
 
             // Make the questions column read-only
-            datagridSurvey.Columns["surveyQuestions"].ReadOnly = true;
+            datagridSurvey.Columns["surveyQuestionss"].ReadOnly = true;
 
-            int idCounter = 1;
-            foreach (string question in questions)
-            {
-                int index = datagridSurvey.Rows.Add();
-                datagridSurvey.Rows[index].Cells["surveyQuestions"].Value = question;
-                datagridSurvey.Rows[index].Cells["surveyID"].Value = $"Q{idCounter:D3}";
-                idCounter++;
-            }
+
+            surveyQuestionList = questions; // Store all questions
+            CalculatePagination();
+            LoadPage(currentPage);
         }
 
+        private void CalculatePagination()
+        {
+            // Calculate rows per page based on DataGridView height
+            int availableHeight = datagridSurvey.Height - datagridSurvey.ColumnHeadersHeight;
+            rowsPerPage = Math.Max(1, availableHeight / datagridSurvey.RowTemplate.Height);
+
+            // Calculate total pages
+            totalPages = (int)Math.Ceiling((double)surveyQuestionList.Count / rowsPerPage);
+        }
+
+        private void LoadPage(int pageNumber)
+        {
+            datagridSurvey.Rows.Clear();
+
+            // Calculate the range of questions to display
+            int startIndex = (pageNumber - 1) * rowsPerPage;
+            int endIndex = Math.Min(startIndex + rowsPerPage, surveyQuestionList.Count);
+
+            // Add questions to the DataGridView
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                int index = datagridSurvey.Rows.Add();
+                datagridSurvey.Rows[index].Cells["surveyQuestionss"].Value = surveyQuestionList[i];
+                datagridSurvey.Rows[index].Cells["surveyID"].Value = $"Q{i + 1:D3}";
+            }
+
+            // Scroll to the top of the DataGridView
+            if (datagridSurvey.Rows.Count > 0)
+            {
+                datagridSurvey.FirstDisplayedScrollingRowIndex = 0;
+            }
+
+            // Update pagination buttons
+            UpdatePaginationButtons();
+        }
+
+        private void UpdatePaginationButtons()
+        {
+            btnStartPage.Enabled = currentPage > 1;
+            btnPreviousPage.Enabled = currentPage > 1;
+            btnNextPage.Enabled = currentPage < totalPages;
+            btnLastPage.Enabled = currentPage < totalPages;
+        }
 
 
         private void btnResponseOption_Click(object sender, EventArgs e)
@@ -331,7 +380,48 @@ namespace CarePulse
             MessageBox.Show("Survey refreshed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnStartPage_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadPage(currentPage);
+        }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadPage(currentPage);
+            }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                LoadPage(currentPage);
+            }
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            currentPage = totalPages;
+            LoadPage(currentPage);
+        }
+
+        private void Survey_Resize(object sender, EventArgs e)
+        {
+            CalculatePagination();
+            LoadPage(currentPage);
+        }
+
+        private void btnImportOCR_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 
     public class SurveyTemplate
     {

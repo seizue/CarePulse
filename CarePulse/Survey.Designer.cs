@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.datagridSurvey = new ReaLTaiizor.Controls.PoisonDataGridView();
-            this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surveyQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surveyResponse = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
             this.btnStartPage = new System.Windows.Forms.Button();
@@ -63,6 +60,9 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surveyQuestionss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surveyResponse = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).BeginInit();
             this.panel8.SuspendLayout();
@@ -103,11 +103,11 @@
             this.datagridSurvey.AllowUserToDeleteRows = false;
             this.datagridSurvey.AllowUserToResizeColumns = false;
             this.datagridSurvey.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.datagridSurvey.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.datagridSurvey.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,77 +117,51 @@
             this.datagridSurvey.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datagridSurvey.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.datagridSurvey.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridSurvey.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurvey.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridSurvey.ColumnHeadersHeight = 48;
             this.datagridSurvey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridSurvey.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surveyID,
-            this.surveyQuestions,
+            this.surveyQuestionss,
             this.surveyResponse});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridSurvey.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridSurvey.DefaultCellStyle = dataGridViewCellStyle4;
             this.datagridSurvey.EnableHeadersVisualStyles = false;
             this.datagridSurvey.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.datagridSurvey.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.datagridSurvey.Location = new System.Drawing.Point(36, 145);
+            this.datagridSurvey.Location = new System.Drawing.Point(35, 145);
             this.datagridSurvey.Name = "datagridSurvey";
             this.datagridSurvey.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridSurvey.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridSurvey.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridSurvey.RowHeadersWidth = 5;
             this.datagridSurvey.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridSurvey.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.datagridSurvey.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridSurvey.Size = new System.Drawing.Size(972, 396);
+            this.datagridSurvey.Size = new System.Drawing.Size(977, 408);
             this.datagridSurvey.TabIndex = 18;
             this.datagridSurvey.UseCustomBackColor = true;
             this.datagridSurvey.UseCustomForeColor = true;
-            // 
-            // surveyID
-            // 
-            this.surveyID.FillWeight = 15F;
-            this.surveyID.HeaderText = "ID";
-            this.surveyID.Name = "surveyID";
-            // 
-            // surveyQuestions
-            // 
-            this.surveyQuestions.DividerWidth = 2;
-            this.surveyQuestions.FillWeight = 80F;
-            this.surveyQuestions.HeaderText = "Survey Questions";
-            this.surveyQuestions.Name = "surveyQuestions";
-            // 
-            // surveyResponse
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle13;
-            this.surveyResponse.FillWeight = 20F;
-            this.surveyResponse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.surveyResponse.HeaderText = "Response ";
-            this.surveyResponse.Name = "surveyResponse";
-            this.surveyResponse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.surveyResponse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel8
             // 
@@ -235,6 +209,7 @@
             this.btnStartPage.TabIndex = 28;
             this.btnStartPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStartPage.UseVisualStyleBackColor = false;
+            this.btnStartPage.Click += new System.EventHandler(this.btnStartPage_Click);
             // 
             // btnPreviousPage
             // 
@@ -254,6 +229,7 @@
             this.btnPreviousPage.TabIndex = 27;
             this.btnPreviousPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPreviousPage.UseVisualStyleBackColor = false;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
             // btnNextPage
             // 
@@ -273,6 +249,7 @@
             this.btnNextPage.TabIndex = 26;
             this.btnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnLastPage
             // 
@@ -293,6 +270,7 @@
             this.btnLastPage.TabIndex = 25;
             this.btnLastPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLastPage.UseVisualStyleBackColor = false;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // panel10
             // 
@@ -606,6 +584,33 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // surveyID
+            // 
+            this.surveyID.FillWeight = 15F;
+            this.surveyID.HeaderText = "ID";
+            this.surveyID.Name = "surveyID";
+            // 
+            // surveyQuestionss
+            // 
+            this.surveyQuestionss.DividerWidth = 2;
+            this.surveyQuestionss.FillWeight = 80F;
+            this.surveyQuestionss.HeaderText = "Survey Questions";
+            this.surveyQuestionss.Name = "surveyQuestionss";
+            // 
+            // surveyResponse
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle3;
+            this.surveyResponse.FillWeight = 20F;
+            this.surveyResponse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.surveyResponse.HeaderText = "Response ";
+            this.surveyResponse.Name = "surveyResponse";
+            this.surveyResponse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.surveyResponse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Survey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +623,7 @@
             this.Text = "Survey";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Survey_FormClosing);
             this.Load += new System.EventHandler(this.Survey_Load);
+            this.Resize += new System.EventHandler(this.Survey_Resize);
             this.dreamForm1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).EndInit();
             this.panel8.ResumeLayout(false);
@@ -657,8 +663,9 @@
         private ReaLTaiizor.Controls.Panel panel2;
         private System.Windows.Forms.Button btnExport;
         private ReaLTaiizor.Controls.Panel panel12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surveyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surveyID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestionss;
         private System.Windows.Forms.DataGridViewComboBoxColumn surveyResponse;
     }
 }
