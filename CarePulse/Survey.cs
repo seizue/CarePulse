@@ -355,27 +355,26 @@ namespace CarePulse
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            // Collect survey responses
-            var responses = new Dictionary<string, string>();
+            // Save any unsaved responses from current page before collecting all responses
             foreach (DataGridViewRow row in datagridSurvey.Rows)
             {
                 if (!row.IsNewRow)
                 {
                     string questionId = row.Cells["surveyID"]?.Value?.ToString();
-                    string answer = row.Cells["surveyResponse"]?.Value?.ToString();
-                    if (!string.IsNullOrWhiteSpace(questionId))
+                    string response = row.Cells["surveyResponse"]?.Value?.ToString();
+                    if (!string.IsNullOrWhiteSpace(questionId) && response != null)
                     {
-                        responses[questionId] = answer ?? "";
+                        surveyResponses[questionId] = response;
                     }
                 }
             }
 
-            // Create a survey result object
+            // Create a survey result object with all collected responses
             var surveyResult = new
             {
                 RespondentID = respondentId,  // Store the respondent ID
                 Date = DateTime.Now,          // Add a timestamp
-                Answers = responses           // Add the responses
+                Answers = surveyResponses     // Add ALL responses (not just current page)
             };
 
             // Save survey result as a temporary JSON file
@@ -389,7 +388,6 @@ namespace CarePulse
 
             this.Close();
         }
-
 
         private void btnExport_Click(object sender, EventArgs e)
         {

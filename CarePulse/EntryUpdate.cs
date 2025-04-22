@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq; // Add this directive to resolve JObject namespace issue
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -357,6 +358,74 @@ namespace CarePulse
             // Instantiate the Survey form with the loaded questions and responses
             Survey survey = new Survey(id, questions, responses);
             survey.ShowDialog();
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtBoxIDNo.Text) ||
+                string.IsNullOrWhiteSpace(txtboxName.Text) ||
+                string.IsNullOrWhiteSpace(txtboxSurveyScore.Text) ||
+                comboBoxSelectSurveyTemplate.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtboxPatientFeedBack.Text) ||
+                comboBoxMonthSurvey.SelectedItem == null ||
+                comboBoxYearSurvey.SelectedItem == null)
+            {
+                MessageBox.Show("All fields are required. Please make sure everything is filled out.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Extract values
+            string id = txtBoxIDNo.Text.Trim();
+            string name = txtboxName.Text.Trim();
+            string score = txtboxSurveyScore.Text.Trim();
+            string feedback = txtboxPatientFeedBack.Text.Trim();
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
+            string month = comboBoxMonthSurvey.SelectedItem.ToString();
+            string year = comboBoxYearSurvey.SelectedItem.ToString();
+            DateTime date = datePickerDateSurvey.Value;
+
+            // Load the temporary survey file
+            string tempFolderPath = Path.Combine(Path.GetTempPath(), "CarePulse", "TemporarySurvey");
+            string tempFilePath = Path.Combine(tempFolderPath, $"{id}.json");
+
+            if (!File.Exists(tempFilePath))
+            {
+                MessageBox.Show("Temporary survey file not found. Please complete the survey before saving.", "Missing Survey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string tempJson = File.ReadAllText(tempFilePath);
+            var surveyAnswers = JsonConvert.DeserializeObject<Dictionary<string, object>>(tempJson);
+
+            // Final object to save
+            var finalData = new
+            {
+                RespondentID = id,
+                Name = name,
+                SurveyScore = score,
+                PatientFeedback = feedback,
+                SurveyTemplate = selectedTemplate,
+                Date = date.ToString("yyyy-MM-dd"),
+                Month = month,
+                Year = year,
+                Answers = surveyAnswers["Answers"]
+            };
+
+            // Save to: Survey_{ID}_{Month}_{Year}.json
+            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            Directory.CreateDirectory(finalFolder);
+            string finalFileName = $"Survey_{id}_{month}_{year}.json";
+            string finalPath = Path.Combine(finalFolder, finalFileName);
+
+            File.WriteAllText(finalPath, JsonConvert.SerializeObject(finalData, Formatting.Indented));
+
+            // Delete the temporary file after saving permanently
+            File.Delete(tempFilePath);
+
+            MessageBox.Show("Survey data saved successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
     }
 }

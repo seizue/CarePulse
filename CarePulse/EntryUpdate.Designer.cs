@@ -661,6 +661,7 @@
             this.btnSaveChanges.Text = "SAVE CHANGES";
             this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // label2
             // 
