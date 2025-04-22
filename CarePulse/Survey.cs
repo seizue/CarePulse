@@ -14,8 +14,7 @@ namespace CarePulse
 {
 
     public partial class Survey : Form
-    {
-        
+    {       
         private string respondentId;
         private int currentPage = 1;
         private int totalPages = 1;

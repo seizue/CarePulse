@@ -265,8 +265,42 @@ namespace CarePulse
 
         private void btnViewTemplates_Click(object sender, EventArgs e)
         {
-            NewTemplates newTemplates = new NewTemplates();
-            newTemplates.ShowDialog();
+            string id = txtBoxIDNo.Text.Trim();
+            if (comboBoxSelectSurveyTemplate.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a survey template before continuing.", "Template Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
+
+            string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
+            string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+
+            SelectedSurvey selectedSurvey = new SelectedSurvey(id);
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
+
+                if (template?.Questions != null)
+                {
+                    selectedSurvey.SetSurveyQuestions(template.Questions);
+                }
+                else
+                {
+                    MessageBox.Show("This template has no questions defined.", "Template Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Template file not found.", "Missing Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            selectedSurvey.ShowDialog();
         }
 
 

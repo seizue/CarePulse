@@ -86,7 +86,7 @@ namespace CarePulse
             string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
             string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
 
-            Survey survey = new Survey(id);
+            SelectedSurvey selectedSurvey = new SelectedSurvey(id);
 
             if (File.Exists(filePath))
             {
@@ -95,7 +95,7 @@ namespace CarePulse
 
                 if (template?.Questions != null)
                 {
-                    survey.SetSurveyQuestions(template.Questions);
+                    selectedSurvey.SetSurveyQuestions(template.Questions);
                 }
                 else
                 {
@@ -109,7 +109,7 @@ namespace CarePulse
                 return;
             }
 
-            survey.ShowDialog();
+            selectedSurvey.ShowDialog();
         }
     }
 }

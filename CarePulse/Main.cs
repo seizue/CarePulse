@@ -376,7 +376,54 @@ namespace CarePulse
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // Ensure a row is selected
+            if (datagridCPHome.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to view the data.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Get the selected row
+            DataGridViewRow selectedRow = datagridCPHome.SelectedRows[0];
+
+            // Retrieve data from the selected row
+            string respondentID = selectedRow.Cells["cpID"].Value?.ToString() ?? string.Empty;
+            string patientName = selectedRow.Cells["cpName"].Value?.ToString() ?? string.Empty;
+            string surveyScore = selectedRow.Cells["cpSurveyScore"].Value?.ToString() ?? string.Empty;
+            string date = selectedRow.Cells["cpDatePeriod"].Value?.ToString() ?? string.Empty;
+            string surveyTemplate = selectedRow.Cells["cpSurveyTemplate"].Value?.ToString() ?? string.Empty;
+            string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
+            string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
+            string patientFeedback = selectedRow.Cells["cpPatientsFeedback"].Value?.ToString() ?? string.Empty;
+
+            // Retrieve the JSON file for the selected respondent
+            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string filePath = Path.Combine(finalizedSurveysPath, $"Survey_{respondentID}_{month}_{year}.json");
+
+            string answers = string.Empty;
+
+            if (File.Exists(filePath))
+            {
+                string jsonContent = File.ReadAllText(filePath);
+                var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonContent);
+
+                if (data != null && data.ContainsKey("Answers"))
+                {
+                    answers = data["Answers"].ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Answers file not found for the selected respondent.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Debugging: Log the surveyTemplate value
+            Console.WriteLine($"Survey Template: {surveyTemplate}");
+
+            // Open the EntryUpdate form and pass the data
+            EntryUpdate entryUpdate = new EntryUpdate(respondentID, patientName, surveyScore, date, month, year, patientFeedback, surveyTemplate, answers);
+            entryUpdate.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

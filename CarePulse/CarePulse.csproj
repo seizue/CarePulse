@@ -85,6 +85,12 @@
     <Compile Include="RecoveryAccount.Designer.cs">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectedSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectedSurvey.Designer.cs">
+      <DependentUpon>SelectedSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecoveryAccount.resx">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectedSurvey.resx">
+      <DependentUpon>SelectedSurvey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
