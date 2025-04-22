@@ -244,7 +244,6 @@ namespace CarePulse
 
             selectedSurvey.ShowDialog();
         }
-        
 
         private void btnEditSurvey_Click(object sender, EventArgs e)
         {
@@ -256,24 +255,31 @@ namespace CarePulse
             }
 
             string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
-
             string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
             string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+            List<string> questions = new List<string>();
+            Dictionary<string, string> responses = new Dictionary<string, string>();
 
-            Survey survey = new Survey(id);
-
+            // Load template questions
             if (File.Exists(filePath))
             {
-                string json = File.ReadAllText(filePath);
-                SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
-
-                if (template?.Questions != null)
+                try
                 {
-                    survey.SetSurveyQuestions(template.Questions);
+                    string json = File.ReadAllText(filePath);
+                    SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
+                    if (template?.Questions != null)
+                    {
+                        questions = template.Questions;
+                    }
+                    else
+                    {
+                        MessageBox.Show("This template has no questions defined.", "Template Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("This template has no questions defined.", "Template Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error loading template: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -283,6 +289,73 @@ namespace CarePulse
                 return;
             }
 
+            // Load existing responses from FinalizedSurveys folder
+            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string responseFilePath = Path.Combine(finalizedSurveysPath,
+                $"Survey_{id}_{comboBoxMonthSurvey.SelectedItem}_{comboBoxYearSurvey.SelectedItem}.json");
+
+            if (File.Exists(responseFilePath))
+            {
+                try
+                {
+                    string json = File.ReadAllText(responseFilePath);
+
+                    // First try to deserialize as a direct dictionary (for simple formats)
+                    try
+                    {
+                        var directResult = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                        if (directResult != null)
+                        {
+                            responses = directResult;
+                        }
+                    }
+                    catch
+                    {
+                        // If direct deserialization fails, try the nested structure
+                        try
+                        {
+                            // Try to deserialize as a full survey result object
+                            var surveyResult = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+
+                            if (surveyResult != null && surveyResult.ContainsKey("Answers"))
+                            {
+                                // Get the Answers object and convert it to a string dictionary
+                                string answersJson = JsonConvert.SerializeObject(surveyResult["Answers"]);
+                                responses = JsonConvert.DeserializeObject<Dictionary<string, string>>(answersJson);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error parsing response structure: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    // Debug - check what's in the responses dictionary
+                    if (responses.Count == 0)
+                    {
+                        MessageBox.Show("No responses found in the file.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        // Debug - show the first response to check format
+                        var firstKey = responses.Keys.First();
+                        MessageBox.Show($"Found {responses.Count} responses. First key: {firstKey}, Value: {responses[firstKey]}",
+                            "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading responses: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No finalized survey responses found for this respondent.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Instantiate the Survey form with the loaded questions and responses
+            Survey survey = new Survey(id, questions, responses);
             survey.ShowDialog();
         }
     }

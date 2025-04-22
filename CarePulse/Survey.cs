@@ -20,12 +20,33 @@ namespace CarePulse
         private int totalPages = 1;
         private int rowsPerPage = 10;
         private List<string> surveyQuestionList = new List<string>();
+        private Dictionary<string, string> surveyResponses = new Dictionary<string, string>();
 
         public Survey(string id)
         {
             InitializeComponent();
-         
-            respondentId = id;  
+
+            respondentId = id;
+     
+        }
+
+        // Add this to the Survey constructor (the one that takes id, questions, responses)
+        public Survey(string id, List<string> questions, Dictionary<string, string> responses)
+        {
+            InitializeComponent();
+
+            respondentId = id;
+
+            // Set survey questions and responses
+            SetSurveyQuestions(questions);
+            SetSurveyResponses(responses);
+
+            // Load response options before initializing the page
+            LoadResponseOptions();
+
+            // Initialize pagination
+            CalculatePagination();
+            LoadPage(currentPage);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -72,11 +93,7 @@ namespace CarePulse
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            LoadResponseOptions();
-
-            // Initialize pagination
-            CalculatePagination();
-            LoadPage(currentPage);
+          
         }
 
         public void SetSurveyQuestions(List<string> questions)
@@ -86,11 +103,12 @@ namespace CarePulse
             // Make the questions column read-only
             datagridSurvey.Columns["surveyQuestionss"].ReadOnly = true;
 
-
             surveyQuestionList = questions; // Store all questions
             CalculatePagination();
             LoadPage(currentPage);
         }
+
+      
 
         private void CalculatePagination()
         {
@@ -102,8 +120,37 @@ namespace CarePulse
             totalPages = (int)Math.Ceiling((double)surveyQuestionList.Count / rowsPerPage);
         }
 
+        public void SetSurveyResponses(Dictionary<string, string> responses)
+        {
+            // Make a deep copy to avoid reference issues
+            surveyResponses = new Dictionary<string, string>();
+
+            if (responses != null)
+            {
+                foreach (var kvp in responses)
+                {
+                    surveyResponses[kvp.Key] = kvp.Value;
+                }
+            }
+        }
+
+  
         private void LoadPage(int pageNumber)
         {
+            // Save current responses before clearing the grid
+            foreach (DataGridViewRow row in datagridSurvey.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string questionId = row.Cells["surveyID"]?.Value?.ToString();
+                    string response = row.Cells["surveyResponse"]?.Value?.ToString();
+                    if (!string.IsNullOrWhiteSpace(questionId) && response != null)
+                    {
+                        surveyResponses[questionId] = response;
+                    }
+                }
+            }
+
             datagridSurvey.Rows.Clear();
 
             // Calculate the range of questions to display
@@ -114,8 +161,28 @@ namespace CarePulse
             for (int i = startIndex; i < endIndex; i++)
             {
                 int index = datagridSurvey.Rows.Add();
+                string questionId = $"Q{i + 1:D3}";
                 datagridSurvey.Rows[index].Cells["surveyQuestionss"].Value = surveyQuestionList[i];
-                datagridSurvey.Rows[index].Cells["surveyID"].Value = $"Q{i + 1:D3}";
+                datagridSurvey.Rows[index].Cells["surveyID"].Value = questionId;
+
+                // Check if we have a response for this question
+                if (surveyResponses.ContainsKey(questionId))
+                {
+                    string response = surveyResponses[questionId];
+
+                    if (!string.IsNullOrEmpty(response))
+                    {
+                        // Make sure the response is in the dropdown items
+                        var comboCol = datagridSurvey.Columns["surveyResponse"] as DataGridViewComboBoxColumn;
+                        if (comboCol != null && !comboCol.Items.Contains(response))
+                        {
+                            comboCol.Items.Add(response);
+                        }
+
+                        // Set the cell value
+                        datagridSurvey.Rows[index].Cells["surveyResponse"].Value = response;
+                    }
+                }
             }
 
             // Scroll to the top of the DataGridView
@@ -261,6 +328,7 @@ namespace CarePulse
                 }
             }
         }
+
 
         private void SaveResponseOptions()
         {
