@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,9 +68,49 @@ namespace CarePulse
 
         private void btnSurveyTemplate_Click(object sender, EventArgs e)
         {
+            string id = txtBoxIDNo.Text.Trim();
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                MessageBox.Show("Please enter an ID number first.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSurveyTemplate.Text))
+            {
+                MessageBox.Show("Please select a survey template before continuing.", "Template Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string selectedTemplate = txtSurveyTemplate.Text;
-            NewTemplates newTemplates = new NewTemplates(selectedTemplate);
-            newTemplates.ShowDialog();
+
+            string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "SurveyTemplate");
+            string filePath = Path.Combine(templatesPath, selectedTemplate + ".json");
+
+            Survey survey = new Survey(id);
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                SurveyTemplate template = JsonConvert.DeserializeObject<SurveyTemplate>(json);
+
+                if (template?.Questions != null)
+                {
+                    survey.SetSurveyQuestions(template.Questions);
+                }
+                else
+                {
+                    MessageBox.Show("This template has no questions defined.", "Template Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Template file not found.", "Missing Template", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            survey.ShowDialog();
         }
     }
 }
+
