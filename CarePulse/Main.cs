@@ -18,11 +18,15 @@ namespace CarePulse
         private bool isStateChanging = false;
         private const int DEFAULT_WIDTH = 1050;
         private const int DEFAULT_HEIGHT = 671;
+        private List<Dictionary<string, object>> allSurveyData = new List<Dictionary<string, object>>();
+        private int currentPage = 1;
+        private int recordsPerPage = 10;
+        private int totalPages = 0;
 
         public Main()
         {
             InitializeComponent();
-           
+         
             LoadJsonToDataGrid();
         }
 
@@ -202,14 +206,6 @@ namespace CarePulse
         }
 
 
-        private void SetDataGridViewRowHeight()
-        {
-            foreach (DataGridViewRow row in datagridCPHome.Rows)
-            {
-                row.Height = 35; 
-            }
-        }
-
         // Moves the panel indicator to a specified vertical position.
         private void UpdatePanelIndicator(int yOffset) => panelIndicator.Location = new Point(1, yOffset);
 
@@ -281,7 +277,8 @@ namespace CarePulse
 
         private void LoadJsonToDataGrid()
         {
-            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string finalizedSurveysPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
 
             // Check if the directory exists
             if (!Directory.Exists(finalizedSurveysPath))
@@ -297,80 +294,160 @@ namespace CarePulse
             if (jsonFiles.Length == 0)
             {
                 Console.WriteLine("No JSON files found in: " + finalizedSurveysPath);
+                lblPageInfo.Text = "Page 0 of 0";
                 return;
             }
 
-            // Clear existing rows in the DataGridView
-            datagridCPHome.Rows.Clear();
+            // Clear existing data list
+            allSurveyData.Clear();
 
-            // Loop through each JSON file and load its data
+            // Load all data from JSON files
             foreach (var file in jsonFiles)
             {
                 string jsonContent = File.ReadAllText(file);
-
-                // Deserialize JSON into a dictionary
                 var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonContent);
-
                 if (data != null)
                 {
-                    // Extract required fields
-                    string respondentID = data.ContainsKey("RespondentID") ? data["RespondentID"].ToString() : string.Empty;
-                    string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
-                    string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
-                    string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
-                    string month = data.ContainsKey("Month") ? data["Month"].ToString() : string.Empty;
-                    string year = data.ContainsKey("Year") ? data["Year"].ToString() : string.Empty;
-                    string surveyTemplate = data.ContainsKey("SurveyTemplate") ? data["SurveyTemplate"].ToString() : string.Empty;
-                    string patientFeedback = data.ContainsKey("PatientFeedback") ? data["PatientFeedback"].ToString() : string.Empty;
-
-                    // Extract answers and format them as a string
-                    string surveyQuestionsAnswers = string.Empty;
-                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
-                    {
-                        var formattedAnswers = answers.Properties()
-                            .Select(p => $"{p.Name}: {p.Value?.ToString() ?? "No Response"}");
-                        surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
-                    }
-
-                    // Calculate the number of answered and unanswered questions
-                    int answeredCount = 0, unansweredCount = 0;
-                    if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answerCounts)
-                    {
-                        foreach (var answer in answerCounts)
-                        {
-                            if (!string.IsNullOrWhiteSpace(answer.Value.ToString()))
-                            {
-                                answeredCount++;
-                            }
-                            else
-                            {
-                                unansweredCount++;
-                            }
-                        }
-                    }
-
-                    string responseSummary = $"Answered: {answeredCount}, Unanswered: {unansweredCount}";
-
-                    // Add a new row to the DataGridView
-                    int rowIndex = datagridCPHome.Rows.Add();
-                    DataGridViewRow row = datagridCPHome.Rows[rowIndex];
-                    row.Cells["cpID"].Value = respondentID;
-                    row.Cells["cpName"].Value = name;
-                    row.Cells["cpDatePeriod"].Value = date;
-                    row.Cells["cpResponseTotal"].Value = responseSummary;
-                    row.Cells["cpSurveyScore"].Value = surveyScore;
-                    row.Cells["cpSurveyQuestionsAnswers"].Value = surveyQuestionsAnswers;
-                    row.Cells["cpMonth"].Value = month;
-                    row.Cells["cpYear"].Value = year;
-                    row.Cells["cpPatientsFeedback"].Value = patientFeedback;
-                    row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
+                    allSurveyData.Add(data);
                 }
             }
 
-            // Set the row height after rows are added
-            SetDataGridViewRowHeight();
+            // Calculate total pages
+            totalPages = (int)Math.Ceiling((double)allSurveyData.Count / recordsPerPage);
+
+            // Ensure current page is valid
+            if (currentPage > totalPages && totalPages > 0)
+                currentPage = totalPages;
+            else if (currentPage < 1)
+                currentPage = 1;
+
+           
+            // Display the current page
+            DisplayCurrentPage();
         }
 
+        private void DisplayCurrentPage()
+        {
+            // Clear existing rows in the DataGridView
+            datagridCPHome.Rows.Clear();
+
+            // Calculate start and end indices for the current page
+            int startIndex = (currentPage - 1) * recordsPerPage;
+            int endIndex = Math.Min(startIndex + recordsPerPage, allSurveyData.Count);
+
+            // Loop through data for the current page
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                var data = allSurveyData[i];
+
+                // Extract required fields
+                string respondentID = data.ContainsKey("RespondentID") ? data["RespondentID"].ToString() : string.Empty;
+                string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
+                string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
+                string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
+                string month = data.ContainsKey("Month") ? data["Month"].ToString() : string.Empty;
+                string year = data.ContainsKey("Year") ? data["Year"].ToString() : string.Empty;
+                string surveyTemplate = data.ContainsKey("SurveyTemplate") ? data["SurveyTemplate"].ToString() : string.Empty;
+                string patientFeedback = data.ContainsKey("PatientFeedback") ? data["PatientFeedback"].ToString() : string.Empty;
+
+                // Extract answers and format them as a string
+                string surveyQuestionsAnswers = string.Empty;
+                if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+                {
+                    var formattedAnswers = answers.Properties()
+                        .Select(p => $"{p.Name}: {p.Value?.ToString() ?? "No Response"}");
+                    surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
+                }
+
+                // Calculate the number of answered and unanswered questions
+                int answeredCount = 0, unansweredCount = 0;
+                if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answerCounts)
+                {
+                    foreach (var answer in answerCounts)
+                    {
+                        if (!string.IsNullOrWhiteSpace(answer.Value.ToString()))
+                        {
+                            answeredCount++;
+                        }
+                        else
+                        {
+                            unansweredCount++;
+                        }
+                    }
+                }
+
+                string responseSummary = $"Answered: {answeredCount}, Unanswered: {unansweredCount}";
+
+                // Add a new row to the DataGridView
+                int rowIndex = datagridCPHome.Rows.Add();
+                DataGridViewRow row = datagridCPHome.Rows[rowIndex];
+                row.Cells["cpID"].Value = respondentID;
+                row.Cells["cpName"].Value = name;
+                row.Cells["cpDatePeriod"].Value = date;
+                row.Cells["cpResponseTotal"].Value = responseSummary;
+                row.Cells["cpSurveyScore"].Value = surveyScore;
+                row.Cells["cpSurveyQuestionsAnswers"].Value = surveyQuestionsAnswers;
+                row.Cells["cpMonth"].Value = month;
+                row.Cells["cpYear"].Value = year;
+                row.Cells["cpPatientsFeedback"].Value = patientFeedback;
+                row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
+            }
+
+            // Update pagination controls
+            UpdatePaginationControls();
+
+            // Apply auto-sizing after rows are loaded
+            ApplyAutoSizing();
+
+        }
+
+        private void UpdatePaginationControls()
+        {
+            // Update page info label
+            lblPageInfo.Text = $"Page {currentPage} of {totalPages}";
+
+            // Enable/disable pagination buttons based on current page
+            btnPreviousPage.Enabled = (currentPage > 1);
+            btnStartPage.Enabled = (currentPage > 1);
+            btnNextPage.Enabled = (currentPage < totalPages);
+            btnLastPage.Enabled = (currentPage < totalPages);
+        }
+
+
+
+        private void ApplyAutoSizing()
+        {
+            // Disable auto-sizing for rows
+            datagridCPHome.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            // Enable auto-fill for columns
+            datagridCPHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Set AutoGenerateColumns to false to prevent duplicate columns
+            datagridCPHome.AutoGenerateColumns = false;
+
+            // Enable text wrapping for columns that might contain long text
+            datagridCPHome.Columns["cpSurveyQuestionsAnswers"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            datagridCPHome.Columns["cpPatientsFeedback"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            // Set height for all rows
+            foreach (DataGridViewRow row in datagridCPHome.Rows)
+            {
+                row.Height = 35;
+            }
+
+            datagridCPHome.Columns["cpID"].FillWeight = 25;            
+            datagridCPHome.Columns["cpDatePeriod"].FillWeight = 35;
+            datagridCPHome.Columns["cpName"].FillWeight = 70;
+            datagridCPHome.Columns["cpResponseTotal"].FillWeight = 60;
+            datagridCPHome.Columns["cpSurveyScore"].FillWeight = 25;
+            datagridCPHome.Columns["cpSurveyQuestionsAnswers"].FillWeight = 30; 
+            datagridCPHome.Columns["cpMonth"].FillWeight = 15;
+            datagridCPHome.Columns["cpYear"].FillWeight = 15;
+            datagridCPHome.Columns["cpPatientsFeedback"].FillWeight = 60;   
+            datagridCPHome.Columns["cpSurveyTemplate"].FillWeight = 30;
+
+        }
 
 
 
@@ -434,10 +511,81 @@ namespace CarePulse
             entryUpdate.ShowDialog();
         }
 
+
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // Ensure a row is selected
+            if (datagridCPHome.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Get the selected row
+            DataGridViewRow selectedRow = datagridCPHome.SelectedRows[0];
+
+            // Retrieve data from the selected row to identify the file
+            string respondentID = selectedRow.Cells["cpID"].Value?.ToString() ?? string.Empty;
+            string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
+            string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
+            string patientName = selectedRow.Cells["cpName"].Value?.ToString() ?? string.Empty;
+
+            // Confirm deletion with the user
+            DialogResult result = MessageBox.Show(
+                $"Are you sure you want to delete the survey for {patientName} (ID: {respondentID})?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Path to the file to delete
+                string finalizedSurveysPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+                string filePath = Path.Combine(finalizedSurveysPath, $"Survey_{respondentID}_{month}_{year}.json");
+
+                try
+                {
+                    // Check if file exists before attempting to delete
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+
+                        // Refresh the data grid to reflect the deletion
+                        LoadJsonToDataGrid();
+
+                        MessageBox.Show(
+                            $"Survey for {patientName} (ID: {respondentID}) has been deleted successfully.",
+                            "Delete Successful",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "The survey file could not be found. It may have been already deleted.",
+                            "File Not Found",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+
+                        // Refresh the data grid to ensure consistency
+                        LoadJsonToDataGrid();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"An error occurred while deleting the file: {ex.Message}",
+                        "Delete Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
+
+
 
         private void btnView_Click(object sender, EventArgs e)
         {
@@ -488,6 +636,40 @@ namespace CarePulse
             viewData.ShowDialog();
         }
 
+        private void btnStartPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage != 1)
+            {
+                currentPage = 1;
+                DisplayCurrentPage();
+            }
+        }
 
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                DisplayCurrentPage();
+            }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                DisplayCurrentPage();
+            }
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage != totalPages)
+            {
+                currentPage = totalPages;
+                DisplayCurrentPage();
+            }
+        }
     }
 }

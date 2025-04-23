@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpResponseTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpSurveyScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpSurveyTemplate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpSurveyQuestionsAnswers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpPatientsFeedback = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblPageInfo = new System.Windows.Forms.Label();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
             this.btnStartPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
@@ -78,16 +89,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpResponseTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpSurveyScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpSurveyTemplate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpSurveyQuestionsAnswers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpPatientsFeedback = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).BeginInit();
             this.panel8.SuspendLayout();
@@ -131,11 +132,11 @@
             this.datagridCPHome.AllowUserToDeleteRows = false;
             this.datagridCPHome.AllowUserToResizeColumns = false;
             this.datagridCPHome.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.datagridCPHome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.datagridCPHome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridCPHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -145,14 +146,14 @@
             this.datagridCPHome.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datagridCPHome.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.datagridCPHome.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridCPHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridCPHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridCPHome.ColumnHeadersHeight = 48;
             this.datagridCPHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridCPHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -166,28 +167,28 @@
             this.cpSurveyTemplate,
             this.cpSurveyQuestionsAnswers,
             this.cpPatientsFeedback});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridCPHome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridCPHome.DefaultCellStyle = dataGridViewCellStyle7;
             this.datagridCPHome.EnableHeadersVisualStyles = false;
             this.datagridCPHome.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.datagridCPHome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.datagridCPHome.Location = new System.Drawing.Point(97, 154);
             this.datagridCPHome.Name = "datagridCPHome";
             this.datagridCPHome.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridCPHome.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridCPHome.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.datagridCPHome.RowHeadersWidth = 5;
             this.datagridCPHome.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridCPHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -196,10 +197,76 @@
             this.datagridCPHome.UseCustomBackColor = true;
             this.datagridCPHome.UseCustomForeColor = true;
             // 
+            // cpID
+            // 
+            this.cpID.FillWeight = 25F;
+            this.cpID.HeaderText = "CPID";
+            this.cpID.Name = "cpID";
+            // 
+            // cpDatePeriod
+            // 
+            this.cpDatePeriod.FillWeight = 35F;
+            this.cpDatePeriod.HeaderText = "Date Period";
+            this.cpDatePeriod.Name = "cpDatePeriod";
+            // 
+            // cpName
+            // 
+            this.cpName.FillWeight = 70F;
+            this.cpName.HeaderText = "Name";
+            this.cpName.Name = "cpName";
+            // 
+            // cpResponseTotal
+            // 
+            this.cpResponseTotal.FillWeight = 60F;
+            this.cpResponseTotal.HeaderText = "Response";
+            this.cpResponseTotal.Name = "cpResponseTotal";
+            // 
+            // cpSurveyScore
+            // 
+            this.cpSurveyScore.FillWeight = 25F;
+            this.cpSurveyScore.HeaderText = "Survey Score";
+            this.cpSurveyScore.Name = "cpSurveyScore";
+            // 
+            // cpMonth
+            // 
+            this.cpMonth.DividerWidth = 15;
+            this.cpMonth.HeaderText = "Month";
+            this.cpMonth.Name = "cpMonth";
+            this.cpMonth.Visible = false;
+            // 
+            // cpYear
+            // 
+            this.cpYear.DividerWidth = 15;
+            this.cpYear.HeaderText = "Year";
+            this.cpYear.Name = "cpYear";
+            this.cpYear.Visible = false;
+            // 
+            // cpSurveyTemplate
+            // 
+            this.cpSurveyTemplate.DividerWidth = 30;
+            this.cpSurveyTemplate.HeaderText = "Template Name";
+            this.cpSurveyTemplate.Name = "cpSurveyTemplate";
+            this.cpSurveyTemplate.Visible = false;
+            // 
+            // cpSurveyQuestionsAnswers
+            // 
+            this.cpSurveyQuestionsAnswers.DividerWidth = 30;
+            this.cpSurveyQuestionsAnswers.HeaderText = "Survey Questions and Answers";
+            this.cpSurveyQuestionsAnswers.Name = "cpSurveyQuestionsAnswers";
+            this.cpSurveyQuestionsAnswers.Visible = false;
+            // 
+            // cpPatientsFeedback
+            // 
+            this.cpPatientsFeedback.FillWeight = 60F;
+            this.cpPatientsFeedback.HeaderText = "Patients Feedback";
+            this.cpPatientsFeedback.Name = "cpPatientsFeedback";
+            this.cpPatientsFeedback.Visible = false;
+            // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.Controls.Add(this.lblPageInfo);
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.btnStartPage);
             this.panel8.Controls.Add(this.btnPreviousPage);
@@ -210,6 +277,18 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(991, 42);
             this.panel8.TabIndex = 15;
+            // 
+            // lblPageInfo
+            // 
+            this.lblPageInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPageInfo.AutoSize = true;
+            this.lblPageInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.lblPageInfo.Location = new System.Drawing.Point(678, 11);
+            this.lblPageInfo.Name = "lblPageInfo";
+            this.lblPageInfo.Size = new System.Drawing.Size(0, 17);
+            this.lblPageInfo.TabIndex = 30;
+            this.lblPageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel11
             // 
@@ -242,6 +321,7 @@
             this.btnStartPage.TabIndex = 28;
             this.btnStartPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStartPage.UseVisualStyleBackColor = false;
+            this.btnStartPage.Click += new System.EventHandler(this.btnStartPage_Click);
             // 
             // btnPreviousPage
             // 
@@ -261,6 +341,7 @@
             this.btnPreviousPage.TabIndex = 27;
             this.btnPreviousPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPreviousPage.UseVisualStyleBackColor = false;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
             // btnNextPage
             // 
@@ -280,6 +361,7 @@
             this.btnNextPage.TabIndex = 26;
             this.btnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnLastPage
             // 
@@ -300,6 +382,7 @@
             this.btnLastPage.TabIndex = 25;
             this.btnLastPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLastPage.UseVisualStyleBackColor = false;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // panel10
             // 
@@ -962,71 +1045,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // cpID
-            // 
-            this.cpID.FillWeight = 25F;
-            this.cpID.HeaderText = "CPID";
-            this.cpID.Name = "cpID";
-            // 
-            // cpDatePeriod
-            // 
-            this.cpDatePeriod.FillWeight = 35F;
-            this.cpDatePeriod.HeaderText = "Date Period";
-            this.cpDatePeriod.Name = "cpDatePeriod";
-            // 
-            // cpName
-            // 
-            this.cpName.FillWeight = 70F;
-            this.cpName.HeaderText = "Name";
-            this.cpName.Name = "cpName";
-            // 
-            // cpResponseTotal
-            // 
-            this.cpResponseTotal.FillWeight = 60F;
-            this.cpResponseTotal.HeaderText = "Response";
-            this.cpResponseTotal.Name = "cpResponseTotal";
-            // 
-            // cpSurveyScore
-            // 
-            this.cpSurveyScore.FillWeight = 25F;
-            this.cpSurveyScore.HeaderText = "Survey Score";
-            this.cpSurveyScore.Name = "cpSurveyScore";
-            // 
-            // cpMonth
-            // 
-            this.cpMonth.DividerWidth = 15;
-            this.cpMonth.HeaderText = "Month";
-            this.cpMonth.Name = "cpMonth";
-            this.cpMonth.Visible = false;
-            // 
-            // cpYear
-            // 
-            this.cpYear.DividerWidth = 15;
-            this.cpYear.HeaderText = "Year";
-            this.cpYear.Name = "cpYear";
-            this.cpYear.Visible = false;
-            // 
-            // cpSurveyTemplate
-            // 
-            this.cpSurveyTemplate.DividerWidth = 30;
-            this.cpSurveyTemplate.HeaderText = "Template Name";
-            this.cpSurveyTemplate.Name = "cpSurveyTemplate";
-            this.cpSurveyTemplate.Visible = false;
-            // 
-            // cpSurveyQuestionsAnswers
-            // 
-            this.cpSurveyQuestionsAnswers.DividerWidth = 30;
-            this.cpSurveyQuestionsAnswers.HeaderText = "Survey Questions and Answers";
-            this.cpSurveyQuestionsAnswers.Name = "cpSurveyQuestionsAnswers";
-            this.cpSurveyQuestionsAnswers.Visible = false;
-            // 
-            // cpPatientsFeedback
-            // 
-            this.cpPatientsFeedback.FillWeight = 60F;
-            this.cpPatientsFeedback.HeaderText = "Patients Feedback";
-            this.cpPatientsFeedback.Name = "cpPatientsFeedback";
-            this.cpPatientsFeedback.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1047,6 +1065,7 @@
             this.dreamForm1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).EndInit();
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1115,6 +1134,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpSurveyTemplate;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpSurveyQuestionsAnswers;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpPatientsFeedback;
+        private System.Windows.Forms.Label lblPageInfo;
     }
 }
 
