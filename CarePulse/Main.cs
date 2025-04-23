@@ -359,8 +359,8 @@ namespace CarePulse
                     surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
                 }
 
-                // Calculate the number of answered and unanswered questions
-                int answeredCount = 0, unansweredCount = 0;
+                // Calculate the number of answered questions
+                int answeredCount = 0;
                 if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answerCounts)
                 {
                     foreach (var answer in answerCounts)
@@ -369,14 +369,10 @@ namespace CarePulse
                         {
                             answeredCount++;
                         }
-                        else
-                        {
-                            unansweredCount++;
-                        }
                     }
                 }
 
-                string responseSummary = $"Answered: {answeredCount}, Unanswered: {unansweredCount}";
+                string responseSummary = $"Answered: {answeredCount}";
 
                 // Add a new row to the DataGridView
                 int rowIndex = datagridCPHome.Rows.Add();
@@ -398,7 +394,6 @@ namespace CarePulse
 
             // Apply auto-sizing after rows are loaded
             ApplyAutoSizing();
-
         }
 
         private void UpdatePaginationControls()
@@ -670,6 +665,131 @@ namespace CarePulse
                 currentPage = totalPages;
                 DisplayCurrentPage();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            // Show a confirmation message box
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to refresh the data?",
+                "Confirm Refresh",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            // If the user confirms, reload the data
+            if (result == DialogResult.Yes)
+            {
+                LoadJsonToDataGrid();
+                MessageBox.Show("Data has been refreshed successfully.", "Refresh Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            // Prompt the user to choose between exporting all data or a specific row
+            DialogResult result = MessageBox.Show(
+                "Do you want to export all data? Click 'Yes' for all data or 'No' for a specific row.",
+                "Export Options",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Cancel)
+            {
+                // User canceled the operation
+                return;
+            }
+
+            bool exportAllData = (result == DialogResult.Yes);
+
+            // If exporting a specific row, ensure a row is selected
+            if (!exportAllData && datagridCPHome.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to export.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Prompt the user to select a location to save the CSV file
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+                saveFileDialog.Title = "Export Data to CSV";
+                saveFileDialog.FileName = "SurveyData.csv";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Open a StreamWriter to write the CSV file
+                        using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                        {
+                            // Write the header row
+                            writer.WriteLine("RespondentID,Name,Date,SurveyScore,Month,Year,SurveyTemplate,PatientFeedback,SurveyQuestionsAnswers");
+
+                            if (exportAllData)
+                            {
+                                // Write all data
+                                foreach (var data in allSurveyData)
+                                {
+                                    WriteDataRow(writer, data);
+                                }
+                            }
+                            else
+                            {
+                                // Write only the selected row
+                                DataGridViewRow selectedRow = datagridCPHome.SelectedRows[0];
+                                var data = GetDataFromRow(selectedRow);
+                                WriteDataRow(writer, data);
+                            }
+                        }
+
+                        MessageBox.Show("Data successfully exported to CSV.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while exporting data: {ex.Message}", "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void WriteDataRow(StreamWriter writer, Dictionary<string, object> data)
+        {
+            string respondentID = data.ContainsKey("RespondentID") ? data["RespondentID"].ToString() : string.Empty;
+            string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
+            string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
+            string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
+            string month = data.ContainsKey("Month") ? data["Month"].ToString() : string.Empty;
+            string year = data.ContainsKey("Year") ? data["Year"].ToString() : string.Empty;
+            string surveyTemplate = data.ContainsKey("SurveyTemplate") ? data["SurveyTemplate"].ToString() : string.Empty;
+            string patientFeedback = data.ContainsKey("PatientFeedback") ? data["PatientFeedback"].ToString() : string.Empty;
+
+            // Extract answers and format them as a string
+            string surveyQuestionsAnswers = string.Empty;
+            if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+            {
+                var formattedAnswers = answers.Properties()
+                    .Select(p => $"{p.Name}: {p.Value?.ToString() ?? "No Response"}");
+                surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
+            }
+
+            // Write the row to the CSV file
+            writer.WriteLine($"{respondentID},{name},{date},{surveyScore},{month},{year},{surveyTemplate},{patientFeedback},{surveyQuestionsAnswers}");
+        }
+
+        private Dictionary<string, object> GetDataFromRow(DataGridViewRow row)
+        {
+            return new Dictionary<string, object>
+            {
+                { "RespondentID", row.Cells["cpID"].Value?.ToString() ?? string.Empty },
+                { "Name", row.Cells["cpName"].Value?.ToString() ?? string.Empty },
+                { "Date", row.Cells["cpDatePeriod"].Value?.ToString() ?? string.Empty },
+                { "SurveyScore", row.Cells["cpSurveyScore"].Value?.ToString() ?? string.Empty },
+                { "Month", row.Cells["cpMonth"].Value?.ToString() ?? string.Empty },
+                { "Year", row.Cells["cpYear"].Value?.ToString() ?? string.Empty },
+                { "SurveyTemplate", row.Cells["cpSurveyTemplate"].Value?.ToString() ?? string.Empty },
+                { "PatientFeedback", row.Cells["cpPatientsFeedback"].Value?.ToString() ?? string.Empty },
+                { "Answers", row.Cells["cpSurveyQuestionsAnswers"].Value?.ToString() ?? string.Empty }
+            };
         }
     }
 }
