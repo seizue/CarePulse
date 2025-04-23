@@ -15,6 +15,7 @@ namespace CarePulse
 {
     public partial class EntryUpdate : Form
     {
+        public event EventHandler SaveChangesCompleted;
 
         public EntryUpdate(string respondentID, string patientName, string surveyScore, string date, string month, string year, string patientFeedback, string surveyTemplate, string answers)
         {
@@ -362,16 +363,16 @@ namespace CarePulse
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            // Validate required fields
-            if (string.IsNullOrWhiteSpace(txtBoxIDNo.Text) ||
-                string.IsNullOrWhiteSpace(txtboxName.Text) ||
-                string.IsNullOrWhiteSpace(txtboxSurveyScore.Text) ||
-                comboBoxSelectSurveyTemplate.SelectedItem == null ||
-                string.IsNullOrWhiteSpace(txtboxPatientFeedBack.Text) ||
-                comboBoxMonthSurvey.SelectedItem == null ||
+            // Check if at least one field has been edited
+            if (string.IsNullOrWhiteSpace(txtBoxIDNo.Text) &&
+                string.IsNullOrWhiteSpace(txtboxName.Text) &&
+                string.IsNullOrWhiteSpace(txtboxSurveyScore.Text) &&
+                comboBoxSelectSurveyTemplate.SelectedItem == null &&
+                string.IsNullOrWhiteSpace(txtboxPatientFeedBack.Text) &&
+                comboBoxMonthSurvey.SelectedItem == null &&
                 comboBoxYearSurvey.SelectedItem == null)
             {
-                MessageBox.Show("All fields are required. Please make sure everything is filled out.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("At least one field must be edited to save changes.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -380,50 +381,90 @@ namespace CarePulse
             string name = txtboxName.Text.Trim();
             string score = txtboxSurveyScore.Text.Trim();
             string feedback = txtboxPatientFeedBack.Text.Trim();
-            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem.ToString();
-            string month = comboBoxMonthSurvey.SelectedItem.ToString();
-            string year = comboBoxYearSurvey.SelectedItem.ToString();
+            string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem?.ToString();
+            string month = comboBoxMonthSurvey.SelectedItem?.ToString();
+            string year = comboBoxYearSurvey.SelectedItem?.ToString();
             DateTime date = datePickerDateSurvey.Value;
 
-            // Load the temporary survey file
-            string tempFolderPath = Path.Combine(Path.GetTempPath(), "CarePulse", "TemporarySurvey");
-            string tempFilePath = Path.Combine(tempFolderPath, $"{id}.json");
-
-            if (!File.Exists(tempFilePath))
-            {
-                MessageBox.Show("Temporary survey file not found. Please complete the survey before saving.", "Missing Survey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string tempJson = File.ReadAllText(tempFilePath);
-            var surveyAnswers = JsonConvert.DeserializeObject<Dictionary<string, object>>(tempJson);
-
-            // Final object to save
-            var finalData = new
-            {
-                RespondentID = id,
-                Name = name,
-                SurveyScore = score,
-                PatientFeedback = feedback,
-                SurveyTemplate = selectedTemplate,
-                Date = date.ToString("yyyy-MM-dd"),
-                Month = month,
-                Year = year,
-                Answers = surveyAnswers["Answers"]
-            };
-
-            // Save to: Survey_{ID}_{Month}_{Year}.json
-            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
-            Directory.CreateDirectory(finalFolder);
+            // Define path to the existing file
+            string finalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                                             "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            Directory.CreateDirectory(finalFolder); // Ensure directory exists
             string finalFileName = $"Survey_{id}_{month}_{year}.json";
             string finalPath = Path.Combine(finalFolder, finalFileName);
 
-            File.WriteAllText(finalPath, JsonConvert.SerializeObject(finalData, Formatting.Indented));
+            // Load existing data if file exists
+            Dictionary<string, object> existingData = new Dictionary<string, object>();
+            JObject answersObject = null;
 
-            // Delete the temporary file after saving permanently
-            File.Delete(tempFilePath);
+            if (File.Exists(finalPath))
+            {
+                string existingJson = File.ReadAllText(finalPath);
+                existingData = JsonConvert.DeserializeObject<Dictionary<string, object>>(existingJson);
 
-            MessageBox.Show("Survey data saved successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Extract answers object if it exists
+                if (existingData.ContainsKey("Answers") && existingData["Answers"] != null)
+                {
+                    answersObject = JObject.FromObject(existingData["Answers"]);
+                }
+            }
+
+            // Check if survey has been edited
+            string tempFolderPath = Path.Combine(Path.GetTempPath(), "CarePulse", "TemporarySurvey");
+            string tempFilePath = Path.Combine(tempFolderPath, $"{id}.json");
+
+            // If we have new answers from a temporary file, use those
+            if (File.Exists(tempFilePath))
+            {
+                string tempJson = File.ReadAllText(tempFilePath);
+                var tempData = JsonConvert.DeserializeObject<Dictionary<string, object>>(tempJson);
+
+                if (tempData != null && tempData.ContainsKey("Answers") && tempData["Answers"] != null)
+                {
+                    answersObject = JObject.FromObject(tempData["Answers"]);
+                }
+
+                // Delete the temporary file after using it
+                File.Delete(tempFilePath);
+            }
+
+            // Update the data with new values (only if they exist)
+            var updatedData = new Dictionary<string, object>();
+
+            // Always include the ID
+            updatedData["RespondentID"] = id;
+
+            // Update name if provided
+            updatedData["Name"] = !string.IsNullOrWhiteSpace(name) ? name :
+                (existingData.ContainsKey("Name") ? existingData["Name"] : "");
+
+            // Update score if provided
+            updatedData["SurveyScore"] = !string.IsNullOrWhiteSpace(score) ? score :
+                (existingData.ContainsKey("SurveyScore") ? existingData["SurveyScore"] : "");
+
+            // Update feedback if provided
+            updatedData["PatientFeedback"] = !string.IsNullOrWhiteSpace(feedback) ? feedback :
+                (existingData.ContainsKey("PatientFeedback") ? existingData["PatientFeedback"] : "");
+
+            // Update template if selected
+            updatedData["SurveyTemplate"] = selectedTemplate != null ? selectedTemplate :
+                (existingData.ContainsKey("SurveyTemplate") ? existingData["SurveyTemplate"] : "");
+
+            // Update date, month, year
+            updatedData["Date"] = date.ToString("yyyy-MM-dd");
+            updatedData["Month"] = month ?? (existingData.ContainsKey("Month") ? existingData["Month"] : "");
+            updatedData["Year"] = year ?? (existingData.ContainsKey("Year") ? existingData["Year"] : "");
+
+            // Include answers
+            updatedData["Answers"] = answersObject;
+
+            // Save the updated data
+            File.WriteAllText(finalPath, JsonConvert.SerializeObject(updatedData, Formatting.Indented));
+
+            MessageBox.Show("Survey data updated successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Trigger the SaveChangesCompleted event
+            SaveChangesCompleted?.Invoke(this, EventArgs.Empty);
 
             this.Close();
         }

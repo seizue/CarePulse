@@ -405,6 +405,7 @@ namespace CarePulse
                         // Write headers
                         writer.WriteLine("Question ID,Question,Response");
 
+                        // Save current page responses
                         foreach (DataGridViewRow row in datagridSurvey.Rows)
                         {
                             if (!row.IsNewRow)
@@ -416,6 +417,30 @@ namespace CarePulse
                                 writer.WriteLine($"{id},{question},{response}");
                             }
                         }
+
+                        // Iterate through all pages and export data
+                        for (int page = 1; page <= totalPages; page++)
+                        {
+                            if (page != currentPage)
+                            {
+                                LoadPage(page); // Load the page data into the DataGridView
+
+                                foreach (DataGridViewRow row in datagridSurvey.Rows)
+                                {
+                                    if (!row.IsNewRow)
+                                    {
+                                        string id = row.Cells["surveyID"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+                                        string question = row.Cells["surveyQuestion"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+                                        string response = row.Cells["surveyResponse"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+
+                                        writer.WriteLine($"{id},{question},{response}");
+                                    }
+                                }
+                            }
+                        }
+
+                        // Reload the original page
+                        LoadPage(currentPage);
                     }
 
                     MessageBox.Show("Survey exported successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);

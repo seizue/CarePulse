@@ -423,6 +423,14 @@ namespace CarePulse
 
             // Open the EntryUpdate form and pass the data
             EntryUpdate entryUpdate = new EntryUpdate(respondentID, patientName, surveyScore, date, month, year, patientFeedback, surveyTemplate, answers);
+
+            // Subscribe to the SaveChangesCompleted event
+            entryUpdate.SaveChangesCompleted += (s, ea) =>
+            {
+                // Refresh the data grid when the event is triggered
+                LoadJsonToDataGrid();
+            };
+
             entryUpdate.ShowDialog();
         }
 
