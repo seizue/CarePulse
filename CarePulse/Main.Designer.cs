@@ -47,48 +47,53 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblPageInfo = new System.Windows.Forms.Label();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
-            this.btnStartPage = new System.Windows.Forms.Button();
-            this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnLastPage = new System.Windows.Forms.Button();
             this.panel10 = new ReaLTaiizor.Controls.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel15 = new ReaLTaiizor.Controls.Panel();
             this.panel14 = new ReaLTaiizor.Controls.Panel();
             this.panel13 = new ReaLTaiizor.Controls.Panel();
-            this.btnView = new System.Windows.Forms.Button();
             this.dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.panel12 = new ReaLTaiizor.Controls.Panel();
-            this.btnPosted = new System.Windows.Forms.Button();
-            this.btnExportCSV = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel9 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSurveyTemplate = new System.Windows.Forms.Button();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
+            this.panel5 = new ReaLTaiizor.Controls.Panel();
+            this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.panelFilter = new ReaLTaiizor.Controls.Panel();
+            this.btnStartPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
+            this.btnClearSearchText = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnPosted = new System.Windows.Forms.Button();
+            this.btnExportCSV = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnSurveyTemplate = new System.Windows.Forms.Button();
             this.btnGithub = new System.Windows.Forms.Button();
             this.carePulse = new ReaLTaiizor.Controls.Button();
-            this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.panel2 = new ReaLTaiizor.Controls.Panel();
-            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel16 = new ReaLTaiizor.Controls.Panel();
+            this.txtboxSearch = new ReaLTaiizor.Controls.CyberTextBox();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).BeginInit();
             this.panel8.SuspendLayout();
@@ -96,6 +101,7 @@
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // dreamForm1
@@ -107,6 +113,7 @@
             this.dreamForm1.ColorD = System.Drawing.Color.WhiteSmoke;
             this.dreamForm1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dreamForm1.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamForm1.Controls.Add(this.panelFilter);
             this.dreamForm1.Controls.Add(this.datagridCPHome);
             this.dreamForm1.Controls.Add(this.panel8);
             this.dreamForm1.Controls.Add(this.panel6);
@@ -303,6 +310,331 @@
             this.panel11.TabIndex = 29;
             this.panel11.Text = "panel11";
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new System.Windows.Forms.Padding(5);
+            this.panel10.Size = new System.Drawing.Size(991, 1);
+            this.panel10.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel10.TabIndex = 15;
+            this.panel10.Text = "panel10";
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.txtboxSearch);
+            this.panel6.Controls.Add(this.panel16);
+            this.panel6.Controls.Add(this.btnClearSearchText);
+            this.panel6.Controls.Add(this.btnSearch);
+            this.panel6.Controls.Add(this.panel15);
+            this.panel6.Controls.Add(this.panel14);
+            this.panel6.Controls.Add(this.panel13);
+            this.panel6.Controls.Add(this.btnView);
+            this.panel6.Controls.Add(this.btnFilter);
+            this.panel6.Controls.Add(this.panel12);
+            this.panel6.Controls.Add(this.btnPosted);
+            this.panel6.Controls.Add(this.btnExportCSV);
+            this.panel6.Controls.Add(this.btnRefresh);
+            this.panel6.Controls.Add(this.btnNew);
+            this.panel6.Controls.Add(this.btnDelete);
+            this.panel6.Controls.Add(this.btnUpdate);
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Location = new System.Drawing.Point(61, 93);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(986, 57);
+            this.panel6.TabIndex = 14;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel15.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel15.Location = new System.Drawing.Point(320, 18);
+            this.panel15.Name = "panel15";
+            this.panel15.Padding = new System.Windows.Forms.Padding(5);
+            this.panel15.Size = new System.Drawing.Size(1, 20);
+            this.panel15.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel15.TabIndex = 35;
+            this.panel15.Text = "panel15";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel14.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel14.Location = new System.Drawing.Point(263, 18);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(5);
+            this.panel14.Size = new System.Drawing.Size(1, 20);
+            this.panel14.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel14.TabIndex = 34;
+            this.panel14.Text = "panel14";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel13.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel13.Location = new System.Drawing.Point(205, 18);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(5);
+            this.panel13.Size = new System.Drawing.Size(1, 20);
+            this.panel13.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel13.TabIndex = 33;
+            this.panel13.Text = "panel13";
+            // 
+            // dungeonComboBox1
+            // 
+            this.dungeonComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dungeonComboBox1.BackColor = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.dungeonComboBox1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.dungeonComboBox1.ColorC = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dungeonComboBox1.ColorE = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorF = System.Drawing.Color.Gainsboro;
+            this.dungeonComboBox1.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.dungeonComboBox1.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
+            this.dungeonComboBox1.ColorI = System.Drawing.Color.White;
+            this.dungeonComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dungeonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dungeonComboBox1.DropDownHeight = 100;
+            this.dungeonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dungeonComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dungeonComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.dungeonComboBox1.FormattingEnabled = true;
+            this.dungeonComboBox1.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.dungeonComboBox1.IntegralHeight = false;
+            this.dungeonComboBox1.ItemHeight = 20;
+            this.dungeonComboBox1.Location = new System.Drawing.Point(62, 42);
+            this.dungeonComboBox1.Name = "dungeonComboBox1";
+            this.dungeonComboBox1.Size = new System.Drawing.Size(226, 26);
+            this.dungeonComboBox1.StartIndex = 0;
+            this.dungeonComboBox1.TabIndex = 31;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel12.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel12.Location = new System.Drawing.Point(142, 18);
+            this.panel12.Name = "panel12";
+            this.panel12.Padding = new System.Windows.Forms.Padding(5);
+            this.panel12.Size = new System.Drawing.Size(1, 20);
+            this.panel12.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel12.TabIndex = 30;
+            this.panel12.Text = "panel12";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel9.Location = new System.Drawing.Point(0, 56);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(5);
+            this.panel9.Size = new System.Drawing.Size(986, 1);
+            this.panel9.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel9.TabIndex = 14;
+            this.panel9.Text = "panel9";
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.btnImport);
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(61, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(986, 60);
+            this.panel3.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Forte", 12.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.label2.Location = new System.Drawing.Point(31, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 19);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "CarePulse";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.03846F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.923077F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.03846F));
+            this.tableLayoutPanel1.Controls.Add(this.btnReports, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnHome, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(282, 10);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 40);
+            this.tableLayoutPanel1.TabIndex = 18;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.Transparent;
+            this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReports.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.Location = new System.Drawing.Point(217, 3);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(201, 34);
+            this.btnReports.TabIndex = 20;
+            this.btnReports.Text = "REPORTS";
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(3, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(200, 34);
+            this.btnHome.TabIndex = 19;
+            this.btnHome.Text = "HOME";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Location = new System.Drawing.Point(209, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(5);
+            this.panel7.Size = new System.Drawing.Size(1, 34);
+            this.panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel7.TabIndex = 18;
+            this.panel7.Text = "panel7";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Location = new System.Drawing.Point(0, 59);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
+            this.panel4.Size = new System.Drawing.Size(986, 1);
+            this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel4.TabIndex = 14;
+            this.panel4.Text = "panel4";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.btnSurveyTemplate);
+            this.panel1.Controls.Add(this.panelIndicator);
+            this.panel1.Controls.Add(this.btnGithub);
+            this.panel1.Controls.Add(this.carePulse);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.btnSettings);
+            this.panel1.Controls.Add(this.btnMain);
+            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(-1, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(61, 630);
+            this.panel1.TabIndex = 12;
+            // 
+            // panelIndicator
+            // 
+            this.panelIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panelIndicator.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panelIndicator.Location = new System.Drawing.Point(1, 85);
+            this.panelIndicator.Name = "panelIndicator";
+            this.panelIndicator.Padding = new System.Windows.Forms.Padding(5);
+            this.panelIndicator.Size = new System.Drawing.Size(5, 25);
+            this.panelIndicator.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panelIndicator.TabIndex = 31;
+            this.panelIndicator.Text = "panel13";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Location = new System.Drawing.Point(12, 66);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(35, 1);
+            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel5.TabIndex = 15;
+            this.panel5.Text = "panel5";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.EdgeColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Location = new System.Drawing.Point(60, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(1, 630);
+            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel2.TabIndex = 12;
+            this.panel2.Text = "panel2";
+            // 
+            // parrotGradientPanel1
+            // 
+            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 661);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(1053, 10);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel1.TabIndex = 8;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFilter.Controls.Add(this.dungeonComboBox1);
+            this.panelFilter.EdgeColor = System.Drawing.Color.White;
+            this.panelFilter.Location = new System.Drawing.Point(595, 155);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Padding = new System.Windows.Forms.Padding(5);
+            this.panelFilter.Size = new System.Drawing.Size(344, 379);
+            this.panelFilter.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panelFilter.TabIndex = 19;
+            this.panelFilter.Text = "panel16";
+            this.panelFilter.Visible = false;
+            // 
             // btnStartPage
             // 
             this.btnStartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -384,77 +716,49 @@
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
-            // panel10
+            // btnClearSearchText
             // 
-            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(5);
-            this.panel10.Size = new System.Drawing.Size(991, 1);
-            this.panel10.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel10.TabIndex = 15;
-            this.panel10.Text = "panel10";
+            this.btnClearSearchText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearSearchText.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearSearchText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClearSearchText.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClearSearchText.FlatAppearance.BorderSize = 0;
+            this.btnClearSearchText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClearSearchText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClearSearchText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearSearchText.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnClearSearchText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnClearSearchText.Image = global::CarePulse.Properties.Resources.broom_24px;
+            this.btnClearSearchText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearSearchText.Location = new System.Drawing.Point(454, 11);
+            this.btnClearSearchText.Name = "btnClearSearchText";
+            this.btnClearSearchText.Size = new System.Drawing.Size(31, 31);
+            this.btnClearSearchText.TabIndex = 398;
+            this.btnClearSearchText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearSearchText.UseVisualStyleBackColor = false;
+            this.btnClearSearchText.Click += new System.EventHandler(this.btnClearSearchText_Click);
             // 
-            // panel6
+            // btnSearch
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.panel15);
-            this.panel6.Controls.Add(this.panel14);
-            this.panel6.Controls.Add(this.panel13);
-            this.panel6.Controls.Add(this.btnView);
-            this.panel6.Controls.Add(this.dungeonComboBox1);
-            this.panel6.Controls.Add(this.btnFilter);
-            this.panel6.Controls.Add(this.panel12);
-            this.panel6.Controls.Add(this.btnPosted);
-            this.panel6.Controls.Add(this.btnExportCSV);
-            this.panel6.Controls.Add(this.btnRefresh);
-            this.panel6.Controls.Add(this.btnNew);
-            this.panel6.Controls.Add(this.btnDelete);
-            this.panel6.Controls.Add(this.btnUpdate);
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Location = new System.Drawing.Point(61, 93);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(986, 57);
-            this.panel6.TabIndex = 14;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel15.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel15.Location = new System.Drawing.Point(320, 18);
-            this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(5);
-            this.panel15.Size = new System.Drawing.Size(1, 20);
-            this.panel15.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel15.TabIndex = 35;
-            this.panel15.Text = "panel15";
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel14.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel14.Location = new System.Drawing.Point(263, 18);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(5);
-            this.panel14.Size = new System.Drawing.Size(1, 20);
-            this.panel14.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel14.TabIndex = 34;
-            this.panel14.Text = "panel14";
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel13.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel13.Location = new System.Drawing.Point(205, 18);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(5);
-            this.panel13.Size = new System.Drawing.Size(1, 20);
-            this.panel13.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel13.TabIndex = 33;
-            this.panel13.Text = "panel13";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnSearch.Image = global::CarePulse.Properties.Resources.search_24px;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(760, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(31, 31);
+            this.btnSearch.TabIndex = 397;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnView
             // 
@@ -477,35 +781,6 @@
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // dungeonComboBox1
-            // 
-            this.dungeonComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonComboBox1.BackColor = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorC = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonComboBox1.ColorE = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorF = System.Drawing.Color.Gainsboro;
-            this.dungeonComboBox1.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.dungeonComboBox1.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
-            this.dungeonComboBox1.ColorI = System.Drawing.Color.White;
-            this.dungeonComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dungeonComboBox1.DropDownHeight = 100;
-            this.dungeonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dungeonComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dungeonComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.dungeonComboBox1.FormattingEnabled = true;
-            this.dungeonComboBox1.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.dungeonComboBox1.IntegralHeight = false;
-            this.dungeonComboBox1.ItemHeight = 20;
-            this.dungeonComboBox1.Location = new System.Drawing.Point(642, 13);
-            this.dungeonComboBox1.Name = "dungeonComboBox1";
-            this.dungeonComboBox1.Size = new System.Drawing.Size(158, 26);
-            this.dungeonComboBox1.StartIndex = 0;
-            this.dungeonComboBox1.TabIndex = 31;
-            // 
             // btnFilter
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -524,20 +799,8 @@
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(31, 31);
             this.btnFilter.TabIndex = 26;
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFilter.UseVisualStyleBackColor = false;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel12.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel12.Location = new System.Drawing.Point(142, 18);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(5);
-            this.panel12.Size = new System.Drawing.Size(1, 20);
-            this.panel12.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel12.TabIndex = 30;
-            this.panel12.Text = "panel12";
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnPosted
             // 
@@ -664,43 +927,6 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel9.Location = new System.Drawing.Point(0, 56);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(5);
-            this.panel9.Size = new System.Drawing.Size(986, 1);
-            this.panel9.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel9.TabIndex = 14;
-            this.panel9.Text = "panel9";
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.btnImport);
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(61, 31);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(986, 60);
-            this.panel3.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Forte", 12.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.label2.Location = new System.Drawing.Point(31, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "CarePulse";
-            // 
             // btnImport
             // 
             this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -722,107 +948,6 @@
             this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.03846F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.923077F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.03846F));
-            this.tableLayoutPanel1.Controls.Add(this.btnReports, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnHome, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(282, 10);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 40);
-            this.tableLayoutPanel1.TabIndex = 18;
-            // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.Transparent;
-            this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(217, 3);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(201, 34);
-            this.btnReports.TabIndex = 20;
-            this.btnReports.Text = "REPORTS";
-            this.btnReports.UseVisualStyleBackColor = false;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(3, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 34);
-            this.btnHome.TabIndex = 19;
-            this.btnHome.Text = "HOME";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel7.Location = new System.Drawing.Point(209, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(5);
-            this.panel7.Size = new System.Drawing.Size(1, 34);
-            this.panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel7.TabIndex = 18;
-            this.panel7.Text = "panel7";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(0, 59);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(986, 1);
-            this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel4.TabIndex = 14;
-            this.panel4.Text = "panel4";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Controls.Add(this.btnSurveyTemplate);
-            this.panel1.Controls.Add(this.panelIndicator);
-            this.panel1.Controls.Add(this.btnGithub);
-            this.panel1.Controls.Add(this.carePulse);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.btnSettings);
-            this.panel1.Controls.Add(this.btnMain);
-            this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(-1, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(61, 630);
-            this.panel1.TabIndex = 12;
-            // 
             // btnSurveyTemplate
             // 
             this.btnSurveyTemplate.BackColor = System.Drawing.Color.Transparent;
@@ -840,18 +965,6 @@
             this.btnSurveyTemplate.TabIndex = 32;
             this.btnSurveyTemplate.UseVisualStyleBackColor = false;
             this.btnSurveyTemplate.Click += new System.EventHandler(this.btnSurveyTemplate_Click);
-            // 
-            // panelIndicator
-            // 
-            this.panelIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelIndicator.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelIndicator.Location = new System.Drawing.Point(1, 85);
-            this.panelIndicator.Name = "panelIndicator";
-            this.panelIndicator.Padding = new System.Windows.Forms.Padding(5);
-            this.panelIndicator.Size = new System.Drawing.Size(5, 25);
-            this.panelIndicator.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panelIndicator.TabIndex = 31;
-            this.panelIndicator.Text = "panel13";
             // 
             // btnGithub
             // 
@@ -892,18 +1005,6 @@
             this.carePulse.Size = new System.Drawing.Size(34, 34);
             this.carePulse.TabIndex = 14;
             this.carePulse.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Location = new System.Drawing.Point(12, 66);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(35, 1);
-            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel5.TabIndex = 15;
-            this.panel5.Text = "panel5";
             // 
             // btnSettings
             // 
@@ -960,39 +1061,6 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.EdgeColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Location = new System.Drawing.Point(60, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(1, 630);
-            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel2.TabIndex = 12;
-            this.panel2.Text = "panel2";
-            // 
-            // parrotGradientPanel1
-            // 
-            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(-1, 661);
-            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
-            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel1.Size = new System.Drawing.Size(1053, 10);
-            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel1.TabIndex = 8;
-            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
-            // 
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1047,6 +1115,50 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panel16
+            // 
+            this.panel16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel16.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel16.EdgeColor = System.Drawing.Color.Gainsboro;
+            this.panel16.Location = new System.Drawing.Point(810, 18);
+            this.panel16.Name = "panel16";
+            this.panel16.Padding = new System.Windows.Forms.Padding(5);
+            this.panel16.Size = new System.Drawing.Size(1, 20);
+            this.panel16.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel16.TabIndex = 399;
+            this.panel16.Text = "panel16";
+            // 
+            // txtboxSearch
+            // 
+            this.txtboxSearch.Alpha = 10;
+            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtboxSearch.Background_WidthPen = 3F;
+            this.txtboxSearch.BackgroundPen = true;
+            this.txtboxSearch.ColorBackground = System.Drawing.Color.White;
+            this.txtboxSearch.ColorBackground_Pen = System.Drawing.Color.Gray;
+            this.txtboxSearch.ColorLighting = System.Drawing.Color.Gainsboro;
+            this.txtboxSearch.ColorPen_1 = System.Drawing.Color.WhiteSmoke;
+            this.txtboxSearch.ColorPen_2 = System.Drawing.Color.White;
+            this.txtboxSearch.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtboxSearch.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.txtboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            this.txtboxSearch.Lighting = true;
+            this.txtboxSearch.LinearGradientPen = false;
+            this.txtboxSearch.Location = new System.Drawing.Point(491, 7);
+            this.txtboxSearch.Name = "txtboxSearch";
+            this.txtboxSearch.PenWidth = 15;
+            this.txtboxSearch.RGB = false;
+            this.txtboxSearch.Rounding = true;
+            this.txtboxSearch.RoundingInt = 20;
+            this.txtboxSearch.Size = new System.Drawing.Size(263, 40);
+            this.txtboxSearch.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtboxSearch.TabIndex = 20;
+            this.txtboxSearch.Tag = "Search";
+            this.txtboxSearch.TextButton = "";
+            this.txtboxSearch.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtboxSearch.Timer_RGB = 300;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1073,6 +1185,7 @@
             this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panelFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1137,6 +1250,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpSurveyQuestionsAnswers;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpPatientsFeedback;
         private System.Windows.Forms.Label lblPageInfo;
+        private ReaLTaiizor.Controls.Panel panelFilter;
+        private System.Windows.Forms.Button btnClearSearchText;
+        private System.Windows.Forms.Button btnSearch;
+        private ReaLTaiizor.Controls.Panel panel16;
+        private ReaLTaiizor.Controls.CyberTextBox txtboxSearch;
     }
 }
 

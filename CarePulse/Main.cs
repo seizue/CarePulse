@@ -791,5 +791,29 @@ namespace CarePulse
                 { "Answers", row.Cells["cpSurveyQuestionsAnswers"].Value?.ToString() ?? string.Empty }
             };
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            // Toggle the visibility of the panelFilter
+            panelFilter.Visible = !panelFilter.Visible;
+
+        }
+
+        private void btnClearSearchText_Click(object sender, EventArgs e)
+        {
+            // Explicitly set the Text property
+            txtboxSearch.TextButton = "";
+
+            // Reset the data grid view
+            LoadJsonToDataGrid();
+
+            // Refocus if needed
+            txtboxSearch.Focus();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
