@@ -101,7 +101,7 @@ namespace CarePulse
             datagridSurvey.Rows.Clear();
 
             // Make the questions column read-only
-            datagridSurvey.Columns["surveyQuestionss"].ReadOnly = true;
+            datagridSurvey.Columns["surveyQuestion"].ReadOnly = true;
 
             surveyQuestionList = questions; // Store all questions
             CalculatePagination();
@@ -162,7 +162,7 @@ namespace CarePulse
             {
                 int index = datagridSurvey.Rows.Add();
                 string questionId = $"Q{i + 1:D3}";
-                datagridSurvey.Rows[index].Cells["surveyQuestionss"].Value = surveyQuestionList[i];
+                datagridSurvey.Rows[index].Cells["surveyQuestion"].Value = surveyQuestionList[i];
                 datagridSurvey.Rows[index].Cells["surveyID"].Value = questionId;
 
                 // Check if we have a response for this question
@@ -410,7 +410,7 @@ namespace CarePulse
                             if (!row.IsNewRow)
                             {
                                 string id = row.Cells["surveyID"]?.Value?.ToString()?.Replace(",", " ") ?? "";
-                                string question = row.Cells["surveyQuestions"]?.Value?.ToString()?.Replace(",", " ") ?? "";
+                                string question = row.Cells["surveyQuestion"]?.Value?.ToString()?.Replace(",", " ") ?? "";
                                 string response = row.Cells["surveyResponse"]?.Value?.ToString()?.Replace(",", " ") ?? "";
 
                                 writer.WriteLine($"{id},{question},{response}");

@@ -61,7 +61,7 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surveyQuestionss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surveyQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surveyResponse = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).BeginInit();
@@ -129,7 +129,7 @@
             this.datagridSurvey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridSurvey.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surveyID,
-            this.surveyQuestionss,
+            this.surveyQuestion,
             this.surveyResponse});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -590,12 +590,12 @@
             this.surveyID.HeaderText = "ID";
             this.surveyID.Name = "surveyID";
             // 
-            // surveyQuestionss
+            // surveyQuestion
             // 
-            this.surveyQuestionss.DividerWidth = 2;
-            this.surveyQuestionss.FillWeight = 80F;
-            this.surveyQuestionss.HeaderText = "Survey Questions";
-            this.surveyQuestionss.Name = "surveyQuestionss";
+            this.surveyQuestion.DividerWidth = 2;
+            this.surveyQuestion.FillWeight = 80F;
+            this.surveyQuestion.HeaderText = "Survey Questions";
+            this.surveyQuestion.Name = "surveyQuestion";
             // 
             // surveyResponse
             // 
@@ -665,7 +665,7 @@
         private ReaLTaiizor.Controls.Panel panel12;
         private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn surveyID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestionss;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestion;
         private System.Windows.Forms.DataGridViewComboBoxColumn surveyResponse;
     }
 }
