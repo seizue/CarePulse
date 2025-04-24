@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label label1;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label label1;
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
+            this.report1 = new CarePulse.Report();
             this.panelFilter = new ReaLTaiizor.Controls.Panel();
+            this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
+            this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
+            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.datePickerEnd = new CarePulse.CustomDatePicker();
+            this.datePickerStart = new CarePulse.CustomDatePicker();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,16 +62,14 @@
             this.btnLastPage = new System.Windows.Forms.Button();
             this.panel10 = new ReaLTaiizor.Controls.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtboxSearch = new ReaLTaiizor.Controls.HopeTextBox();
             this.panel16 = new ReaLTaiizor.Controls.Panel();
             this.btnClearSearchText = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.panel15 = new ReaLTaiizor.Controls.Panel();
-            this.panel14 = new ReaLTaiizor.Controls.Panel();
-            this.panel13 = new ReaLTaiizor.Controls.Panel();
             this.btnView = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.panel12 = new ReaLTaiizor.Controls.Panel();
-            this.btnPosted = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             this.btnExportCSV = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
@@ -93,14 +98,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtboxSearch = new ReaLTaiizor.Controls.HopeTextBox();
-            this.datePickerStart = new CarePulse.CustomDatePicker();
-            this.datePickerEnd = new CarePulse.CustomDatePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
-            this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
-            this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
             label1 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -112,6 +109,18 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            label1.Location = new System.Drawing.Point(35, 35);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(83, 15);
+            label1.TabIndex = 395;
+            label1.Text = "STARTED DATE";
+            // 
             // dreamForm1
             // 
             this.dreamForm1.BackColor = System.Drawing.Color.White;
@@ -121,6 +130,7 @@
             this.dreamForm1.ColorD = System.Drawing.Color.WhiteSmoke;
             this.dreamForm1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dreamForm1.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamForm1.Controls.Add(this.report1);
             this.dreamForm1.Controls.Add(this.panelFilter);
             this.dreamForm1.Controls.Add(this.datagridCPHome);
             this.dreamForm1.Controls.Add(this.panel8);
@@ -141,6 +151,19 @@
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
             // 
+            // report1
+            // 
+            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report1.BackColor = System.Drawing.Color.White;
+            this.report1.Location = new System.Drawing.Point(61, 95);
+            this.report1.Margin = new System.Windows.Forms.Padding(4);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(989, 565);
+            this.report1.TabIndex = 20;
+            this.report1.Visible = false;
+            // 
             // panelFilter
             // 
             this.panelFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -152,16 +175,119 @@
             this.panelFilter.Controls.Add(label1);
             this.panelFilter.Controls.Add(this.datePickerEnd);
             this.panelFilter.Controls.Add(this.datePickerStart);
-            this.panelFilter.Controls.Add(this.dungeonComboBox1);
             this.panelFilter.EdgeColor = System.Drawing.Color.White;
             this.panelFilter.Location = new System.Drawing.Point(595, 155);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Padding = new System.Windows.Forms.Padding(5);
-            this.panelFilter.Size = new System.Drawing.Size(344, 296);
+            this.panelFilter.Size = new System.Drawing.Size(344, 275);
             this.panelFilter.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panelFilter.TabIndex = 19;
             this.panelFilter.Text = "panel16";
             this.panelFilter.Visible = false;
+            // 
+            // btnViewAll
+            // 
+            this.btnViewAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnViewAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnViewAll.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnViewAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewAll.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnViewAll.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnViewAll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewAll.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnViewAll.InfoColor = System.Drawing.Color.White;
+            this.btnViewAll.Location = new System.Drawing.Point(43, 183);
+            this.btnViewAll.Name = "btnViewAll";
+            this.btnViewAll.PrimaryColor = System.Drawing.Color.Peru;
+            this.btnViewAll.Size = new System.Drawing.Size(259, 32);
+            this.btnViewAll.SuccessColor = System.Drawing.Color.SandyBrown;
+            this.btnViewAll.TabIndex = 400;
+            this.btnViewAll.Text = "REMOVE FILTER";
+            this.btnViewAll.TextColor = System.Drawing.Color.White;
+            this.btnViewAll.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
+            // 
+            // btnFilterData
+            // 
+            this.btnFilterData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnFilterData.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnFilterData.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnFilterData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterData.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnFilterData.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFilterData.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFilterData.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnFilterData.InfoColor = System.Drawing.Color.White;
+            this.btnFilterData.Location = new System.Drawing.Point(43, 132);
+            this.btnFilterData.Name = "btnFilterData";
+            this.btnFilterData.PrimaryColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFilterData.Size = new System.Drawing.Size(259, 32);
+            this.btnFilterData.SuccessColor = System.Drawing.Color.SeaGreen;
+            this.btnFilterData.TabIndex = 399;
+            this.btnFilterData.Text = "APPLY FILTER";
+            this.btnFilterData.TextColor = System.Drawing.Color.White;
+            this.btnFilterData.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnFilterData.Click += new System.EventHandler(this.btnFilterData_Click);
+            // 
+            // parrotGradientPanel2
+            // 
+            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.SeaGreen;
+            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel2.Location = new System.Drawing.Point(43, 107);
+            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
+            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel2.Size = new System.Drawing.Size(259, 1);
+            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel2.TabIndex = 397;
+            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel2.TopRight = System.Drawing.Color.Black;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(249, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.TabIndex = 396;
+            this.label3.Text = "END DATE";
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
+            this.datePickerEnd.TabIndex = 33;
+            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerStart.BorderSize = 0;
+            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
+            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.ShowIconOnly = false;
+            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
+            this.datePickerStart.TabIndex = 32;
+            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             // 
             // datagridCPHome
             // 
@@ -442,13 +568,10 @@
             this.panel6.Controls.Add(this.panel16);
             this.panel6.Controls.Add(this.btnClearSearchText);
             this.panel6.Controls.Add(this.btnSearch);
-            this.panel6.Controls.Add(this.panel15);
-            this.panel6.Controls.Add(this.panel14);
-            this.panel6.Controls.Add(this.panel13);
             this.panel6.Controls.Add(this.btnView);
             this.panel6.Controls.Add(this.btnFilter);
             this.panel6.Controls.Add(this.panel12);
-            this.panel6.Controls.Add(this.btnPosted);
+            this.panel6.Controls.Add(this.btnPost);
             this.panel6.Controls.Add(this.btnExportCSV);
             this.panel6.Controls.Add(this.btnRefresh);
             this.panel6.Controls.Add(this.btnNew);
@@ -459,6 +582,30 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(986, 57);
             this.panel6.TabIndex = 14;
+            // 
+            // txtboxSearch
+            // 
+            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxSearch.BackColor = System.Drawing.Color.White;
+            this.txtboxSearch.BaseColor = System.Drawing.Color.White;
+            this.txtboxSearch.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtboxSearch.BorderColorB = System.Drawing.Color.DimGray;
+            this.txtboxSearch.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.txtboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtboxSearch.Hint = "Search";
+            this.txtboxSearch.Location = new System.Drawing.Point(495, 10);
+            this.txtboxSearch.MaxLength = 32767;
+            this.txtboxSearch.Multiline = false;
+            this.txtboxSearch.Name = "txtboxSearch";
+            this.txtboxSearch.PasswordChar = '\0';
+            this.txtboxSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtboxSearch.SelectedText = "";
+            this.txtboxSearch.SelectionLength = 0;
+            this.txtboxSearch.SelectionStart = 0;
+            this.txtboxSearch.Size = new System.Drawing.Size(255, 32);
+            this.txtboxSearch.TabIndex = 432;
+            this.txtboxSearch.TabStop = false;
+            this.txtboxSearch.UseSystemPasswordChar = false;
             // 
             // panel16
             // 
@@ -517,42 +664,6 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel15.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel15.Location = new System.Drawing.Point(320, 18);
-            this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(5);
-            this.panel15.Size = new System.Drawing.Size(1, 20);
-            this.panel15.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel15.TabIndex = 35;
-            this.panel15.Text = "panel15";
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel14.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel14.Location = new System.Drawing.Point(263, 18);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(5);
-            this.panel14.Size = new System.Drawing.Size(1, 20);
-            this.panel14.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel14.TabIndex = 34;
-            this.panel14.Text = "panel14";
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel13.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel13.Location = new System.Drawing.Point(205, 18);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(5);
-            this.panel13.Size = new System.Drawing.Size(1, 20);
-            this.panel13.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel13.TabIndex = 33;
-            this.panel13.Text = "panel13";
-            // 
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.Color.Transparent;
@@ -607,25 +718,26 @@
             this.panel12.TabIndex = 30;
             this.panel12.Text = "panel12";
             // 
-            // btnPosted
+            // btnPost
             // 
-            this.btnPosted.BackColor = System.Drawing.Color.Transparent;
-            this.btnPosted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPosted.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.BorderSize = 0;
-            this.btnPosted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPosted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPosted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnPosted.Image = global::CarePulse.Properties.Resources.Posted_24px;
-            this.btnPosted.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPosted.Location = new System.Drawing.Point(35, 12);
-            this.btnPosted.Name = "btnPosted";
-            this.btnPosted.Size = new System.Drawing.Size(89, 31);
-            this.btnPosted.TabIndex = 26;
-            this.btnPosted.Text = "POST";
-            this.btnPosted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPosted.UseVisualStyleBackColor = false;
+            this.btnPost.BackColor = System.Drawing.Color.Transparent;
+            this.btnPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPost.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatAppearance.BorderSize = 0;
+            this.btnPost.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnPost.Image = global::CarePulse.Properties.Resources.Posted_24px;
+            this.btnPost.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPost.Location = new System.Drawing.Point(35, 12);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(89, 31);
+            this.btnPost.TabIndex = 26;
+            this.btnPost.Text = "POST";
+            this.btnPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPost.UseVisualStyleBackColor = false;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // btnExportCSV
             // 
@@ -1115,175 +1227,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtboxSearch
-            // 
-            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxSearch.BackColor = System.Drawing.Color.White;
-            this.txtboxSearch.BaseColor = System.Drawing.Color.White;
-            this.txtboxSearch.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtboxSearch.BorderColorB = System.Drawing.Color.DimGray;
-            this.txtboxSearch.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.txtboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtboxSearch.Hint = "Search";
-            this.txtboxSearch.Location = new System.Drawing.Point(495, 10);
-            this.txtboxSearch.MaxLength = 32767;
-            this.txtboxSearch.Multiline = false;
-            this.txtboxSearch.Name = "txtboxSearch";
-            this.txtboxSearch.PasswordChar = '\0';
-            this.txtboxSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtboxSearch.SelectedText = "";
-            this.txtboxSearch.SelectionLength = 0;
-            this.txtboxSearch.SelectionStart = 0;
-            this.txtboxSearch.Size = new System.Drawing.Size(255, 32);
-            this.txtboxSearch.TabIndex = 432;
-            this.txtboxSearch.TabStop = false;
-            this.txtboxSearch.UseSystemPasswordChar = false;
-            // 
-            // datePickerStart
-            // 
-            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerStart.BorderSize = 0;
-            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
-            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.ShowIconOnly = false;
-            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
-            this.datePickerStart.TabIndex = 32;
-            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerEnd.BorderSize = 0;
-            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
-            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.ShowIconOnly = false;
-            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
-            this.datePickerEnd.TabIndex = 33;
-            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
-            // label1
-            // 
-            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            label1.Location = new System.Drawing.Point(35, 35);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(83, 15);
-            label1.TabIndex = 395;
-            label1.Text = "STARTED DATE";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(249, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 396;
-            this.label3.Text = "END DATE";
-            // 
-            // parrotGradientPanel2
-            // 
-            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.SeaGreen;
-            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel2.Location = new System.Drawing.Point(43, 107);
-            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
-            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel2.Size = new System.Drawing.Size(259, 1);
-            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel2.TabIndex = 397;
-            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.parrotGradientPanel2.TopRight = System.Drawing.Color.Black;
-            // 
-            // dungeonComboBox1
-            // 
-            this.dungeonComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonComboBox1.BackColor = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorC = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonComboBox1.ColorE = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorF = System.Drawing.Color.Gainsboro;
-            this.dungeonComboBox1.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.dungeonComboBox1.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
-            this.dungeonComboBox1.ColorI = System.Drawing.Color.White;
-            this.dungeonComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dungeonComboBox1.DropDownHeight = 100;
-            this.dungeonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dungeonComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dungeonComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.dungeonComboBox1.FormattingEnabled = true;
-            this.dungeonComboBox1.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.dungeonComboBox1.IntegralHeight = false;
-            this.dungeonComboBox1.ItemHeight = 20;
-            this.dungeonComboBox1.Location = new System.Drawing.Point(58, 127);
-            this.dungeonComboBox1.Name = "dungeonComboBox1";
-            this.dungeonComboBox1.Size = new System.Drawing.Size(226, 26);
-            this.dungeonComboBox1.StartIndex = 0;
-            this.dungeonComboBox1.TabIndex = 31;
-            // 
-            // btnFilterData
-            // 
-            this.btnFilterData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFilterData.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnFilterData.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnFilterData.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilterData.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnFilterData.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnFilterData.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnFilterData.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFilterData.InfoColor = System.Drawing.Color.White;
-            this.btnFilterData.Location = new System.Drawing.Point(43, 177);
-            this.btnFilterData.Name = "btnFilterData";
-            this.btnFilterData.PrimaryColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnFilterData.Size = new System.Drawing.Size(259, 32);
-            this.btnFilterData.SuccessColor = System.Drawing.Color.SeaGreen;
-            this.btnFilterData.TabIndex = 399;
-            this.btnFilterData.Text = "APPLY FILTER";
-            this.btnFilterData.TextColor = System.Drawing.Color.White;
-            this.btnFilterData.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnFilterData.Click += new System.EventHandler(this.btnFilterData_Click);
-            // 
-            // btnViewAll
-            // 
-            this.btnViewAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnViewAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnViewAll.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnViewAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewAll.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnViewAll.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnViewAll.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewAll.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnViewAll.InfoColor = System.Drawing.Color.White;
-            this.btnViewAll.Location = new System.Drawing.Point(43, 225);
-            this.btnViewAll.Name = "btnViewAll";
-            this.btnViewAll.PrimaryColor = System.Drawing.Color.Peru;
-            this.btnViewAll.Size = new System.Drawing.Size(259, 32);
-            this.btnViewAll.SuccessColor = System.Drawing.Color.SandyBrown;
-            this.btnViewAll.TabIndex = 400;
-            this.btnViewAll.Text = "REMOVE FILTER";
-            this.btnViewAll.TextColor = System.Drawing.Color.White;
-            this.btnViewAll.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1353,7 +1296,7 @@
         private ReaLTaiizor.Controls.Panel panel11;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnExportCSV;
-        private System.Windows.Forms.Button btnPosted;
+        private System.Windows.Forms.Button btnPost;
         private ReaLTaiizor.Controls.Panel panel12;
         private System.Windows.Forms.Button btnFilter;
         private ReaLTaiizor.Controls.PoisonDataGridView datagridCPHome;
@@ -1361,9 +1304,6 @@
         private ReaLTaiizor.Controls.Panel panelIndicator;
         private System.Windows.Forms.Button btnSurveyTemplate;
         private System.Windows.Forms.Button btnView;
-        private ReaLTaiizor.Controls.Panel panel15;
-        private ReaLTaiizor.Controls.Panel panel14;
-        private ReaLTaiizor.Controls.Panel panel13;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpDatePeriod;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpName;
@@ -1385,8 +1325,8 @@
         private ReaLTaiizor.Controls.HopeButton btnFilterData;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
         private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
         private ReaLTaiizor.Controls.HopeButton btnViewAll;
+        private Report report1;
     }
 }
 

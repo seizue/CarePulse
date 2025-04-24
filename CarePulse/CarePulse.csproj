@@ -85,6 +85,12 @@
     <Compile Include="RecoveryAccount.Designer.cs">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectedSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecoveryAccount.resx">
       <DependentUpon>RecoveryAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectedSurvey.resx">
       <DependentUpon>SelectedSurvey.cs</DependentUpon>
@@ -311,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rollback_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

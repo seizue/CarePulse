@@ -244,11 +244,13 @@ namespace CarePulse
         private void btnHome_Click(object sender, EventArgs e)
         {
             UpdateButtonColors(btnHome, btnReports);
+            report1.Visible = false;
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         { 
-            UpdateButtonColors(btnReports, btnHome); 
+            UpdateButtonColors(btnReports, btnHome);
+            report1.Visible = true;
         }
 
         private void btnGithub_Click(object sender, EventArgs e)
@@ -931,6 +933,11 @@ namespace CarePulse
             LoadJsonToDataGrid();
 
             panelFilter.Visible = false;
+        }
+
+        private void btnPost_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

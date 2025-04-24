@@ -63,3 +63,4 @@ C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\Care
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.pdb
 C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\CarePulse.SelectedSurvey.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.SelectedSurvey.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Report.resources
