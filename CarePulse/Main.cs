@@ -801,8 +801,8 @@ namespace CarePulse
 
         private void btnClearSearchText_Click(object sender, EventArgs e)
         {
-            // Explicitly set the Text property
-            txtboxSearch.TextButton = "";
+            // Clear search textbox
+            txtboxSearch.Clear();
 
             // Reset the data grid view
             LoadJsonToDataGrid();
@@ -813,7 +813,77 @@ namespace CarePulse
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string searchText = txtboxSearch.Text.Trim().ToLower();
 
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // If search text is empty, reload all data
+                LoadJsonToDataGrid();
+                return;
+            }
+
+            // Filter the data based on RespondentID or Name
+            var filteredData = allSurveyData.Where(data =>
+                (data.ContainsKey("RespondentID") && data["RespondentID"].ToString().ToLower().Contains(searchText)) ||
+                (data.ContainsKey("Name") && data["Name"].ToString().ToLower().Contains(searchText))
+            ).ToList();
+
+            if (filteredData.Count == 0)
+            {
+                MessageBox.Show("No matching records found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Update the DataGridView with the filtered data
+            DisplayFilteredData(filteredData);
+        }
+
+        private void DisplayFilteredData(List<Dictionary<string, object>> filteredData)
+        {
+            // Clear existing rows in the DataGridView
+            datagridCPHome.Rows.Clear();
+
+            // Loop through the filtered data
+            foreach (var data in filteredData)
+            {
+                // Extract required fields
+                string respondentID = data.ContainsKey("RespondentID") ? data["RespondentID"].ToString() : string.Empty;
+                string name = data.ContainsKey("Name") ? data["Name"].ToString() : string.Empty;
+                string date = data.ContainsKey("Date") ? data["Date"].ToString() : string.Empty;
+                string surveyScore = data.ContainsKey("SurveyScore") ? data["SurveyScore"].ToString() : string.Empty;
+                string month = data.ContainsKey("Month") ? data["Month"].ToString() : string.Empty;
+                string year = data.ContainsKey("Year") ? data["Year"].ToString() : string.Empty;
+                string surveyTemplate = data.ContainsKey("SurveyTemplate") ? data["SurveyTemplate"].ToString() : string.Empty;
+                string patientFeedback = data.ContainsKey("PatientFeedback") ? data["PatientFeedback"].ToString() : string.Empty;
+
+                // Extract answers and format them as a string
+                string surveyQuestionsAnswers = string.Empty;
+                int answeredCount = 0; // Initialize answeredCount to avoid unassigned variable issues
+                if (data.ContainsKey("Answers") && data["Answers"] is Newtonsoft.Json.Linq.JObject answers)
+                {
+                    var formattedAnswers = answers.Properties()
+                        .Select(p => $"{p.Name}: {p.Value?.ToString() ?? "No Response"}");
+                    surveyQuestionsAnswers = string.Join("; ", formattedAnswers);
+
+                    // Calculate the number of answered questions
+                    answeredCount = answers.Properties().Count(p => !string.IsNullOrWhiteSpace(p.Value?.ToString()));
+                }
+
+                string responseSummary = $"Answered: {answeredCount}";
+
+                // Add a new row to the DataGridView
+                int rowIndex = datagridCPHome.Rows.Add();
+                DataGridViewRow row = datagridCPHome.Rows[rowIndex];
+                row.Cells["cpID"].Value = respondentID;
+                row.Cells["cpName"].Value = name;
+                row.Cells["cpDatePeriod"].Value = date;
+                row.Cells["cpResponseTotal"].Value = responseSummary;
+                row.Cells["cpSurveyScore"].Value = surveyScore;
+                row.Cells["cpSurveyQuestionsAnswers"].Value = surveyQuestionsAnswers;
+                row.Cells["cpMonth"].Value = month;
+                row.Cells["cpYear"].Value = year;
+                row.Cells["cpPatientsFeedback"].Value = patientFeedback;
+                row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
+            }
         }
     }
 }
