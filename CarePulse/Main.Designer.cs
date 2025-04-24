@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label1;
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.panelFilter = new ReaLTaiizor.Controls.Panel();
-            this.dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +94,14 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtboxSearch = new ReaLTaiizor.Controls.HopeTextBox();
+            this.datePickerStart = new CarePulse.CustomDatePicker();
+            this.datePickerEnd = new CarePulse.CustomDatePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
+            this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
+            label1 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             this.panelFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).BeginInit();
@@ -135,46 +143,25 @@
             // 
             // panelFilter
             // 
+            this.panelFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFilter.Controls.Add(this.btnViewAll);
+            this.panelFilter.Controls.Add(this.btnFilterData);
+            this.panelFilter.Controls.Add(this.parrotGradientPanel2);
+            this.panelFilter.Controls.Add(this.label3);
+            this.panelFilter.Controls.Add(label1);
+            this.panelFilter.Controls.Add(this.datePickerEnd);
+            this.panelFilter.Controls.Add(this.datePickerStart);
             this.panelFilter.Controls.Add(this.dungeonComboBox1);
             this.panelFilter.EdgeColor = System.Drawing.Color.White;
             this.panelFilter.Location = new System.Drawing.Point(595, 155);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Padding = new System.Windows.Forms.Padding(5);
-            this.panelFilter.Size = new System.Drawing.Size(344, 379);
+            this.panelFilter.Size = new System.Drawing.Size(344, 296);
             this.panelFilter.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panelFilter.TabIndex = 19;
             this.panelFilter.Text = "panel16";
             this.panelFilter.Visible = false;
-            // 
-            // dungeonComboBox1
-            // 
-            this.dungeonComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonComboBox1.BackColor = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
-            this.dungeonComboBox1.ColorC = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonComboBox1.ColorE = System.Drawing.Color.White;
-            this.dungeonComboBox1.ColorF = System.Drawing.Color.Gainsboro;
-            this.dungeonComboBox1.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.dungeonComboBox1.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
-            this.dungeonComboBox1.ColorI = System.Drawing.Color.White;
-            this.dungeonComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dungeonComboBox1.DropDownHeight = 100;
-            this.dungeonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dungeonComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dungeonComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.dungeonComboBox1.FormattingEnabled = true;
-            this.dungeonComboBox1.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.dungeonComboBox1.IntegralHeight = false;
-            this.dungeonComboBox1.ItemHeight = 20;
-            this.dungeonComboBox1.Location = new System.Drawing.Point(62, 42);
-            this.dungeonComboBox1.Name = "dungeonComboBox1";
-            this.dungeonComboBox1.Size = new System.Drawing.Size(226, 26);
-            this.dungeonComboBox1.StartIndex = 0;
-            this.dungeonComboBox1.TabIndex = 31;
             // 
             // datagridCPHome
             // 
@@ -182,11 +169,11 @@
             this.datagridCPHome.AllowUserToDeleteRows = false;
             this.datagridCPHome.AllowUserToResizeColumns = false;
             this.datagridCPHome.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.datagridCPHome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.datagridCPHome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridCPHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,14 +183,14 @@
             this.datagridCPHome.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datagridCPHome.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.datagridCPHome.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridCPHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridCPHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridCPHome.ColumnHeadersHeight = 48;
             this.datagridCPHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridCPHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -217,28 +204,28 @@
             this.cpSurveyTemplate,
             this.cpSurveyQuestionsAnswers,
             this.cpPatientsFeedback});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridCPHome.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridCPHome.DefaultCellStyle = dataGridViewCellStyle7;
             this.datagridCPHome.EnableHeadersVisualStyles = false;
             this.datagridCPHome.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.datagridCPHome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.datagridCPHome.Location = new System.Drawing.Point(97, 154);
             this.datagridCPHome.Name = "datagridCPHome";
             this.datagridCPHome.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridCPHome.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridCPHome.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.datagridCPHome.RowHeadersWidth = 5;
             this.datagridCPHome.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridCPHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1152,6 +1139,151 @@
             this.txtboxSearch.TabStop = false;
             this.txtboxSearch.UseSystemPasswordChar = false;
             // 
+            // datePickerStart
+            // 
+            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerStart.BorderSize = 0;
+            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
+            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.ShowIconOnly = false;
+            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
+            this.datePickerStart.TabIndex = 32;
+            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
+            this.datePickerEnd.TabIndex = 33;
+            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // label1
+            // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            label1.Location = new System.Drawing.Point(35, 35);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(83, 15);
+            label1.TabIndex = 395;
+            label1.Text = "STARTED DATE";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(249, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.TabIndex = 396;
+            this.label3.Text = "END DATE";
+            // 
+            // parrotGradientPanel2
+            // 
+            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.SeaGreen;
+            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel2.Location = new System.Drawing.Point(43, 107);
+            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
+            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel2.Size = new System.Drawing.Size(259, 1);
+            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel2.TabIndex = 397;
+            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel2.TopRight = System.Drawing.Color.Black;
+            // 
+            // dungeonComboBox1
+            // 
+            this.dungeonComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dungeonComboBox1.BackColor = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.dungeonComboBox1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(67)))), ((int)(((byte)(60)))));
+            this.dungeonComboBox1.ColorC = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dungeonComboBox1.ColorE = System.Drawing.Color.White;
+            this.dungeonComboBox1.ColorF = System.Drawing.Color.Gainsboro;
+            this.dungeonComboBox1.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.dungeonComboBox1.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
+            this.dungeonComboBox1.ColorI = System.Drawing.Color.White;
+            this.dungeonComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dungeonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dungeonComboBox1.DropDownHeight = 100;
+            this.dungeonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dungeonComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dungeonComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.dungeonComboBox1.FormattingEnabled = true;
+            this.dungeonComboBox1.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.dungeonComboBox1.IntegralHeight = false;
+            this.dungeonComboBox1.ItemHeight = 20;
+            this.dungeonComboBox1.Location = new System.Drawing.Point(58, 127);
+            this.dungeonComboBox1.Name = "dungeonComboBox1";
+            this.dungeonComboBox1.Size = new System.Drawing.Size(226, 26);
+            this.dungeonComboBox1.StartIndex = 0;
+            this.dungeonComboBox1.TabIndex = 31;
+            // 
+            // btnFilterData
+            // 
+            this.btnFilterData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnFilterData.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnFilterData.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnFilterData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterData.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnFilterData.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFilterData.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFilterData.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnFilterData.InfoColor = System.Drawing.Color.White;
+            this.btnFilterData.Location = new System.Drawing.Point(43, 177);
+            this.btnFilterData.Name = "btnFilterData";
+            this.btnFilterData.PrimaryColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFilterData.Size = new System.Drawing.Size(259, 32);
+            this.btnFilterData.SuccessColor = System.Drawing.Color.SeaGreen;
+            this.btnFilterData.TabIndex = 399;
+            this.btnFilterData.Text = "APPLY FILTER";
+            this.btnFilterData.TextColor = System.Drawing.Color.White;
+            this.btnFilterData.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnFilterData.Click += new System.EventHandler(this.btnFilterData_Click);
+            // 
+            // btnViewAll
+            // 
+            this.btnViewAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnViewAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnViewAll.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnViewAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewAll.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnViewAll.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnViewAll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewAll.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnViewAll.InfoColor = System.Drawing.Color.White;
+            this.btnViewAll.Location = new System.Drawing.Point(43, 225);
+            this.btnViewAll.Name = "btnViewAll";
+            this.btnViewAll.PrimaryColor = System.Drawing.Color.Peru;
+            this.btnViewAll.Size = new System.Drawing.Size(259, 32);
+            this.btnViewAll.SuccessColor = System.Drawing.Color.SandyBrown;
+            this.btnViewAll.TabIndex = 400;
+            this.btnViewAll.Text = "REMOVE FILTER";
+            this.btnViewAll.TextColor = System.Drawing.Color.White;
+            this.btnViewAll.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1171,6 +1303,7 @@
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.dreamForm1.ResumeLayout(false);
             this.panelFilter.ResumeLayout(false);
+            this.panelFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCPHome)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -1225,7 +1358,6 @@
         private System.Windows.Forms.Button btnFilter;
         private ReaLTaiizor.Controls.PoisonDataGridView datagridCPHome;
         private System.Windows.Forms.Button btnGithub;
-        private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
         private ReaLTaiizor.Controls.Panel panelIndicator;
         private System.Windows.Forms.Button btnSurveyTemplate;
         private System.Windows.Forms.Button btnView;
@@ -1248,6 +1380,13 @@
         private System.Windows.Forms.Button btnSearch;
         private ReaLTaiizor.Controls.Panel panel16;
         private ReaLTaiizor.Controls.HopeTextBox txtboxSearch;
+        private CustomDatePicker datePickerEnd;
+        private CustomDatePicker datePickerStart;
+        private ReaLTaiizor.Controls.HopeButton btnFilterData;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
+        private System.Windows.Forms.Label label3;
+        private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
+        private ReaLTaiizor.Controls.HopeButton btnViewAll;
     }
 }
 

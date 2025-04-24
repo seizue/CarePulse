@@ -813,6 +813,8 @@ namespace CarePulse
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            ApplyAutoSizing();
+
             string searchText = txtboxSearch.Text.Trim().ToLower();
 
             if (string.IsNullOrEmpty(searchText))
@@ -833,6 +835,7 @@ namespace CarePulse
                 MessageBox.Show("No matching records found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+    
             // Update the DataGridView with the filtered data
             DisplayFilteredData(filteredData);
         }
@@ -883,7 +886,51 @@ namespace CarePulse
                 row.Cells["cpYear"].Value = year;
                 row.Cells["cpPatientsFeedback"].Value = patientFeedback;
                 row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
+
+                ApplyAutoSizing();
+
             }
+        }
+
+        private void btnFilterData_Click(object sender, EventArgs e)
+        {
+            // Ensure both date pickers have valid dates
+            if (datePickerStart.Value > datePickerEnd.Value)
+            {
+                MessageBox.Show("Start date cannot be later than end date.", "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Parse the selected date range
+            DateTime startDate = datePickerStart.Value.Date;
+            DateTime endDate = datePickerEnd.Value.Date;
+
+            // Filter the data based on the Date field
+            var filteredData = allSurveyData.Where(data =>
+            {
+                if (data.ContainsKey("Date") && DateTime.TryParse(data["Date"].ToString(), out DateTime recordDate))
+                {
+                    return recordDate.Date >= startDate && recordDate.Date <= endDate;
+                }
+                return false;
+            }).ToList();
+
+        
+            // Update the DataGridView with the filtered data
+            DisplayFilteredData(filteredData);
+
+            panelFilter.Visible = false;
+        }
+
+        private void btnViewAll_Click(object sender, EventArgs e)
+        {
+            // Clear search textbox
+            txtboxSearch.Clear();
+
+            // Reset the data grid view
+            LoadJsonToDataGrid();
+
+            panelFilter.Visible = false;
         }
     }
 }
