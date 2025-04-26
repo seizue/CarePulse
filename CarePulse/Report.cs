@@ -106,6 +106,41 @@ namespace CarePulse
 
         private void DisplayCurrentPage()
         {
+            // Adjust recordsPerPage based on the form's window state
+            Form parentForm = this.FindForm();
+            if (parentForm != null)
+            {
+                if (parentForm.WindowState == FormWindowState.Normal)
+                {
+                    recordsPerPage = 12; // Fixed to 12 rows in normal state
+                }
+                else if (parentForm.WindowState == FormWindowState.Maximized)
+                {
+                    // Calculate the number of rows that can fit in the DataGridView based on its height
+                    // Use a fixed row height (33 pixels as used in ApplyAutoSizing)
+                    int rowHeight = 33;
+                    int headerHeight = datagridReport.ColumnHeadersHeight;
+                    // Account for potential scrollbar and border spacing
+                    int adjustment = 10;
+                    int availableHeight = datagridReport.Height - headerHeight - adjustment;
+
+                    // Calculate how many rows can fit, and ensure at least 1 row
+                    recordsPerPage = Math.Max(1, availableHeight / rowHeight);
+
+                    // Add safety limit to prevent too many rows
+                    recordsPerPage = Math.Min(recordsPerPage, 30);
+                }
+            }
+
+            // Recalculate total pages based on the potentially updated recordsPerPage
+            totalPages = (int)Math.Ceiling((double)allSurveyData.Count / recordsPerPage);
+
+            // Ensure current page is valid
+            if (currentPage > totalPages && totalPages > 0)
+                currentPage = totalPages;
+            else if (currentPage < 1)
+                currentPage = 1;
+
             // Clear existing rows in the DataGridView
             datagridReport.Rows.Clear();
 
@@ -186,8 +221,6 @@ namespace CarePulse
             btnLastPage.Enabled = (currentPage < totalPages);
         }
 
-
-
         private void ApplyAutoSizing()
         {
             // Disable auto-sizing for rows
@@ -203,12 +236,16 @@ namespace CarePulse
             datagridReport.Columns["cpSurveyQuestionsAnswers"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             datagridReport.Columns["cpPatientsFeedback"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            // Set height for all rows
+            // Set consistent height for all rows (33 pixels)
             foreach (DataGridViewRow row in datagridReport.Rows)
             {
-                row.Height = 34;
+                row.Height = 33;
             }
 
+            // Set the default row height for new rows as well
+            datagridReport.RowTemplate.Height = 33;
+
+            // Your existing column width settings
             datagridReport.Columns["cpID"].FillWeight = 25;
             datagridReport.Columns["cpDatePeriod"].FillWeight = 35;
             datagridReport.Columns["cpName"].FillWeight = 70;
@@ -219,7 +256,6 @@ namespace CarePulse
             datagridReport.Columns["cpYear"].FillWeight = 15;
             datagridReport.Columns["cpPatientsFeedback"].FillWeight = 60;
             datagridReport.Columns["cpSurveyTemplate"].FillWeight = 30;
-
         }
 
         private void btnStartPage_Click(object sender, EventArgs e)
@@ -282,11 +318,9 @@ namespace CarePulse
                 MessageBox.Show("No matching records found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-
             // Update the DataGridView with the filtered data
             DisplayFilteredData(filteredData);
         }
-
 
         private void DisplayFilteredData(List<Dictionary<string, object>> filteredData)
         {
@@ -336,10 +370,8 @@ namespace CarePulse
                 row.Cells["cpSurveyTemplate"].Value = surveyTemplate;
 
                 ApplyAutoSizing();
-
             }
         }
-
 
         private void btnClearSearchText_Click(object sender, EventArgs e)
         {
@@ -402,7 +434,6 @@ namespace CarePulse
             viewData.ShowDialog();
         }
 
-
         private void btnRollBack_Click(object sender, EventArgs e)
         {
             // Ensure a row is selected
@@ -463,14 +494,12 @@ namespace CarePulse
             }
         }
 
-
         private void btnFilter_Click(object sender, EventArgs e)
         {
             // Toggle the visibility of the panelFilter
             panelFilter.Visible = !panelFilter.Visible;
         }
 
-    
         private void btnExportCSV_Click(object sender, EventArgs e)
         {
             // Prompt the user to choose between exporting all data or a specific row
@@ -538,7 +567,6 @@ namespace CarePulse
                 }
             }
         }
-
 
         private void WriteDataRow(StreamWriter writer, Dictionary<string, object> data)
         {
@@ -640,7 +668,6 @@ namespace CarePulse
                 return false;
             }).ToList();
 
-
             // Update the DataGridView with the filtered data
             DisplayFilteredData(filteredData);
 
@@ -656,6 +683,17 @@ namespace CarePulse
             LoadJsonToDataGrid();
 
             panelFilter.Visible = false;
+        }
+
+
+        private void Report_Load_1(object sender, EventArgs e)
+        {
+            datagridReport.ScrollBars = ScrollBars.None;
+        }
+
+        private void Report_Resize(object sender, EventArgs e)
+        {
+            DisplayCurrentPage();
         }
     }
 }

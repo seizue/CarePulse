@@ -163,6 +163,9 @@ namespace CarePulse
                 {
                     PositionForm();
                 }
+
+                // Disable scrollbars for the DataGridView
+                datagridCPHome.ScrollBars = ScrollBars.None;
             }));
         }
 
@@ -179,12 +182,9 @@ namespace CarePulse
 
         private void Main_SizeChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized && !isStateChanging)
+            if (!isStateChanging)
             {
-                // Update MaximizedBounds when the window is maximized
-                Screen screen = Screen.FromControl(this);
-                Rectangle workingArea = screen.WorkingArea;
-                this.MaximizedBounds = workingArea;
+                DisplayCurrentPage();
             }
         }
 
@@ -332,12 +332,44 @@ namespace CarePulse
 
         private void DisplayCurrentPage()
         {
+            // Adjust recordsPerPage based on the window state
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                recordsPerPage = 12; // Fixed to 12 rows in normal state
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                // Calculate the number of rows that can fit in the DataGridView based on its height
+                // Use a fixed row height (33 pixels as used in ApplyAutoSizing)
+                int rowHeight = 33;
+                int headerHeight = datagridCPHome.ColumnHeadersHeight;
+                // Account for potential scrollbar and border spacing
+                int adjustment = 10;
+                int availableHeight = datagridCPHome.Height - headerHeight - adjustment;
+
+                // Calculate how many rows can fit, and ensure at least 1 row
+                recordsPerPage = Math.Max(1, availableHeight / rowHeight);
+
+                // Add safety limit to prevent too many rows
+                recordsPerPage = Math.Min(recordsPerPage, 30);
+            }
+
+            // Recalculate total pages based on the potentially updated recordsPerPage
+            totalPages = (int)Math.Ceiling((double)allSurveyData.Count / recordsPerPage);
+
+            // Ensure current page is valid
+            if (currentPage > totalPages && totalPages > 0)
+                currentPage = totalPages;
+            else if (currentPage < 1)
+                currentPage = 1;
+
             // Clear existing rows in the DataGridView
             datagridCPHome.Rows.Clear();
 
             // Calculate start and end indices for the current page
             int startIndex = (currentPage - 1) * recordsPerPage;
             int endIndex = Math.Min(startIndex + recordsPerPage, allSurveyData.Count);
+
 
             // Loop through data for the current page
             for (int i = startIndex; i < endIndex; i++)
@@ -432,7 +464,7 @@ namespace CarePulse
             // Set height for all rows
             foreach (DataGridViewRow row in datagridCPHome.Rows)
             {
-                row.Height = 34;
+                row.Height = 33;
             }
 
             datagridCPHome.Columns["cpID"].FillWeight = 25;            
