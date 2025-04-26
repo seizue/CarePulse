@@ -20,7 +20,7 @@ namespace CarePulse
         private const int DEFAULT_HEIGHT = 671;
         private List<Dictionary<string, object>> allSurveyData = new List<Dictionary<string, object>>();
         private int currentPage = 1;
-        private int recordsPerPage = 10;
+        private int recordsPerPage = 12;
         private int totalPages = 0;
 
         public Main()
@@ -430,7 +430,7 @@ namespace CarePulse
             // Set height for all rows
             foreach (DataGridViewRow row in datagridCPHome.Rows)
             {
-                row.Height = 35;
+                row.Height = 34;
             }
 
             datagridCPHome.Columns["cpID"].FillWeight = 25;            
@@ -937,7 +937,62 @@ namespace CarePulse
 
         private void btnPost_Click(object sender, EventArgs e)
         {
+            // Ensure a row is selected
+            if (datagridCPHome.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to post.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Define the directory paths
+            string finalizedSurveysPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string postedFolderPath = Path.Combine(finalizedSurveysPath, "Posted");
+
+            // Ensure the "Posted" directory exists
+            if (!Directory.Exists(postedFolderPath))
+            {
+                Directory.CreateDirectory(postedFolderPath);
+            }
+
+            // Get the selected row
+            DataGridViewRow selectedRow = datagridCPHome.SelectedRows[0];
+
+            // Retrieve data from the selected row
+            string respondentID = selectedRow.Cells["cpID"].Value?.ToString() ?? string.Empty;
+            string name = selectedRow.Cells["cpName"].Value?.ToString().Replace(" ", "_") ?? "UnknownData";
+            string date = selectedRow.Cells["cpDatePeriod"].Value?.ToString() ?? "UnknownDate";
+            string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
+            string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
+
+            // Define the file paths
+            string sourceFilePath = Path.Combine(finalizedSurveysPath, $"Survey_{respondentID}_{month}_{year}.json");
+            string destinationFileName = $"PostedData_{respondentID}_{name}_{month}_{year}.json";
+            string destinationFilePath = Path.Combine(postedFolderPath, destinationFileName);
+
+            try
+            {
+                // Check if the source file exists
+                if (!File.Exists(sourceFilePath))
+                {
+                    MessageBox.Show("The survey file could not be found. It may have been already moved or deleted.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Move the file to the "Posted" folder
+                File.Move(sourceFilePath, destinationFilePath);
+
+                // Notify the user
+                MessageBox.Show("Data has been successfully posted and moved.", "Post Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh the DataGridView to reflect the changes
+                LoadJsonToDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while posting the data: {ex.Message}", "Post Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

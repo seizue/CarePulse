@@ -663,7 +663,6 @@
         private ReaLTaiizor.Controls.Panel panel2;
         private System.Windows.Forms.Button btnExport;
         private ReaLTaiizor.Controls.Panel panel12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn surveyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn surveyQuestion;
         private System.Windows.Forms.DataGridViewComboBoxColumn surveyResponse;

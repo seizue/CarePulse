@@ -34,14 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
-            this.report1 = new CarePulse.Report();
             this.panelFilter = new ReaLTaiizor.Controls.Panel();
             this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
             this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.datePickerEnd = new CarePulse.CustomDatePicker();
-            this.datePickerStart = new CarePulse.CustomDatePicker();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +75,6 @@
             this.panel9 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -98,6 +94,9 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.report1 = new CarePulse.Report();
+            this.datePickerEnd = new CarePulse.CustomDatePicker();
+            this.datePickerStart = new CarePulse.CustomDatePicker();
             label1 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -150,19 +149,6 @@
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
-            // 
-            // report1
-            // 
-            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.report1.BackColor = System.Drawing.Color.White;
-            this.report1.Location = new System.Drawing.Point(61, 95);
-            this.report1.Margin = new System.Windows.Forms.Padding(4);
-            this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(989, 565);
-            this.report1.TabIndex = 20;
-            this.report1.Visible = false;
             // 
             // panelFilter
             // 
@@ -258,36 +244,6 @@
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 396;
             this.label3.Text = "END DATE";
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerEnd.BorderSize = 0;
-            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
-            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.ShowIconOnly = false;
-            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
-            this.datePickerEnd.TabIndex = 33;
-            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
-            // datePickerStart
-            // 
-            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerStart.BorderSize = 0;
-            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
-            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.ShowIconOnly = false;
-            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
-            this.datePickerStart.TabIndex = 32;
-            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             // 
             // datagridCPHome
             // 
@@ -862,7 +818,6 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.btnImport);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(61, 31);
@@ -880,27 +835,6 @@
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 17;
             this.label2.Text = "CarePulse";
-            // 
-            // btnImport
-            // 
-            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImport.BackColor = System.Drawing.Color.Transparent;
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnImport.Image = global::CarePulse.Properties.Resources.import_24px;
-            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImport.Location = new System.Drawing.Point(864, 15);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(95, 31);
-            this.btnImport.TabIndex = 19;
-            this.btnImport.Text = "IMPORT";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -1227,6 +1161,49 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // report1
+            // 
+            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report1.BackColor = System.Drawing.Color.White;
+            this.report1.Location = new System.Drawing.Point(61, 95);
+            this.report1.Margin = new System.Windows.Forms.Padding(4);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(989, 565);
+            this.report1.TabIndex = 20;
+            this.report1.Visible = false;
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
+            this.datePickerEnd.TabIndex = 33;
+            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerStart.BorderSize = 0;
+            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
+            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.ShowIconOnly = false;
+            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
+            this.datePickerStart.TabIndex = 32;
+            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1281,7 +1258,6 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnHome;
         private ReaLTaiizor.Controls.Panel panel7;
-        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Panel panel6;
         private ReaLTaiizor.Controls.Panel panel9;
         private System.Windows.Forms.Button btnDelete;
