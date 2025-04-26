@@ -75,6 +75,8 @@ namespace CarePulse
 
         private void Survey_Load(object sender, EventArgs e)
         {
+            LoadResponseOptions();
+
             // Set row height
             datagridSurvey.RowTemplate.Height = 33;
 
@@ -347,12 +349,6 @@ namespace CarePulse
         }
 
 
-        private void Survey_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveResponseOptions();
-        }
-
-
         private void btnPost_Click(object sender, EventArgs e)
         {
             // Save any unsaved responses from current page before collecting all responses
@@ -506,10 +502,6 @@ namespace CarePulse
             LoadPage(currentPage);
         }
 
-        private void btnImportOCR_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 

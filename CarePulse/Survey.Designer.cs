@@ -35,6 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.datagridSurvey = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surveyQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surveyResponse = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
             this.btnStartPage = new System.Windows.Forms.Button();
@@ -43,9 +46,7 @@
             this.btnLastPage = new System.Windows.Forms.Button();
             this.panel10 = new ReaLTaiizor.Controls.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.btnPost = new System.Windows.Forms.Button();
-            this.btnImportOCR = new System.Windows.Forms.Button();
             this.btnResponseOption = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
@@ -60,9 +61,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.surveyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surveyQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surveyResponse = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridSurvey)).BeginInit();
             this.panel8.SuspendLayout();
@@ -162,6 +160,33 @@
             this.datagridSurvey.TabIndex = 18;
             this.datagridSurvey.UseCustomBackColor = true;
             this.datagridSurvey.UseCustomForeColor = true;
+            // 
+            // surveyID
+            // 
+            this.surveyID.FillWeight = 15F;
+            this.surveyID.HeaderText = "ID";
+            this.surveyID.Name = "surveyID";
+            // 
+            // surveyQuestion
+            // 
+            this.surveyQuestion.DividerWidth = 2;
+            this.surveyQuestion.FillWeight = 80F;
+            this.surveyQuestion.HeaderText = "Survey Questions";
+            this.surveyQuestion.Name = "surveyQuestion";
+            // 
+            // surveyResponse
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle3;
+            this.surveyResponse.FillWeight = 20F;
+            this.surveyResponse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.surveyResponse.HeaderText = "Response ";
+            this.surveyResponse.Name = "surveyResponse";
+            this.surveyResponse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.surveyResponse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel8
             // 
@@ -289,9 +314,7 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.panel1);
             this.panel6.Controls.Add(this.btnPost);
-            this.panel6.Controls.Add(this.btnImportOCR);
             this.panel6.Controls.Add(this.btnResponseOption);
             this.panel6.Controls.Add(this.btnRefresh);
             this.panel6.Controls.Add(this.panel2);
@@ -302,19 +325,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1045, 57);
             this.panel6.TabIndex = 15;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.EdgeColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(810, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1, 20);
-            this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel1.TabIndex = 417;
-            this.panel1.Text = "panel1";
             // 
             // btnPost
             // 
@@ -337,26 +347,6 @@
             this.btnPost.UseVisualStyleBackColor = false;
             this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
-            // btnImportOCR
-            // 
-            this.btnImportOCR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImportOCR.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnImportOCR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImportOCR.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnImportOCR.FlatAppearance.BorderSize = 2;
-            this.btnImportOCR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnImportOCR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnImportOCR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportOCR.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnImportOCR.ForeColor = System.Drawing.Color.White;
-            this.btnImportOCR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImportOCR.Location = new System.Drawing.Point(834, 11);
-            this.btnImportOCR.Name = "btnImportOCR";
-            this.btnImportOCR.Size = new System.Drawing.Size(178, 31);
-            this.btnImportOCR.TabIndex = 414;
-            this.btnImportOCR.Text = "IMPORT";
-            this.btnImportOCR.UseVisualStyleBackColor = false;
-            // 
             // btnResponseOption
             // 
             this.btnResponseOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -371,7 +361,7 @@
             this.btnResponseOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             this.btnResponseOption.Image = global::CarePulse.Properties.Resources.insert_column_right_24px;
             this.btnResponseOption.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResponseOption.Location = new System.Drawing.Point(638, 11);
+            this.btnResponseOption.Location = new System.Drawing.Point(855, 11);
             this.btnResponseOption.Name = "btnResponseOption";
             this.btnResponseOption.Size = new System.Drawing.Size(157, 31);
             this.btnResponseOption.TabIndex = 416;
@@ -584,33 +574,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // surveyID
-            // 
-            this.surveyID.FillWeight = 15F;
-            this.surveyID.HeaderText = "ID";
-            this.surveyID.Name = "surveyID";
-            // 
-            // surveyQuestion
-            // 
-            this.surveyQuestion.DividerWidth = 2;
-            this.surveyQuestion.FillWeight = 80F;
-            this.surveyQuestion.HeaderText = "Survey Questions";
-            this.surveyQuestion.Name = "surveyQuestion";
-            // 
-            // surveyResponse
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.surveyResponse.DefaultCellStyle = dataGridViewCellStyle3;
-            this.surveyResponse.FillWeight = 20F;
-            this.surveyResponse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.surveyResponse.HeaderText = "Response ";
-            this.surveyResponse.Name = "surveyResponse";
-            this.surveyResponse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.surveyResponse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Survey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,7 +584,6 @@
             this.Name = "Survey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Survey";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Survey_FormClosing);
             this.Load += new System.EventHandler(this.Survey_Load);
             this.Resize += new System.EventHandler(this.Survey_Resize);
             this.dreamForm1.ResumeLayout(false);
@@ -655,8 +617,6 @@
         private System.Windows.Forms.Button btnLastPage;
         private ReaLTaiizor.Controls.Panel panel10;
         private System.Windows.Forms.Button btnResponseOption;
-        private System.Windows.Forms.Button btnImportOCR;
-        private ReaLTaiizor.Controls.Panel panel1;
         private ReaLTaiizor.Controls.PoisonDataGridView datagridSurvey;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnRefresh;
