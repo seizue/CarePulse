@@ -316,6 +316,18 @@ namespace CarePulse
                 }
             }
 
+            // Sort the data by the "Date" field
+            allSurveyData = allSurveyData
+                .OrderBy(data =>
+                {
+                    if (data.ContainsKey("Date") && DateTime.TryParse(data["Date"].ToString(), out DateTime parsedDate))
+                    {
+                        return parsedDate;
+                    }
+                    return DateTime.MaxValue; // Place invalid or missing dates at the end
+                })
+                .ToList();
+
             // Calculate total pages
             totalPages = (int)Math.Ceiling((double)allSurveyData.Count / recordsPerPage);
 
@@ -325,10 +337,11 @@ namespace CarePulse
             else if (currentPage < 1)
                 currentPage = 1;
 
-           
             // Display the current page
             DisplayCurrentPage();
         }
+
+
 
         private void DisplayCurrentPage()
         {
