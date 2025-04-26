@@ -212,11 +212,13 @@ namespace CarePulse
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             UpdatePanelIndicator(85);
+            dashboard1.Visible = true;
         }
 
         private void btnMain_Click(object sender, EventArgs e)
         {
             UpdatePanelIndicator(135);
+            dashboard1.Visible = false;
         }
 
         private void btnSurveyTemplate_Click(object sender, EventArgs e)

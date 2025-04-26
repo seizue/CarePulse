@@ -61,6 +61,12 @@
     <Compile Include="CustomDatePicker.Designer.cs">
       <DependentUpon>CustomDatePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntryNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <Compile Include="ViewData.Designer.cs">
       <DependentUpon>ViewData.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EntryNew.resx">
       <DependentUpon>EntryNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +332,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rollback_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\survey_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test_passed_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

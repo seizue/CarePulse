@@ -63,6 +63,26 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_24px {
+            get {
+                object obj = ResourceManager.GetObject("account_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap account_48px {
+            get {
+                object obj = ResourceManager.GetObject("account_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_new_24px {
             get {
                 object obj = ResourceManager.GetObject("add_new_24px", resourceCulture);
@@ -353,6 +373,16 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap overview_24px {
+            get {
+                object obj = ResourceManager.GetObject("overview_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_math_24px {
             get {
                 object obj = ResourceManager.GetObject("plus_math_24px", resourceCulture);
@@ -443,9 +473,29 @@ namespace CarePulse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap survey_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("survey_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap template_24px {
             get {
                 object obj = ResourceManager.GetObject("template_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap test_passed_24px {
+            get {
+                object obj = ResourceManager.GetObject("test_passed_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
