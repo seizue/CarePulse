@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
+            this.btnAnsSurvey = new System.Windows.Forms.Button();
+            this.btnViewTemplates = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -60,12 +62,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.btnAnsSurvey = new System.Windows.Forms.Button();
-            this.btnViewTemplates = new System.Windows.Forms.Button();
-            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dreamForm1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,6 +123,51 @@
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
+            // 
+            // btnAnsSurvey
+            // 
+            this.btnAnsSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnsSurvey.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnsSurvey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAnsSurvey.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnsSurvey.FlatAppearance.BorderSize = 0;
+            this.btnAnsSurvey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnsSurvey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnsSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnsSurvey.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnAnsSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnAnsSurvey.Image = global::CarePulse.Properties.Resources.check_all_24px;
+            this.btnAnsSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnsSurvey.Location = new System.Drawing.Point(761, 262);
+            this.btnAnsSurvey.Name = "btnAnsSurvey";
+            this.btnAnsSurvey.Size = new System.Drawing.Size(148, 31);
+            this.btnAnsSurvey.TabIndex = 425;
+            this.btnAnsSurvey.Text = "ANSWER SURVEY";
+            this.btnAnsSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnsSurvey.UseVisualStyleBackColor = false;
+            this.btnAnsSurvey.Click += new System.EventHandler(this.btnAnsSurvey_Click);
+            // 
+            // btnViewTemplates
+            // 
+            this.btnViewTemplates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewTemplates.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewTemplates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewTemplates.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewTemplates.FlatAppearance.BorderSize = 0;
+            this.btnViewTemplates.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewTemplates.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewTemplates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewTemplates.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnViewTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnViewTemplates.Image = global::CarePulse.Properties.Resources.binoculars_24px;
+            this.btnViewTemplates.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewTemplates.Location = new System.Drawing.Point(878, 116);
+            this.btnViewTemplates.Name = "btnViewTemplates";
+            this.btnViewTemplates.Size = new System.Drawing.Size(31, 31);
+            this.btnViewTemplates.TabIndex = 423;
+            this.btnViewTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewTemplates.UseVisualStyleBackColor = false;
+            this.btnViewTemplates.Click += new System.EventHandler(this.btnViewTemplates_Click);
             // 
             // label20
             // 
@@ -385,6 +430,7 @@
             this.txtboxSurveyScore.TabIndex = 399;
             this.txtboxSurveyScore.TabStop = false;
             this.txtboxSurveyScore.UseSystemPasswordChar = false;
+            this.txtboxSurveyScore.TextChanged += new System.EventHandler(this.txtboxSurveyScore_TextChanged);
             // 
             // label7
             // 
@@ -614,6 +660,27 @@
             this.label21.TabIndex = 416;
             this.label21.Text = "NEW SURVEY ENTRY";
             // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveChanges.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveChanges.FlatAppearance.BorderSize = 0;
+            this.btnSaveChanges.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnSaveChanges.Image = global::CarePulse.Properties.Resources.Posted_24px;
+            this.btnSaveChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveChanges.Location = new System.Drawing.Point(775, 7);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(134, 31);
+            this.btnSaveChanges.TabIndex = 415;
+            this.btnSaveChanges.Text = "SAVE CHANGES";
+            this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -657,72 +724,6 @@
             this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
-            // 
-            // btnAnsSurvey
-            // 
-            this.btnAnsSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnsSurvey.BackColor = System.Drawing.Color.Transparent;
-            this.btnAnsSurvey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAnsSurvey.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatAppearance.BorderSize = 0;
-            this.btnAnsSurvey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnsSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnsSurvey.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnAnsSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnAnsSurvey.Image = global::CarePulse.Properties.Resources.check_all_24px;
-            this.btnAnsSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnsSurvey.Location = new System.Drawing.Point(761, 262);
-            this.btnAnsSurvey.Name = "btnAnsSurvey";
-            this.btnAnsSurvey.Size = new System.Drawing.Size(148, 31);
-            this.btnAnsSurvey.TabIndex = 425;
-            this.btnAnsSurvey.Text = "ANSWER SURVEY";
-            this.btnAnsSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnsSurvey.UseVisualStyleBackColor = false;
-            this.btnAnsSurvey.Click += new System.EventHandler(this.btnAnsSurvey_Click);
-            // 
-            // btnViewTemplates
-            // 
-            this.btnViewTemplates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewTemplates.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewTemplates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnViewTemplates.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnViewTemplates.FlatAppearance.BorderSize = 0;
-            this.btnViewTemplates.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnViewTemplates.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnViewTemplates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewTemplates.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnViewTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnViewTemplates.Image = global::CarePulse.Properties.Resources.binoculars_24px;
-            this.btnViewTemplates.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewTemplates.Location = new System.Drawing.Point(878, 116);
-            this.btnViewTemplates.Name = "btnViewTemplates";
-            this.btnViewTemplates.Size = new System.Drawing.Size(31, 31);
-            this.btnViewTemplates.TabIndex = 423;
-            this.btnViewTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewTemplates.UseVisualStyleBackColor = false;
-            this.btnViewTemplates.Click += new System.EventHandler(this.btnViewTemplates_Click);
-            // 
-            // btnSaveChanges
-            // 
-            this.btnSaveChanges.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveChanges.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaveChanges.FlatAppearance.BorderSize = 0;
-            this.btnSaveChanges.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnSaveChanges.Image = global::CarePulse.Properties.Resources.Posted_24px;
-            this.btnSaveChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveChanges.Location = new System.Drawing.Point(775, 7);
-            this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(134, 31);
-            this.btnSaveChanges.TabIndex = 415;
-            this.btnSaveChanges.Text = "SAVE CHANGES";
-            this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveChanges.UseVisualStyleBackColor = false;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // btnClose
             // 

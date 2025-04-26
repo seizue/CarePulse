@@ -74,6 +74,10 @@ namespace CarePulse
             {
                 MessageBox.Show($"Survey template '{surveyTemplate}' is not available in the list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            // TextChanged event handler for txtboxSurveyScore
+            txtboxSurveyScore.TextChanged += txtboxSurveyScore_TextChanged;
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -379,7 +383,7 @@ namespace CarePulse
             // Extract values
             string id = txtBoxIDNo.Text.Trim();
             string name = txtboxName.Text.Trim();
-            string score = txtboxSurveyScore.Text.Trim();
+            string score = txtboxSurveyScore.Text.Trim() + "%";
             string feedback = txtboxPatientFeedBack.Text.Trim();
             string selectedTemplate = comboBoxSelectSurveyTemplate.SelectedItem?.ToString();
             string month = comboBoxMonthSurvey.SelectedItem?.ToString();
@@ -467,6 +471,24 @@ namespace CarePulse
             SaveChangesCompleted?.Invoke(this, EventArgs.Empty);
 
             this.Close();
+        }
+
+        private void txtboxSurveyScore_TextChanged(object sender, EventArgs e)
+        {
+            // Store current cursor position
+            int cursorPosition = txtboxSurveyScore.SelectionStart;
+
+            // Filter out non-numeric characters
+            string filteredText = new string(txtboxSurveyScore.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            // Only update if the text has changed to avoid infinite loop
+            if (txtboxSurveyScore.Text != filteredText)
+            {
+                txtboxSurveyScore.Text = filteredText;
+
+                // Restore cursor position, but account for potential character removal
+                txtboxSurveyScore.SelectionStart = Math.Min(cursorPosition, filteredText.Length);
+            }
         }
     }
 }
