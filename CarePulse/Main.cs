@@ -244,13 +244,15 @@ namespace CarePulse
         private void btnHome_Click(object sender, EventArgs e)
         {
             UpdateButtonColors(btnHome, btnReports);
+            LoadJsonToDataGrid();
             report1.Visible = false;
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         { 
             UpdateButtonColors(btnReports, btnHome);
-            report1.Visible = true;
+            report1.Reload();
+            report1.Visible = true;          
         }
 
         private void btnGithub_Click(object sender, EventArgs e)
@@ -984,7 +986,7 @@ namespace CarePulse
                 File.Move(sourceFilePath, destinationFilePath);
 
                 // Notify the user
-                MessageBox.Show("Data has been successfully posted and moved.", "Post Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data has been successfully posted!.", "Post Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Refresh the DataGridView to reflect the changes
                 LoadJsonToDataGrid();

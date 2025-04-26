@@ -36,6 +36,20 @@ namespace CarePulse
             LoadJsonToDataGrid();
         }
 
+        public void Reload()
+        {
+            comboBoxFilterMonth.Items.AddRange(new string[]
+        {
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+        });
+
+            // Set default selection to "All" or the first month
+            comboBoxFilterMonth.SelectedIndex = -1;
+
+            LoadJsonToDataGrid();
+        }
+
         private void LoadJsonToDataGrid()
         {
             string finalizedSurveysPath = Path.Combine(
