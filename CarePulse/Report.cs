@@ -391,7 +391,62 @@ namespace CarePulse
 
         private void btnRollBack_Click(object sender, EventArgs e)
         {
+            // Ensure a row is selected
+            if (datagridReport.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to roll back.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Define the directory paths
+            string finalizedSurveysPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "CarePulse", "AnsweredSurvey", "FinalizedSurveys");
+            string postedFolderPath = Path.Combine(finalizedSurveysPath, "Posted");
+
+            // Ensure the "FinalizedSurveys" directory exists
+            if (!Directory.Exists(finalizedSurveysPath))
+            {
+                Directory.CreateDirectory(finalizedSurveysPath);
+            }
+
+            // Get the selected row
+            DataGridViewRow selectedRow = datagridReport.SelectedRows[0];
+
+            // Retrieve data from the selected row
+            string respondentID = selectedRow.Cells["cpID"].Value?.ToString() ?? string.Empty;
+            string name = selectedRow.Cells["cpName"].Value?.ToString().Replace(" ", "_") ?? "UnknownData";
+            string date = selectedRow.Cells["cpDatePeriod"].Value?.ToString() ?? "UnknownDate";
+            string month = selectedRow.Cells["cpMonth"].Value?.ToString() ?? string.Empty;
+            string year = selectedRow.Cells["cpYear"].Value?.ToString() ?? string.Empty;
+
+            // Define the file paths
+            string sourceFilePath = Path.Combine(postedFolderPath, $"PostedData_{respondentID}_{name}_{month}_{year}.json");
+            string destinationFileName = $"Survey_{respondentID}_{month}_{year}.json";
+            string destinationFilePath = Path.Combine(finalizedSurveysPath, destinationFileName);
+
+            try
+            {
+                // Check if the source file exists
+                if (!File.Exists(sourceFilePath))
+                {
+                    MessageBox.Show("The survey file could not be found. It may have been already moved or deleted.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Move the file back to the "FinalizedSurveys" folder
+                File.Move(sourceFilePath, destinationFilePath);
+
+                // Notify the user
+                MessageBox.Show("Data has been successfully rolled back.", "Rollback Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh the DataGridView to reflect the changes
+                LoadJsonToDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while rolling back the data: {ex.Message}", "Rollback Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
