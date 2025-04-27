@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
+            this.btnExportData = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnDeleteAcc = new System.Windows.Forms.Button();
             this.comboBoxUsers = new ReaLTaiizor.Controls.DungeonComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,10 +57,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comBox_WindowState = new ReaLTaiizor.Controls.DungeonComboBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.btnExportData = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnDeleteAcc = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dreamForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -133,6 +134,61 @@
             this.panel8.TabIndex = 409;
             this.panel8.Text = "panel8";
             // 
+            // btnExportData
+            // 
+            this.btnExportData.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportData.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnExportData.FlatAppearance.BorderSize = 0;
+            this.btnExportData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnExportData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportData.ForeColor = System.Drawing.Color.LightGray;
+            this.btnExportData.Image = global::CarePulse.Properties.Resources.export_csv_24px;
+            this.btnExportData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportData.Location = new System.Drawing.Point(637, 255);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnExportData.Size = new System.Drawing.Size(33, 38);
+            this.btnExportData.TabIndex = 393;
+            this.btnExportData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportData.UseVisualStyleBackColor = false;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRefresh.Image = global::CarePulse.Properties.Resources.refresh_24px;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(565, 255);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
+            this.btnRefresh.TabIndex = 392;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CarePulse.Properties.Resources.advance_24px;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(218, 292);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 408;
+            this.pictureBox3.TabStop = false;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -143,6 +199,29 @@
             this.label12.Size = new System.Drawing.Size(158, 17);
             this.label12.TabIndex = 407;
             this.label12.Text = "Selec Account To Update";
+            // 
+            // btnDeleteAcc
+            // 
+            this.btnDeleteAcc.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteAcc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnDeleteAcc.FlatAppearance.BorderSize = 0;
+            this.btnDeleteAcc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnDeleteAcc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
+            this.btnDeleteAcc.Image = global::CarePulse.Properties.Resources.trash_24px1;
+            this.btnDeleteAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteAcc.Location = new System.Drawing.Point(706, 255);
+            this.btnDeleteAcc.Name = "btnDeleteAcc";
+            this.btnDeleteAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnDeleteAcc.Size = new System.Drawing.Size(140, 38);
+            this.btnDeleteAcc.TabIndex = 394;
+            this.btnDeleteAcc.Text = "Delete Account";
+            this.btnDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteAcc.UseVisualStyleBackColor = false;
+            this.btnDeleteAcc.Click += new System.EventHandler(this.btnDeleteAcc_Click);
             // 
             // comboBoxUsers
             // 
@@ -488,84 +567,6 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.ForestGreen;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.MediumAquamarine;
             // 
-            // btnExportData
-            // 
-            this.btnExportData.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExportData.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnExportData.FlatAppearance.BorderSize = 0;
-            this.btnExportData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnExportData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportData.ForeColor = System.Drawing.Color.LightGray;
-            this.btnExportData.Image = global::CarePulse.Properties.Resources.export_csv_24px;
-            this.btnExportData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportData.Location = new System.Drawing.Point(637, 255);
-            this.btnExportData.Name = "btnExportData";
-            this.btnExportData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnExportData.Size = new System.Drawing.Size(33, 38);
-            this.btnExportData.TabIndex = 393;
-            this.btnExportData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportData.UseVisualStyleBackColor = false;
-            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRefresh.Image = global::CarePulse.Properties.Resources.refresh_24px;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(565, 255);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
-            this.btnRefresh.TabIndex = 392;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CarePulse.Properties.Resources.advance_24px;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(218, 292);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 408;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnDeleteAcc
-            // 
-            this.btnDeleteAcc.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeleteAcc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnDeleteAcc.FlatAppearance.BorderSize = 0;
-            this.btnDeleteAcc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnDeleteAcc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.btnDeleteAcc.Image = global::CarePulse.Properties.Resources.trash_24px1;
-            this.btnDeleteAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteAcc.Location = new System.Drawing.Point(706, 255);
-            this.btnDeleteAcc.Name = "btnDeleteAcc";
-            this.btnDeleteAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteAcc.Size = new System.Drawing.Size(140, 38);
-            this.btnDeleteAcc.TabIndex = 394;
-            this.btnDeleteAcc.Text = "Delete Account";
-            this.btnDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteAcc.UseVisualStyleBackColor = false;
-            this.btnDeleteAcc.Click += new System.EventHandler(this.btnDeleteAcc_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -591,6 +592,7 @@
             this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";

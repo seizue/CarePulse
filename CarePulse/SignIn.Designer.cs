@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.label2 = new System.Windows.Forms.Label();
             this.labelCreateAcc = new System.Windows.Forms.Label();
@@ -268,6 +269,7 @@
             this.ClientSize = new System.Drawing.Size(534, 464);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign In";

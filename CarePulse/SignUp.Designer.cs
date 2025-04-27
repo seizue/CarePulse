@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.label2 = new System.Windows.Forms.Label();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
@@ -275,6 +276,7 @@
             this.ClientSize = new System.Drawing.Size(566, 504);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";

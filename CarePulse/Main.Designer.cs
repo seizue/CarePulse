@@ -33,16 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
-            this.dashboard1 = new CarePulse.Dashboard();
-            this.report1 = new CarePulse.Report();
             this.panelFilter = new ReaLTaiizor.Controls.Panel();
             this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
             this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.datePickerEnd = new CarePulse.CustomDatePicker();
-            this.datePickerStart = new CarePulse.CustomDatePicker();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,10 +82,10 @@
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSurveyTemplate = new System.Windows.Forms.Button();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
             this.btnGithub = new System.Windows.Forms.Button();
-            this.carePulse = new ReaLTaiizor.Controls.Button();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
@@ -98,6 +95,10 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.dashboard1 = new CarePulse.Dashboard();
+            this.report1 = new CarePulse.Report();
+            this.datePickerEnd = new CarePulse.CustomDatePicker();
+            this.datePickerStart = new CarePulse.CustomDatePicker();
             label1 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -107,6 +108,7 @@
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -151,30 +153,6 @@
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboard1.BackColor = System.Drawing.Color.White;
-            this.dashboard1.Location = new System.Drawing.Point(61, 31);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(989, 629);
-            this.dashboard1.TabIndex = 21;
-            // 
-            // report1
-            // 
-            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.report1.BackColor = System.Drawing.Color.White;
-            this.report1.Location = new System.Drawing.Point(61, 95);
-            this.report1.Margin = new System.Windows.Forms.Padding(4);
-            this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(989, 565);
-            this.report1.TabIndex = 20;
-            this.report1.Visible = false;
             // 
             // panelFilter
             // 
@@ -270,36 +248,6 @@
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 396;
             this.label3.Text = "END DATE";
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerEnd.BorderSize = 0;
-            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
-            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.ShowIconOnly = false;
-            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
-            this.datePickerEnd.TabIndex = 33;
-            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
-            // datePickerStart
-            // 
-            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerStart.BorderSize = 0;
-            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
-            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.ShowIconOnly = false;
-            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
-            this.datePickerStart.TabIndex = 32;
-            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             // 
             // datagridCPHome
             // 
@@ -979,10 +927,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnSurveyTemplate);
             this.panel1.Controls.Add(this.panelIndicator);
             this.panel1.Controls.Add(this.btnGithub);
-            this.panel1.Controls.Add(this.carePulse);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnMain);
@@ -992,6 +940,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(61, 630);
             this.panel1.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarePulse.Properties.Resources.health_data_24px;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSurveyTemplate
             // 
@@ -1042,26 +1000,6 @@
             this.btnGithub.TabIndex = 17;
             this.btnGithub.UseVisualStyleBackColor = false;
             this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
-            // 
-            // carePulse
-            // 
-            this.carePulse.BackColor = System.Drawing.Color.White;
-            this.carePulse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.carePulse.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.carePulse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.carePulse.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.carePulse.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.carePulse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.carePulse.Image = global::CarePulse.Properties.Resources.ecg_32px;
-            this.carePulse.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.carePulse.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.carePulse.Location = new System.Drawing.Point(13, 17);
-            this.carePulse.Name = "carePulse";
-            this.carePulse.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.carePulse.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(58)))), ((int)(((byte)(51)))));
-            this.carePulse.Size = new System.Drawing.Size(34, 34);
-            this.carePulse.TabIndex = 14;
-            this.carePulse.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // panel5
             // 
@@ -1217,6 +1155,60 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // dashboard1
+            // 
+            this.dashboard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboard1.BackColor = System.Drawing.Color.White;
+            this.dashboard1.Location = new System.Drawing.Point(61, 31);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(989, 629);
+            this.dashboard1.TabIndex = 21;
+            // 
+            // report1
+            // 
+            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report1.BackColor = System.Drawing.Color.White;
+            this.report1.Location = new System.Drawing.Point(61, 95);
+            this.report1.Margin = new System.Windows.Forms.Padding(4);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(989, 565);
+            this.report1.TabIndex = 20;
+            this.report1.Visible = false;
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
+            this.datePickerEnd.TabIndex = 33;
+            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerStart.BorderSize = 0;
+            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
+            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.ShowIconOnly = false;
+            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
+            this.datePickerStart.TabIndex = 32;
+            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1224,10 +1216,10 @@
             this.ClientSize = new System.Drawing.Size(1050, 671);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1600, 852);
             this.MinimumSize = new System.Drawing.Size(261, 65);
             this.Name = "Main";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarePulse";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
@@ -1245,6 +1237,8 @@
             this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1265,7 +1259,6 @@
         private System.Windows.Forms.Button btnMain;
         private System.Windows.Forms.Button btnSettings;
         private ReaLTaiizor.Controls.Panel panel5;
-        private ReaLTaiizor.Controls.Button carePulse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnReports;
@@ -1317,6 +1310,7 @@
         private ReaLTaiizor.Controls.HopeButton btnViewAll;
         private Report report1;
         private Dashboard dashboard1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

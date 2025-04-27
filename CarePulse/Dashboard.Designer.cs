@@ -29,41 +29,43 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAccount = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new ReaLTaiizor.Controls.Panel();
             this.txtboxTotalSurveyCount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.txtboxPostedSurveyCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.txtboxPendingSurveyCount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new ReaLTaiizor.Controls.Panel();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label21);
             this.panel3.Controls.Add(this.btnAccount);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panel4);
@@ -72,27 +74,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(989, 60);
             this.panel3.TabIndex = 14;
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccount.BackColor = System.Drawing.Color.Transparent;
-            this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnAccount.Image = global::CarePulse.Properties.Resources.account_24px;
-            this.btnAccount.Location = new System.Drawing.Point(912, 16);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(31, 31);
-            this.btnAccount.TabIndex = 399;
-            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // label2
             // 
@@ -184,16 +165,6 @@
             this.label4.TabIndex = 411;
             this.label4.Text = "Total Survey";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CarePulse.Properties.Resources.overview_24px;
-            this.pictureBox3.Location = new System.Drawing.Point(223, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 251;
-            this.pictureBox3.TabStop = false;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Gray;
@@ -246,16 +217,6 @@
             this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 411;
             this.label3.Text = "Posted Survey";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CarePulse.Properties.Resources.test_passed_24px;
-            this.pictureBox2.Location = new System.Drawing.Point(223, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 251;
-            this.pictureBox2.TabStop = false;
             // 
             // panel6
             // 
@@ -337,16 +298,6 @@
             this.label1.TabIndex = 411;
             this.label1.Text = "Pending Survey";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CarePulse.Properties.Resources.survey_24px1;
-            this.pictureBox1.Location = new System.Drawing.Point(223, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 251;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Gray;
@@ -379,6 +330,69 @@
             this.cartesianChart1.TabIndex = 21;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CarePulse.Properties.Resources.overview_24px;
+            this.pictureBox3.Location = new System.Drawing.Point(223, 19);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 251;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CarePulse.Properties.Resources.test_passed_24px;
+            this.pictureBox2.Location = new System.Drawing.Point(223, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 251;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarePulse.Properties.Resources.survey_24px1;
+            this.pictureBox1.Location = new System.Drawing.Point(223, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 251;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnAccount.Image = global::CarePulse.Properties.Resources.account_24px;
+            this.btnAccount.Location = new System.Drawing.Point(912, 16);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(31, 31);
+            this.btnAccount.TabIndex = 399;
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.label21.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(114, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(82, 15);
+            this.label21.TabIndex = 418;
+            this.label21.Text = "DASHBOARD";
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -394,12 +408,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -431,5 +445,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label21;
     }
 }

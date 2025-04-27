@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecoveryAccount));
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
             this.label2 = new System.Windows.Forms.Label();
             this.comBox_UserAccounts = new ReaLTaiizor.Controls.DungeonComboBox();
@@ -520,6 +521,7 @@
             this.ClientSize = new System.Drawing.Size(566, 504);
             this.Controls.Add(this.dreamForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecoveryAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recover Account";
