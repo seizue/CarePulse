@@ -65,3 +65,12 @@ C:\Users\ADMIN\Desktop\Ven\Projects\CarePulse\CarePulse\CarePulse\obj\Debug\Care
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.SelectedSurvey.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Report.resources
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Dashboard.resources
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.dll
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.pdb
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.xml
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.Wpf.xml

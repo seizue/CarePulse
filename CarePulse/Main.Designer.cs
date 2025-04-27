@@ -34,11 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dreamForm1 = new ReaLTaiizor.Forms.DreamForm();
+            this.dashboard1 = new CarePulse.Dashboard();
+            this.report1 = new CarePulse.Report();
             this.panelFilter = new ReaLTaiizor.Controls.Panel();
             this.btnViewAll = new ReaLTaiizor.Controls.HopeButton();
             this.btnFilterData = new ReaLTaiizor.Controls.HopeButton();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.datePickerEnd = new CarePulse.CustomDatePicker();
+            this.datePickerStart = new CarePulse.CustomDatePicker();
             this.datagridCPHome = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.cpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpDatePeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,10 +98,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.dashboard1 = new CarePulse.Dashboard();
-            this.report1 = new CarePulse.Report();
-            this.datePickerEnd = new CarePulse.CustomDatePicker();
-            this.datePickerStart = new CarePulse.CustomDatePicker();
             label1 = new System.Windows.Forms.Label();
             this.dreamForm1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -151,6 +151,30 @@
             this.dreamForm1.TabStop = false;
             this.dreamForm1.TitleAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dreamForm1.TitleHeight = 30;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboard1.BackColor = System.Drawing.Color.White;
+            this.dashboard1.Location = new System.Drawing.Point(61, 31);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(989, 629);
+            this.dashboard1.TabIndex = 21;
+            // 
+            // report1
+            // 
+            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report1.BackColor = System.Drawing.Color.White;
+            this.report1.Location = new System.Drawing.Point(61, 95);
+            this.report1.Margin = new System.Windows.Forms.Padding(4);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(989, 565);
+            this.report1.TabIndex = 20;
+            this.report1.Visible = false;
             // 
             // panelFilter
             // 
@@ -247,6 +271,36 @@
             this.label3.TabIndex = 396;
             this.label3.Text = "END DATE";
             // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
+            this.datePickerEnd.TabIndex = 33;
+            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerStart.BorderSize = 0;
+            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
+            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.ShowIconOnly = false;
+            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
+            this.datePickerStart.TabIndex = 32;
+            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            // 
             // datagridCPHome
             // 
             this.datagridCPHome.AllowUserToAddRows = false;
@@ -268,11 +322,11 @@
             this.datagridCPHome.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.datagridCPHome.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.datagridCPHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridCPHome.ColumnHeadersHeight = 48;
@@ -1162,60 +1216,6 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboard1.BackColor = System.Drawing.Color.White;
-            this.dashboard1.Location = new System.Drawing.Point(61, 31);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(989, 629);
-            this.dashboard1.TabIndex = 21;
-            // 
-            // report1
-            // 
-            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.report1.BackColor = System.Drawing.Color.White;
-            this.report1.Location = new System.Drawing.Point(61, 95);
-            this.report1.Margin = new System.Windows.Forms.Padding(4);
-            this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(989, 565);
-            this.report1.TabIndex = 20;
-            this.report1.Visible = false;
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerEnd.BorderSize = 0;
-            this.datePickerEnd.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEnd.Location = new System.Drawing.Point(181, 63);
-            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.ShowIconOnly = false;
-            this.datePickerEnd.Size = new System.Drawing.Size(132, 35);
-            this.datePickerEnd.TabIndex = 33;
-            this.datePickerEnd.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            // 
-            // datePickerStart
-            // 
-            this.datePickerStart.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerStart.BorderSize = 0;
-            this.datePickerStart.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.datePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStart.Location = new System.Drawing.Point(25, 63);
-            this.datePickerStart.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.ShowIconOnly = false;
-            this.datePickerStart.Size = new System.Drawing.Size(132, 35);
-            this.datePickerStart.TabIndex = 32;
-            this.datePickerStart.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
             // 
             // Main
             // 
