@@ -92,6 +92,7 @@
             this.btnAccount.TabIndex = 399;
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // label2
             // 
@@ -160,10 +161,12 @@
             // 
             this.txtboxTotalSurveyCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtboxTotalSurveyCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxTotalSurveyCount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtboxTotalSurveyCount.Font = new System.Drawing.Font("Bahnschrift SemiBold", 31.75F, System.Drawing.FontStyle.Bold);
             this.txtboxTotalSurveyCount.ForeColor = System.Drawing.Color.Peru;
             this.txtboxTotalSurveyCount.Location = new System.Drawing.Point(45, 38);
             this.txtboxTotalSurveyCount.Name = "txtboxTotalSurveyCount";
+            this.txtboxTotalSurveyCount.ReadOnly = true;
             this.txtboxTotalSurveyCount.Size = new System.Drawing.Size(150, 51);
             this.txtboxTotalSurveyCount.TabIndex = 413;
             this.txtboxTotalSurveyCount.Text = "-";
@@ -221,10 +224,12 @@
             // 
             this.txtboxPostedSurveyCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtboxPostedSurveyCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxPostedSurveyCount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtboxPostedSurveyCount.Font = new System.Drawing.Font("Bahnschrift SemiBold", 31.75F, System.Drawing.FontStyle.Bold);
             this.txtboxPostedSurveyCount.ForeColor = System.Drawing.Color.LightCoral;
             this.txtboxPostedSurveyCount.Location = new System.Drawing.Point(45, 38);
             this.txtboxPostedSurveyCount.Name = "txtboxPostedSurveyCount";
+            this.txtboxPostedSurveyCount.ReadOnly = true;
             this.txtboxPostedSurveyCount.Size = new System.Drawing.Size(150, 51);
             this.txtboxPostedSurveyCount.TabIndex = 413;
             this.txtboxPostedSurveyCount.Text = "-";
@@ -309,10 +314,12 @@
             // 
             this.txtboxPendingSurveyCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtboxPendingSurveyCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxPendingSurveyCount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtboxPendingSurveyCount.Font = new System.Drawing.Font("Bahnschrift SemiBold", 31.75F, System.Drawing.FontStyle.Bold);
             this.txtboxPendingSurveyCount.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txtboxPendingSurveyCount.Location = new System.Drawing.Point(45, 38);
             this.txtboxPendingSurveyCount.Name = "txtboxPendingSurveyCount";
+            this.txtboxPendingSurveyCount.ReadOnly = true;
             this.txtboxPendingSurveyCount.Size = new System.Drawing.Size(150, 51);
             this.txtboxPendingSurveyCount.TabIndex = 413;
             this.txtboxPendingSurveyCount.Text = "-";
@@ -366,9 +373,9 @@
             this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cartesianChart1.Location = new System.Drawing.Point(56, 314);
+            this.cartesianChart1.Location = new System.Drawing.Point(56, 319);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(886, 268);
+            this.cartesianChart1.Size = new System.Drawing.Size(876, 263);
             this.cartesianChart1.TabIndex = 21;
             this.cartesianChart1.Text = "cartesianChart1";
             // 

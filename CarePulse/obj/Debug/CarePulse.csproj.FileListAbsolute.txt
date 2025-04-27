@@ -74,3 +74,4 @@ C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.WinForms.
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Ven\Documents\GitHub\CarePulse\CarePulse\obj\Debug\CarePulse.Account.resources

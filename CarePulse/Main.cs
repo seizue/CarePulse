@@ -212,12 +212,14 @@ namespace CarePulse
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             UpdatePanelIndicator(85);
+            dashboard1.BringToFront();
             dashboard1.Visible = true;
         }
 
         private void btnMain_Click(object sender, EventArgs e)
         {
             UpdatePanelIndicator(135);
+            dashboard1.SendToBack();
             dashboard1.Visible = false;
         }
 
@@ -247,6 +249,7 @@ namespace CarePulse
         {
             UpdateButtonColors(btnHome, btnReports);
             LoadJsonToDataGrid();
+            report1.SendToBack();
             report1.Visible = false;
         }
 
@@ -254,6 +257,7 @@ namespace CarePulse
         { 
             UpdateButtonColors(btnReports, btnHome);
             report1.Reload();
+            report1.BringToFront();
             report1.Visible = true;          
         }
 

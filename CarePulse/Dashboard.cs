@@ -151,5 +151,11 @@ namespace CarePulse
                 }
             };
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            Account accountForm = new Account();
+            accountForm.ShowDialog();
+        }
     }
 }
